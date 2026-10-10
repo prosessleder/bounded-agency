@@ -2,13 +2,13 @@
 
 **Ontology-Driven Authority for Delegated Intelligence**
 
-Timothy O'Brien · Initial conceptual preprint · 9 October 2026 · v0.1.0-preprint
+Timothy O'Brien · Initial conceptual preprint · 10 October 2026 · v0.1.0-preprint
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
-This project investigates how an autonomous system can receive a bounded mandate for independent judgment without semantic evolution silently broadening it. The paper separates capability, execution permission, decision authority, and authority to adopt an operational semantic model. It proposes authority-relative semantic-change review and version-bound operational admission.
+This project investigates how an autonomous system can receive a bounded scope of independent judgment without semantic evolution silently broadening it. The paper separates capability, execution permission, decision authority, and authority to adopt an operational semantic model. It proposes authority-relative semantic-change review and version-bound operational authorization.
 
-The paper develops a conceptual synthesis of established semantic-policy, ontology-evolution, and authorization mechanisms. Its focus is an explicit comparison of decision eligibility under changed semantics and the admission of that change by a designated authority. The cases and executable illustration are synthetic; no deployment evaluation is reported.
+The paper develops a conceptual synthesis of established semantic-policy, ontology-evolution, and authorization mechanisms. Its focus is authority-relative semantic-change admission: checking whether proposed changes in meaning broaden a specified agent's decision scope before approving their operational use. Building-safety and customer-support thought experiments illustrate the mechanism. The cases and executable illustration are synthetic; no deployment evaluation is reported.
 
 ## Paper and supplementary materials
 
@@ -43,7 +43,7 @@ python3 scripts/build_paper.py --pdf
 python3 scripts/package_release.py
 ```
 
-The illustration exhaustively compares four fixed candidates in a finite positive taxonomy. It distinguishes shadow eligibility from live version-bound admission and shows both ontology and accepted-type-fact paths. It is neither an LLM experiment nor a production implementation.
+The illustration exhaustively compares four fixed candidates in a finite positive taxonomy. It distinguishes shadow eligibility from current version-bound authorization and shows both ontology and accepted-type-fact paths. It is neither an LLM experiment nor a production implementation.
 
 ## Publication status and rights
 

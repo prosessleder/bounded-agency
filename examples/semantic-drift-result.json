@@ -1,20 +1,20 @@
 {
-  "scope": "four fixed cases, positive finite taxonomy, one fixed approval policy",
+  "scope": "four fixed cases, positive finite taxonomy, one fixed incident-closure policy",
   "before_shadow_eligible": [
-    "ordinary"
+    "routine-service"
   ],
   "after_shadow_eligible": [
-    "device",
-    "ordinary"
+    "routine-service",
+    "sensor-anomaly"
   ],
   "expansion_witnesses": [
-    "device"
+    "sensor-anomaly"
   ],
   "removed": [],
   "unrelated_revision_changes_eligibility": false,
-  "candidate_live_permit_under_old_grant": false,
-  "candidate_live_permit_after_ratification": true,
-  "revoked_grant_live_permit": false,
+  "candidate_authorized_under_old_grant": false,
+  "candidate_authorized_after_ratification": true,
+  "revoked_grant_authorizes_action": false,
   "accepted_type_fact_can_change_fixed_ontology_eligibility": true,
-  "limitations": "illustration only; no production mediation, authenticity, concurrency, or general entailment"
+  "limitations": "illustration only; no safety-clearance verification, production mediation, authenticity, concurrency, or general entailment"
 }

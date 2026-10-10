@@ -14,7 +14,7 @@ Use `zenodo-upload-metadata.json` as a field-by-field aid for the deposit form.
 - Title: Bounded Agency: Ontology-Driven Authority for Delegated Intelligence.
 - Creator: O'Brien, Timothy. ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X). Leave affiliation blank.
 - Version: 0.1.0-preprint.
-- Date: use the actual deposit publication date. The manuscript is dated 9 October 2026.
+- Date: use the actual deposit publication date. The manuscript is dated 10 October 2026.
 - Description: supplied abstract, conceptual preprint/not peer reviewed status, and the factual AI-use disclosure in the metadata document.
 - Keywords: supplied in the metadata document.
 - Access: choose public paper files when ready; the GitHub repository is already public.

@@ -1,10 +1,10 @@
 # Bounded Agency: supplementary materials
 
-Timothy O'Brien · 0.1.0-preprint · 9 October 2026
+Timothy O'Brien · 0.1.0-preprint · 10 October 2026
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
-This archive accompanies *Bounded Agency: Ontology-Driven Authority for Delegated Intelligence*. It contains the paper's sources and a finite illustration of how a changed taxonomy or accepted classification can affect decision eligibility while live admission remains bound to an approved version.
+This archive accompanies *Bounded Agency: Ontology-Driven Authority for Delegated Intelligence*. It contains the paper's sources and a finite illustration of how a changed taxonomy or accepted classification can affect decision eligibility while authorization to act remains bound to an approved version.
 
 ## Contents
 
@@ -28,7 +28,7 @@ With Python 3.9 or newer, from the extracted archive directory run:
 python3 examples/semantic_drift.py
 ```
 
-The output should match `examples/semantic-drift-result.json`. The program compares four fixed proposals under a finite positive taxonomy. It distinguishes candidate eligibility from current version-bound operational admission and illustrates both ontology and accepted-fact changes.
+The output should match `examples/semantic-drift-result.json`. The program compares four fixed proposals under a finite positive taxonomy. It distinguishes candidate eligibility from current version-bound operational authorization and illustrates both ontology and accepted-fact changes.
 
 The cases and this finite example are synthetic. They do not implement a deployed agent, general OWL reasoning, complete mediation, or a validated semantic-change assessor, and they provide no empirical estimate of safety or performance.
 

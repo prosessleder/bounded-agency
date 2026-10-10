@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Timothy O’Brien" />
-  <meta name="dcterms.date" content="2026-10-09" />
+  <meta name="dcterms.date" content="2026-10-10" />
   <title>Bounded Agency</title>
   <style>
     /* Default styles provided by pandoc.
@@ -177,7 +177,7 @@
 <h1 class="title">Bounded Agency: Ontology-Driven Authority for
 Delegated Intelligence</h1>
 <p class="author">Timothy O’Brien</p>
-<p class="date">9 October 2026</p>
+<p class="date">10 October 2026</p>
 </header>
 <p><em>Preprint (not peer reviewed). Version 0.1.0-preprint.</em></p>
 <p>ORCID: <a href="https://orcid.org/0009-0001-2589-347X"
@@ -185,81 +185,108 @@ class="uri">https://orcid.org/0009-0001-2589-347X</a></p>
 <p>Copyright © 2026 Timothy O’Brien. Licensed under <a
 href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 <h1 id="abstract">Abstract</h1>
-<p>Autonomous systems may have permission to invoke an operation without
-having an institutional mandate to select the outcome expressed by that
-operation. Ontology-grounded policies can make such mandates explicit,
-but they introduce a change-control problem: revising classifications,
-relationships, or inference rules can alter what a fixed policy permits.
-This paper examines bounded agency as delegated independent judgment
-constrained by decision scope, consequences, and an admitted semantic
-basis. It separates domain ontology, situation facts, evidence, decision
-policy, execution permission, and authority to promote semantic changes.
-A lightweight model separates a candidate eligibility envelope from live
-admission and defines a policy-relative expansion test; a
-positive-taxonomy counterexample shows how a subclass axiom enlarges
-that envelope without editing policy text. A reference architecture
-connects change-impact assessment, explicit authority ratification,
-version-bound decision admission, and mediated execution. Insurance and
-customer-support thought experiments illustrate both semantic expansion
-and changes to facts that require different controls. Building on
-semantic-policy and ontology-evolution research, the contribution is a
-design synthesis centered on authority-relative semantic-change
-admission. The cases and finite taxonomy illustration are explanatory;
+<p>An autonomous system’s technical permissions may let it perform
+actions that settle decisions beyond the authority it was given.
+Permission to update an incident record, for example, need not include
+authority to declare a potentially hazardous situation resolved.
+Ontology-grounded policies can express these decision boundaries, but
+revisions to classifications, relationships, or inference rules can
+change what an unchanged policy permits. This paper examines bounded
+agency as delegated independent judgment limited by the situations an
+agent may resolve, the outcomes it may choose, and the consequences it
+may initiate. Its central mechanism is authority-relative
+semantic-change admission: assessing how a proposed change in meaning
+affects a specified agent’s decision scope before approving that change
+for operational use. A lightweight model separates the decisions a
+candidate semantic model would permit in a hypothetical evaluation from
+the decisions the agent is currently authorized to carry out. A
+positive-taxonomy counterexample shows how a subclass axiom enlarges the
+former set without editing policy text. A reference architecture
+connects that comparison to explicit approval, version-bound operational
+authorization, and controlled execution. Building-safety and
+customer-support thought experiments distinguish changes in meaning from
+changes in accepted facts. The contribution is a conceptual design
+synthesis building on semantic-policy and ontology-evolution research.
+The cases and finite taxonomy illustration explain the mechanism;
 operational effectiveness remains to be evaluated.</p>
 <p><strong>Keywords:</strong> bounded agency; delegated intelligence;
 decision authority; ontology evolution; semantic policy; agent
 governance; authority-sensitive change.</p>
 <h1 id="introduction">1. Introduction</h1>
-<p>Consider a claims-processing agent with credentials that permit
-updates to a claim record. Its assigned task is to identify missing
-documentation. The same update endpoint accepts a final disposition
-field. A technically valid request setting that field to
-<code>denied</code> may exceed the agent’s mandate, even if
-authentication and a coarse operation-level permission check succeed. An
-institution has delegated one kind of judgment and the software has
-exercised another.</p>
+<p>Consider a facilities agent that monitors building incidents. It may
+record observations, notify a designated responder, and close
+independently verified routine maintenance notices. Its technical
+permissions allow it to update incident status. The same interface can
+mark an unexplained sensor alert as <code>resolved</code>; in this
+hypothetical application, that update removes the alert from the
+unresolved-incident display and may send an all-clear message to
+occupants. The agent can invoke the operation, but it has not thereby
+been given authority to decide that a potentially hazardous situation is
+safe.</p>
+<p>The permissions granted by the software can therefore exceed the
+boundary of the decisions entrusted to the agent. That boundary concerns
+which situations it may independently resolve, which outcomes it may
+choose, and which consequences it may initiate. It must still be able to
+notice unfamiliar or potentially dangerous situations, preserve
+observations, and escalate under its reporting authority. A limit on
+autonomous resolution is not a reason to ignore a hazard.</p>
 <p>This is a configuration and modeling problem rather than evidence
 that authorization systems are intrinsically limited to identity and
 resource access. Attribute-based, relationship-based, and usage-control
-systems can express rich business conditions [4-6]. A final-disposition
-action can be modeled directly in such systems. The issue is whether the
-deployment represents and enforces the intended decision rights,
-evidence conditions, and consequences. Tool access does not supply those
-representations automatically.</p>
-<p>A shared ontology can support them. Domain concepts such as claim,
-evidence, coverage, exclusion, disposition, and appeal provide a common
-language for relating a situation to a permissible decision. Yet the
-language itself can change. Suppose a policy permits an agent to approve
-routine claims. A revised ontology classifies a category not previously
-entailed to be routine as routine. In a deployment that adopts this
-revision without grant review, the policy text and tool credentials
-remain unchanged, while the agent can now approve more claims. The
-change has institutional significance because classification helps
-determine the extension of a delegated right.</p>
+systems can express rich business conditions [4-6]. A well-designed
+authorization policy may already enforce the decision boundary. The
+issue is whether the deployment represents and enforces that boundary,
+including evidence requirements and downstream effects. Broad access to
+an update operation does not supply those distinctions
+automatically.</p>
+<p>A shared ontology can support them. Domain concepts such as incident,
+observation, routine notice, unresolved alert, responder, and resolution
+provide a common language for relating a situation to an authorized
+decision. Yet that language itself can change. Suppose a policy permits
+an agent to close routine notices. A revised ontology places a kind of
+sensor anomaly not previously classified as routine within that
+category. Where routine membership defines the settlement scope, the
+same policy can now permit additional closures. If a deployment adopts
+that revision without grant review, the technical permissions and policy
+text remain unchanged while the situations the agent can resolve expand.
+Section 7 distinguishes this case from one in which an independent
+safety-clearance requirement still prevents closure.</p>
 <p>The question examined here is: <strong>How can an autonomous
 intelligence be given a bounded scope of independent judgment, grounded
 in a shared model of its operating world, without allowing learning or
 semantic evolution to silently expand its authority?</strong> The word
-<em>silently</em> matters. An institution may intentionally expand a
-mandate. The design objective is to make a relevant expansion
-detectable, reviewable, and explicitly admitted, rather than to freeze
-knowledge or prohibit institutional change.</p>
-<p>We call the delegated scope of independent judgment <em>bounded
-agency</em>. The proposed distinctions concern which decisions an agent
-may settle, which consequences it may authorize, and which
-representations it may promote into the basis for those decisions. They
-do not purport to constrain every concept entertained inside a language
-model.</p>
+<em>silently</em> matters. An authorized person or organization may
+intentionally broaden the agent’s delegated decision scope. The design
+objective is to make a relevant expansion detectable, reviewable, and
+explicitly admitted, rather than to freeze knowledge or prohibit
+institutional change.</p>
+<p>We call this constrained scope of independent judgment <em>bounded
+agency</em>. A <em>mandate</em> means the assignment that specifies
+which situations, decisions, and consequences have been entrusted to the
+agent. The assignment may come from a person or an organization. It is
+distinct from the technical permissions through which the agent can
+affect a system.</p>
+<p>The paper’s central mechanism is <strong>authority-relative
+semantic-change admission</strong>. In plain terms, it asks: does a
+proposed change in meaning expand what this agent would be allowed to
+decide, and who may approve using that change?
+<em>Authority-relative</em> identifies the particular agent, mandate,
+and policy being examined. <em>Semantic change</em> includes revisions
+to classifications, relationships, mappings, or inference rules.
+<em>Admission</em> is the decision to accept the revised model as a
+basis for operational decisions. This change-approval process is
+distinct from authorizing an individual action under the currently
+approved model.</p>
 <p>The paper makes three contributions. First, it gives an explicit
 comparison target for changes to the effective permissible-decision set
 under a fixed policy and controlled context. Second, it connects that
 comparison to a proposed semantic-change admission procedure and a
-version-bound decision envelope. Third, it develops two operational
-thought experiments that distinguish ontology revisions from ordinary
-facts and classification assertions. These contributions are
-architectural proposals and explanatory formalization. They build on
-established authorization and semantic-change mechanisms; their
-operational benefits require evaluation.</p>
+version-bound authorization for each proposed decision. Third, it
+develops two operational thought experiments that distinguish ontology
+revisions from ordinary facts and classification assertions. These
+contributions are architectural proposals and explanatory formalization.
+They build on established authorization and semantic-change mechanisms;
+their operational benefits require evaluation.</p>
 <h1 id="related-work">2. Related work</h1>
 <h2 id="scope-of-comparison">2.1 Scope of comparison</h2>
 <p>This comparison draws on targeted searches of primary papers,
@@ -368,9 +395,9 @@ competence.</li>
 <li><strong>Execution permission:</strong> authorization to invoke an
 operation on a resource. A sophisticated implementation may already
 condition this permission on business meaning.</li>
-<li><strong>Decision authority:</strong> a delegated institutional right
-to select, approve, or initiate a specified outcome under stated
-conditions.</li>
+<li><strong>Decision authority:</strong> the delegated right to resolve
+specified kinds of situations, select or approve outcomes, and initiate
+their consequences under stated conditions.</li>
 <li><strong>Semantic authority:</strong> a right to promote a
 representation or inference regime into the authoritative basis of
 operational decisions.</li>
@@ -389,15 +416,16 @@ and answering for its consequences. The architecture must identify that
 role rather than rely on a statement that the agent is accountable.</p>
 <h2 id="scope-constraints-and-admitted-semantic-basis">3.2 Scope,
 constraints, and admitted semantic basis</h2>
-<p>The first dimension is <strong>decision scope</strong>: subjects and
-decision classes entrusted to the agent. Documentation completeness and
-fraud determination are different decision classes even if both concern
-the same claim.</p>
+<p>The first dimension is <strong>decision scope</strong>: the
+situations, subjects, and decision classes entrusted to the agent.
+Recording a sensor observation, closing a routine maintenance notice,
+and declaring an unresolved situation safe are different decisions even
+when they concern the same location.</p>
 <p>The second is <strong>decision constraints</strong>: permitted
-outcomes, conditions, and consequences. An agent may recommend a denial
-while lacking authority to finalize it. Amount, jurisdiction, recipient,
-appeal opportunity, evidence freshness, and cumulative exposure may
-constrain an otherwise permitted class.</p>
+outcomes, conditions, and consequences. An agent may recommend an
+assessment while lacking authority to issue an all-clear. Location,
+recipient, evidence freshness, required review, and cumulative effects
+may constrain an otherwise permitted decision class.</p>
 <p>The third is <strong>the admitted semantic basis</strong>: which
 formal representations and admission rules may support those operational
 judgments. An agent can recognize a possible new category, preserve
@@ -475,12 +503,12 @@ for every real-world consequence.</p>
 situation assertions, and represented consequences under the supplied
 bundle. For comparison, it intentionally excludes the requirement that
 the candidate bundle already be admitted by an active production grant.
-It runs in a shadow context with no authority to cause effects.
-Indeterminate covers missing evidence, unsupported inference, unknown
-classification, inconsistent inputs, or inability to resolve required
-conditions. Deployment rules must specify this treatment; unrestricted
-classical entailment from an inconsistent theory is unsuitable for a
-permit test.</p>
+It runs in a hypothetical, or shadow, evaluation with no authority to
+cause effects. Indeterminate covers missing evidence, unsupported
+inference, unknown classification, inconsistent inputs, or inability to
+resolve required conditions. Deployment rules must specify this
+treatment; unrestricted classical entailment from an inconsistent theory
+is unsuitable for a permit test.</p>
 <p>For a fixed proposal universe
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>,
 define the candidate eligibility envelope</p>
@@ -488,9 +516,11 @@ define the candidate eligibility envelope</p>
 = \{q\in Q \mid U(A,q;P,L,B,K,E,C)=\mathsf{permit}\}. </annotation></semantics></math></p>
 <p>Let
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
-identify the active version-bound grant. Operational admission
+identify the active version-bound grant. <strong>Operational
+authorization</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
-additionally requires that
+determines whether the agent may actually carry out this particular
+proposal now. It additionally requires that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
 admit this exact policy, mandate, semantic and deployment basis; that
 the grant and evidence remain current; and that the effect can be
@@ -538,8 +568,8 @@ the situation. In production,
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
 also vary. Controlled replay can compare the same snapshot to isolate
-the bundle’s impact, while operational admission evaluates the current
-admitted context. Holding already-admitted
+the bundle’s impact, while operational authorization evaluates the
+current admitted context. Holding already-admitted
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
 fixed tests downstream interpretation only. To compare changes to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
@@ -579,19 +609,18 @@ domain, and query language must be specified.</p>
 counterexample</h2>
 <p>Consider finite class names and individuals, positive subclass
 axioms, positive type assertions, and transitive classification. Fix one
-policy permitting approval of an individual
+policy permitting closure of a notice
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 exactly when
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>∪</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">K\cup O</annotation></semantics></math>
-entails <code>RoutineClaim(x)</code> and the unchanged
-amount/evidence/context predicates pass. There are no overriding
-denials, negation, inconsistent assertions, or other inference
-rules.</p>
+entails <code>RoutineNotice(x)</code> and the unchanged evidence/context
+predicates pass. There are no overriding denials, negation, inconsistent
+assertions, or other inference rules.</p>
 <p><strong>Proposition.</strong> For counterfactual eligibility in this
 fragment, adding subclass axioms cannot remove a previously permitted
-approval. It can add an approval without changing the policy.</p>
+closure. It can add a closure without changing the policy.</p>
 <p><strong>Proof.</strong> Every existing derivation of
-<code>RoutineClaim(x)</code> remains available after axioms are added,
+<code>RoutineNotice(x)</code> remains available after axioms are added,
 and the other predicates are fixed. Therefore the permitted set cannot
 shrink. For strict growth, choose
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
@@ -599,16 +628,16 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mn>0</mn></msub><annotation encoding="application/x-tex">O_0</annotation></semantics></math>
 such that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
-contains <code>DeviceLossClaim(c)</code>, the unchanged
-amount/evidence/context predicates pass, and
+contains <code>SensorAnomaly(c)</code>, the unchanged evidence/context
+predicates pass, and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>∪</mo><msub><mi>O</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">K\cup O_0</annotation></semantics></math>
-does not entail <code>RoutineClaim(c)</code>. Under the evaluator’s
-stipulated positive-membership permit rule, approval of
+does not entail <code>RoutineNotice(c)</code>. Under the evaluator’s
+stipulated positive-membership permit rule, closure of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
-is not permitted. Add <code>DeviceLossClaim</code> subclass of
-<code>RoutineClaim</code> to obtain
+is not permitted. Add <code>SensorAnomaly</code> subclass of
+<code>RoutineNotice</code> to obtain
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mn>1</mn></msub><annotation encoding="application/x-tex">O_1</annotation></semantics></math>.
-The new axiom derives <code>RoutineClaim(c)</code>, so approval is
+The new axiom derives <code>RoutineNotice(c)</code>, so closure is
 permitted. The policy is identical.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
 <p>This is a direct consequence of monotone positive inference, not a
@@ -764,19 +793,19 @@ it is not a reliable security boundary by itself.</p>
 <tbody>
 <tr>
 <td>Observation or ordinary fact</td>
-<td>Receipt received for a known claim</td>
+<td>Authenticated observation received for a known incident</td>
 <td>Is the assertion supported, current, and admitted under the existing
 evidence rule?</td>
 </tr>
 <tr>
 <td>New instance</td>
-<td>A new claim of an existing kind</td>
+<td>A new maintenance notice of an existing kind</td>
 <td>Does normal enrollment and the existing mandate cover this
 instance?</td>
 </tr>
 <tr>
 <td>Classification assertion</td>
-<td>An existing claim is now marked routine</td>
+<td>An existing alert is now classified as routine</td>
 <td>Who can attest this type, and what evidence permits operational
 reliance?</td>
 </tr>
@@ -788,7 +817,7 @@ subjects?</td>
 </tr>
 <tr>
 <td>New class or changed definition</td>
-<td>Device loss becomes a routine subclass</td>
+<td>Sensor anomaly becomes a routine-notice subclass</td>
 <td>Does this alter the decisions or consequences permitted under
 current mandates?</td>
 </tr>
@@ -799,7 +828,7 @@ current mandates?</td>
 </tr>
 <tr>
 <td>Authority policy or mandate</td>
-<td>Agent receives denial authority</td>
+<td>Agent receives authority to issue an all-clear</td>
 <td>Is the delegating role entitled to grant it, and has the change been
 explicitly ratified?</td>
 </tr>
@@ -885,91 +914,110 @@ bound bundle remains the evaluated basis and the grant is current. It
 does not decide whether the next bundle should be adopted.
 Authority-relative comparison serves that admission decision, while the
 execution gate enforces the admitted result.</p>
-<h1 id="insurance-claims-thought-experiment">7. Insurance-claims thought
+<h1 id="building-safety-thought-experiment">7. Building-safety thought
 experiment</h1>
-<h2 id="initial-mandate">7.1 Initial mandate</h2>
-<p>All policy choices in this example are synthetic. They are not
-insurance law or recommendations for claims handling.</p>
-<p>An insurer uses an ontology with <code>Claim</code>,
-<code>RoutineClaim</code>, <code>DeviceLossClaim</code>,
-<code>Policy</code>, <code>Coverage</code>, <code>Exclusion</code>,
-<code>Evidence</code>, <code>Disposition</code>, and
-<code>Appeal</code>. An agent may collect documentation and classify
-document completeness. It may recommend an outcome for review. It may
-approve a routine claim of at most 500 units when coverage and loss
-evidence have been independently attested. It may never autonomously
-finalize a denial or a fraud finding. A designated adjuster ratifies
-those outcomes.</p>
-<p>The record-update API can technically write documentation status,
-recommendations, approvals, and denials. Its credentials are brokered
-through an adapter. The decision evaluator checks the decision class and
-actual resulting transition. A completeness check is admitted as a
-documentation update; it cannot carry a hidden final disposition.
-Reading a claimant’s history is governed access and does not confer
-fraud-adjudication authority.</p>
-<p>Recommendations are not automatically harmless. If a downstream
-workflow routinely treats a denial recommendation as final unless a
-reviewer interrupts it, the effect contract must represent that default.
-Labeling the decision a recommendation does not justify avoiding
-ratification.</p>
-<h2 id="semantic-expansion">7.2 Semantic expansion</h2>
-<p>A claim
+<h2 id="technical-access-and-the-decision-boundary">7.1 Technical access
+and the decision boundary</h2>
+<p>This is a synthetic incident-management application used to
+illustrate an authorization problem. It does not specify a real
+building-safety or emergency-response procedure.</p>
+<p>A facilities agent can monitor incidents at an assigned site,
+preserve observations, notify a designated responder, and close routine
+maintenance notices. The ontology includes <code>ServiceNotice</code>,
+<code>RoutineNotice</code>, and <code>SensorAnomaly</code>. An
+independently supported service notice can be classified under the
+admitted model as routine. An unexplained sensor anomaly may indicate a
+situation that the agent is not authorized to resolve independently. It
+remains within the agent’s observation and reporting scope.</p>
+<p>The technical update permission covers incident records generally.
+Setting a record to <code>resolved</code> can remove it from the
+unresolved-incident display and, for some records, trigger an all-clear
+message. Those effects matter to people who use the display or receive
+the message. The decision evaluator must examine the proposed closure
+and its consequences, rather than treat every successful status update
+as equally authorized. A recommendation also needs an accurate effect
+description: if downstream automation treats it as a final resolution,
+the recommendation label does not remove that consequence.</p>
+<p>In the simplified policy, routine membership is the predicate
+defining which notices the agent may close. The other conditions check
+that the incident belongs to its assigned site and that the observations
+have independently attested provenance and completeness. These evidence
+checks do not certify that a possible hazard has been cleared. The
+distinction is essential to the following comparison: the category
+boundary carries the decision-scope restriction. A policy with an
+additional, independently checked safety-clearance requirement would
+retain that requirement after a taxonomy edit.</p>
+<h2 id="a-proposed-category-change">7.2 A proposed category change</h2>
+<p>An incident
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
-has type <code>DeviceLossClaim</code>, an amount of 300, and sufficient
-supported coverage/evidence facts. Under
+has the already supported type <code>SensorAnomaly</code>, belongs to
+the assigned site, and has observations meeting the provenance and
+completeness checks. The fixed proposal is to mark that incident
+resolved and publish its all-clear status; it makes no claim about other
+incidents or the safety of the whole site. Under
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mn>0</mn></msub><annotation encoding="application/x-tex">O_0</annotation></semantics></math>,
-device-loss claims are not known to be routine; the positive-membership
-gate therefore refuses autonomous approval. The agent can preserve
-evidence and escalate.</p>
+the accepted classification does not entail
+<code>RoutineNotice(c)</code>, so the policy does not permit the agent
+to close it. The agent can retain the unresolved status, preserve the
+observations, and notify the designated responder under its existing
+reporting authority.</p>
 <p>An improvement process proposes the axiom</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝖣</mi><mi>𝖾</mi><mi>𝗏</mi><mi>𝗂</mi><mi>𝖼</mi><mi>𝖾</mi><mi>𝖫</mi><mi>𝗈</mi><mi>𝗌</mi><mi>𝗌</mi><mi>𝖢</mi><mi>𝗅</mi><mi>𝖺</mi><mi>𝗂</mi><mi>𝗆</mi></mrow><mo>⊑</mo><mrow><mi>𝖱</mi><mi>𝗈</mi><mi>𝗎</mi><mi>𝗍</mi><mi>𝗂</mi><mi>𝗇</mi><mi>𝖾</mi><mi>𝖢</mi><mi>𝗅</mi><mi>𝖺</mi><mi>𝗂</mi><mi>𝗆</mi></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex"> \mathsf{DeviceLossClaim}\sqsubseteq\mathsf{RoutineClaim}. </annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝖲</mi><mi>𝖾</mi><mi>𝗇</mi><mi>𝗌</mi><mi>𝗈</mi><mi>𝗋</mi><mi>𝖠</mi><mi>𝗇</mi><mi>𝗈</mi><mi>𝗆</mi><mi>𝖺</mi><mi>𝗅</mi><mi>𝗒</mi></mrow><mo>⊑</mo><mrow><mi>𝖱</mi><mi>𝗈</mi><mi>𝗎</mi><mi>𝗍</mi><mi>𝗂</mi><mi>𝗇</mi><mi>𝖾</mi><mi>𝖭</mi><mi>𝗈</mi><mi>𝗍</mi><mi>𝗂</mi><mi>𝖼</mi><mi>𝖾</mi></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex"> \mathsf{SensorAnomaly}\sqsubseteq\mathsf{RoutineNotice}. </annotation></semantics></math></p>
 <p>Under
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mn>1</mn></msub><annotation encoding="application/x-tex">O_1</annotation></semantics></math>,
-the unchanged routine-approval policy permits approval of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.
-The shadow comparison has a concrete witness: the same subject,
-evidence, amount, decision, and substantive policy change from
-non-permit to permit under
+the unchanged routine-closure policy now permits closure of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+in the hypothetical evaluation. The comparison has a concrete witness:
+the same incident, evidence, assigned-site condition, proposed effect,
+and policy change from non-permit to permit under
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>.
-This is prospective eligibility expansion, while the active grant
-remains bound to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math>.
-The institution may welcome the result; operational adoption requires
-ratification before
+This is prospective eligibility expansion. It does not demonstrate that
+closure is safe or that the category change should be accepted. If a
+separate safety-clearance condition were required and remained
+unsatisfied, the proposal would still be refused; a subclass axiom does
+not override that condition.</p>
+<p>The active grant remains bound to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math>,
+so
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
-can admit the expanded scope.</p>
-<p>An ungoverned deployment might replace the ontology service’s current
-content and continue using the policy as before. The proposed
-architecture instead retains the operating grant’s admitted
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math>
-until the release decision is complete. The change assessor reports the
-witness and identifies other affected decisions. The domain steward
-evaluates the classification; the authorized claims role decides whether
-routine-approval delegation should now include device loss. Approval
-results in an explicit grant bound to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>1</mn></msub><annotation encoding="application/x-tex">B_1</annotation></semantics></math>.
-If the institution rejects the delegation change, it can retain a
-compatible restricted contract or amend the policy before releasing the
-new operational basis.</p>
-<p>Pinning an ontology name such as <code>current</code> is
-insufficient. Pinning the policy text while permitting the type
-hierarchy to drift is also insufficient. A grant must name the evaluated
-semantic basis. Conversely, listing an allowed parent class without
-controlling the meaning of descendant membership does not freeze its
-effective scope.</p>
-<h2 id="a-fact-level-alternative">7.3 A fact-level alternative</h2>
+does not authorize use of the proposed category change to close the
+incident. The domain steward reviews whether the classification is
+justified. The role responsible for delegating incident-resolution
+authority separately decides whether the resulting scope is acceptable.
+A descriptive model can be accepted while authority to close incidents
+in the new category is withheld. Review can reject the broad subclass
+relation, distinguish a narrower category supported by additional
+evidence, or change the policy before any revised operational grant is
+issued. Even an explicitly approved change can be mistaken; approval and
+version binding do not establish that the underlying situation is
+safe.</p>
+<p>An ungoverned deployment could instead replace the ontology service’s
+current hierarchy and continue evaluating the old policy against it.
+That would convert a change in description into a change in the agent’s
+effective decision scope. Pinning only the policy text, or naming an
+ontology <code>current</code>, would not prevent the expansion. A
+version-bound grant must identify the meanings against which the
+decision scope was evaluated.</p>
+<h2 id="changed-facts-without-a-changed-ontology">7.3 Changed facts
+without a changed ontology</h2>
 <p>Suppose the ontology remains
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mn>0</mn></msub><annotation encoding="application/x-tex">O_0</annotation></semantics></math>
-but an agent writes <code>RoutineClaim(c)</code> into the situation
-store. The same policy can now permit approval. This is not ontology
-evolution. It is an assertion-admission problem.</p>
-<p>The approved rule must identify who can attest routine status and
-from which evidence. If the operating agent is permitted only to
-classify completeness, its self-issued routine assertion cannot become
-an accepted premise for approval. New genuine routine instances may
-enter through the existing attestation procedure without requiring a
-revised ontology or a new delegation. This distinction allows
-operational learning while controlling policy-relevant assertions.</p>
+but the agent writes <code>RoutineNotice(c)</code> into the situation
+store. The same simplified policy can now permit closure. This is an
+assertion-admission problem rather than an ontology revision.</p>
+<p>The approved admission rule must identify who can attest routine
+status and what evidence supports it. Permission to record a sensor
+observation does not automatically include permission to classify that
+observation as grounds for closing the incident. A self-issued routine
+classification cannot become an authoritative premise merely because the
+agent can write to the store. New genuine routine notices can enter
+through the existing attestation procedure without a new ontology or a
+broader delegation.</p>
+<p>The agent therefore has two distinct ways to respond to an unfamiliar
+situation: it can report the observation under its current authority,
+and it can propose a new classification for review. Neither response
+requires pretending that the situation is already understood or granting
+itself authority to resolve it.</p>
 <h1 id="customer-support-thought-experiment">8. Customer-support thought
 experiment</h1>
 <h2 id="access-judgment-and-consequences">8.1 Access, judgment, and
@@ -1146,10 +1194,10 @@ the decisions it permits expand.</p>
 knowledge from adopting an authoritative operational basis and renewing
 affected decision rights. The proposed architecture pairs
 authority-relative semantic comparison with explicit ratification,
-current version-bound admission, and mediated effects. Future evaluation
-should test whether this obligation detects consequential semantic
-changes beyond existing controls and measure review burden and runtime
-cost.</p>
+current version-bound authorization, and mediated effects. Future
+evaluation should test whether this obligation detects consequential
+semantic changes beyond existing controls and measure review burden and
+runtime cost.</p>
 <h1 id="declarations">Declarations</h1>
 <p><strong>Nature of the work.</strong> This is a conceptual design
 study. The cases and finite taxonomy illustration are synthetic thought

@@ -29,7 +29,7 @@ files['README.md'] = release / 'supplement-README.md'
 with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED) as z:
     for name, path in sorted(files.items()):
         content = path.read_bytes()
-        item = zipfile.ZipInfo(name, date_time=(2026,10,9,0,0,0))
+        item = zipfile.ZipInfo(name, date_time=(2026,10,10,0,0,0))
         item.compress_type = zipfile.ZIP_DEFLATED
         item.external_attr = 0o100644 << 16
         z.writestr(item, content)
@@ -38,7 +38,7 @@ for path in [pdf, archive, release / 'zenodo-upload-metadata.json']:
     checks[path.name] = {'sha256':sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size}
 (release / 'SHA256SUMS.txt').write_text(''.join(f"{v['sha256']}  {k}\n" for k,v in checks.items()))
 (release / 'release-manifest.json').write_text(json.dumps({
-    'version':version,'manuscript_date':'2026-10-09','publication_status':'not published',
+    'version':version,'manuscript_date':'2026-10-10','publication_status':'not published',
     'doi_assigned':False,'repository_visibility':'public','license':'CC-BY-4.0','files':checks,
     'archive_entry_count':len(files),'archive_contents':sorted(files),
 },indent=2)+'\n')

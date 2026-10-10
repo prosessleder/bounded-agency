@@ -126,6 +126,11 @@ tex = tex.replace(r'\end{document}', '\n'.join([
 tex = re.sub(r'\\texttt\{([A-Za-z][A-Za-z0-9]+)\}',
              lambda m: r'\texttt{' + re.sub(r'(?<=[a-z])(?=[A-Z])',
                                               lambda _: r'\allowbreak{}', m.group(1)) + '}', tex)
+# Keep the evaluator's introduction with its display at the page boundary.
+evaluator_intro = r'Define a \textbf{counterfactual eligibility evaluator}'
+if tex.count(evaluator_intro) != 1:
+    raise RuntimeError('Expected one counterfactual evaluator introduction')
+tex = tex.replace(evaluator_intro, evaluator_intro + r'\nopagebreak[4]')
 (out / 'bounded-agency.tex').write_text(tex)
 
 # HTML retains ordinary Markdown headings and includes the same author ID/rights.

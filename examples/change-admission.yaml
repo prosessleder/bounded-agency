@@ -1,16 +1,19 @@
 # Proposed record shape, not executable policy or an implemented standard.
-change_id: synthetic-device-loss-review
+change_id: synthetic-sensor-anomaly-review
 baseline_bundle: B0
 candidate_bundle: B1
-substantive_mandate: routine-claim-approval-v1
-substantive_policy: approval-policy-v1
+substantive_mandate: routine-notice-closure-v1
+substantive_policy: closure-policy-v1
+proposed_effect: mark-one-incident-resolved-and-publish-its-all-clear-status
+fixed_residual_checks: [assigned-site, observation-provenance, observation-completeness]
+evidence_checks_establish_safety_clearance: false
 comparison:
   mode: shadow-no-effect-authority
   domain: four-enumerated-candidates
   inference: finite-positive-subclass-closure
   frozen_inputs: [principal, mandate, policy, situation, evidence, context, proposals]
   result: witnessed-expansion
-  witnesses: [approve-device-claim]
+  witnesses: [close-sensor-anomaly-incident]
   coverage: bounded
   universal_preservation_proven: false
   observation_replay_for_admission_rule_changes: required-when-rules-change
