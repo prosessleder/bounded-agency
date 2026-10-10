@@ -1,0 +1,36 @@
+{
+  "version": "v0.1.0-preprint",
+  "manuscript_date": "2026-10-09",
+  "publication_status": "not published",
+  "doi_assigned": false,
+  "repository_visibility": "public",
+  "license": "CC-BY-4.0",
+  "files": {
+    "bounded-agency-v0.1.0-preprint.pdf": {
+      "sha256": "6bde249b7f5dd0196ed23caed65e35bc39bba7144e12ae776645e0b8cc515524",
+      "bytes": 126022
+    },
+    "bounded-agency-v0.1.0-preprint-research.zip": {
+      "sha256": "2e04678dc911393ec3c6ed2b2fb183a7ccf0765b027ff031e78d61e1c8e71619",
+      "bytes": 51567
+    },
+    "zenodo-upload-metadata.json": {
+      "sha256": "43ca04dab0927747a3baab14a9323ae8a7c9e2adb1d57befd97d66f42aa48624",
+      "bytes": 2859
+    }
+  },
+  "archive_entry_count": 11,
+  "archive_contents": [
+    "CITATION.cff",
+    "LICENSE.md",
+    "README.md",
+    "examples/change-admission.yaml",
+    "examples/semantic-drift-result.json",
+    "examples/semantic_drift.py",
+    "output/pdf/bounded-agency.tex",
+    "paper.md",
+    "references.md",
+    "release/license-notice.txt",
+    "scripts/build_paper.py"
+  ]
+}

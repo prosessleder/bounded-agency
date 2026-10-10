@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript; add its version-specific Zenodo DOI after publication."
+title: "Bounded Agency: Ontology-Driven Authority for Delegated Intelligence"
+authors:
+  - family-names: "O'Brien"
+    given-names: "Timothy"
+    orcid: "https://orcid.org/0009-0001-2589-347X"
+version: "0.1.0-preprint"
+license: CC-BY-4.0
+url: "https://github.com/prosessleder/bounded-agency"
+preferred-citation:
+  type: article
+  title: "Bounded Agency: Ontology-Driven Authority for Delegated Intelligence"
+  authors:
+    - family-names: "O'Brien"
+      given-names: "Timothy"
+      orcid: "https://orcid.org/0009-0001-2589-347X"
+  year: 2026
+  month: 10
+  day: 9
+  notes: "Initial conceptual preprint; not peer reviewed; DOI not yet assigned."

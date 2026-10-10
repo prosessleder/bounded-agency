@@ -1,0 +1,20 @@
+{
+  "scope": "four fixed cases, positive finite taxonomy, one fixed approval policy",
+  "before_shadow_eligible": [
+    "ordinary"
+  ],
+  "after_shadow_eligible": [
+    "device",
+    "ordinary"
+  ],
+  "expansion_witnesses": [
+    "device"
+  ],
+  "removed": [],
+  "unrelated_revision_changes_eligibility": false,
+  "candidate_live_permit_under_old_grant": false,
+  "candidate_live_permit_after_ratification": true,
+  "revoked_grant_live_permit": false,
+  "accepted_type_fact_can_change_fixed_ontology_eligibility": true,
+  "limitations": "illustration only; no production mediation, authenticity, concurrency, or general entailment"
+}

@@ -1,0 +1,36 @@
+{
+  "resource_type": "publication/preprint",
+  "title": "Bounded Agency: Ontology-Driven Authority for Delegated Intelligence",
+  "creators": [
+    {
+      "name": "O'Brien, Timothy",
+      "orcid": "0009-0001-2589-347X"
+    }
+  ],
+  "version": "0.1.0-preprint",
+  "manuscript_date": "2026-10-09",
+  "publication_date_instruction": "Use the actual date of public deposit.",
+  "description": "Autonomous systems may have permission to invoke an operation without having an institutional mandate to select the outcome expressed by that operation. Ontology-grounded policies can make such mandates explicit, but they introduce a change-control problem: revising classifications, relationships, or inference rules can alter what a fixed policy permits. This paper examines bounded agency as delegated independent judgment constrained by decision scope, consequences, and an admitted semantic basis. It separates domain ontology, situation facts, evidence, decision policy, execution permission, and authority to promote semantic changes. A lightweight model separates a candidate eligibility envelope from live admission and defines a policy-relative expansion test; a positive-taxonomy counterexample shows how a subclass axiom enlarges that envelope without editing policy text. A reference architecture connects change-impact assessment, explicit authority ratification, version-bound decision admission, and mediated execution. Insurance and customer-support thought experiments illustrate both semantic expansion and changes to facts that require different controls. Building on semantic-policy and ontology-evolution research, the contribution is a design synthesis centered on authority-relative semantic-change admission. The cases and finite taxonomy illustration are explanatory; operational effectiveness remains to be evaluated.\n\nConceptual preprint; not peer reviewed.\n\nAI assistance: OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. The author is responsible for the manuscript's content, references, and conclusions.",
+  "keywords": [
+    "bounded agency",
+    "delegated intelligence",
+    "decision authority",
+    "ontology evolution",
+    "semantic policy",
+    "agent governance"
+  ],
+  "language": "eng",
+  "rights": {
+    "title": "Creative Commons Attribution 4.0 International",
+    "spdx_id": "CC-BY-4.0",
+    "zenodo_id": "cc-by-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "description": "Copyright © 2026 Timothy O'Brien. Licensed under CC BY 4.0."
+  },
+  "publication_status": "Initial conceptual preprint; not peer reviewed. No DOI assigned.",
+  "repository": {
+    "url": "https://github.com/prosessleder/bounded-agency",
+    "visibility": "public"
+  },
+  "schema_note": "Human upload field aid, not an API request body."
+}

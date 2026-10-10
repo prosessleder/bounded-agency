@@ -1,0 +1,27 @@
+# Proposed record shape, not executable policy or an implemented standard.
+change_id: synthetic-device-loss-review
+baseline_bundle: B0
+candidate_bundle: B1
+substantive_mandate: routine-claim-approval-v1
+substantive_policy: approval-policy-v1
+comparison:
+  mode: shadow-no-effect-authority
+  domain: four-enumerated-candidates
+  inference: finite-positive-subclass-closure
+  frozen_inputs: [principal, mandate, policy, situation, evidence, context, proposals]
+  result: witnessed-expansion
+  witnesses: [approve-device-claim]
+  coverage: bounded
+  universal_preservation_proven: false
+  observation_replay_for_admission_rule_changes: required-when-rules-change
+approval:
+  authorize_review_using: pre-change-admitted-grant-and-context
+  semantic_acceptance: separate-domain-steward-decision
+  authority_ratification: separate-authorized-mandate-owner-decision
+  candidate_cannot_authorize_own_approver: true
+release:
+  active_grant_remains: B0-until-ratified
+  new_grant_after_ratification: B1-with-exact-policy-and-deployment-manifest
+  deployment_dependencies: [evaluator, adapter, effect-contract, shapes, classifier, imports, mappings]
+  stale_proposals: invalidate-or-revalidate-under-explicit-freshness-protocol
+  revocation: enforce-before-new-effect-admission

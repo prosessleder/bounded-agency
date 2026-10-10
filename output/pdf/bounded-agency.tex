@@ -1,0 +1,1287 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  english,
+  12pt,
+  a4paper,
+  preprint,
+  numbers,
+  nopreprintline]{elsarticle}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\AtBeginEnvironment{longtable}{\footnotesize}
+\AtBeginEnvironment{verbatim}{\small}
+% Keep the standard manuscript page style without a submission claim.
+\makeatletter
+\def\ps@pprintTitle{%
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \def\@oddfoot{\hfil\thepage\hfil}%
+  \let\@evenfoot\@oddfoot}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Bounded Agency: Ontology-Driven Authority for Delegated Intelligence},
+  pdfauthor={Timothy O'Brien},
+  pdflang={en},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\begin{document}
+\begin{frontmatter}
+\title{Bounded Agency: Ontology-Driven Authority for Delegated Intelligence}
+\author{Timothy O'Brien\fnref{orcid}}
+\fntext[orcid]{ORCID: \url{https://orcid.org/0009-0001-2589-347X}}
+\nonumnote{Preprint (not peer reviewed). Version 0.1.0-preprint, 9 October 2026.\\ Copyright © 2026 Timothy O'Brien. Licensed under
+\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.}
+\begin{abstract}
+Autonomous systems may have permission to invoke an operation without
+having an institutional mandate to select the outcome expressed by that
+operation. Ontology-grounded policies can make such mandates explicit,
+but they introduce a change-control problem: revising classifications,
+relationships, or inference rules can alter what a fixed policy permits.
+This paper examines bounded agency as delegated independent judgment
+constrained by decision scope, consequences, and an admitted semantic
+basis. It separates domain ontology, situation facts, evidence, decision
+policy, execution permission, and authority to promote semantic changes.
+A lightweight model separates a candidate eligibility envelope from live
+admission and defines a policy-relative expansion test; a
+positive-taxonomy counterexample shows how a subclass axiom enlarges
+that envelope without editing policy text. A reference architecture
+connects change-impact assessment, explicit authority ratification,
+version-bound decision admission, and mediated execution. Insurance and
+customer-support thought experiments illustrate both semantic expansion
+and changes to facts that require different controls. Building on
+semantic-policy and ontology-evolution research, the contribution is a
+design synthesis centered on authority-relative semantic-change
+admission. The cases and finite taxonomy illustration are explanatory;
+operational effectiveness remains to be evaluated.
+\end{abstract}
+\begin{keyword}
+bounded agency \sep delegated intelligence \sep decision authority \sep ontology evolution \sep semantic policy \sep agent governance \sep authority-sensitive change
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}\label{introduction}
+
+Consider a claims-processing agent with credentials that permit updates
+to a claim record. Its assigned task is to identify missing
+documentation. The same update endpoint accepts a final disposition
+field. A technically valid request setting that field to \texttt{denied}
+may exceed the agent's mandate, even if authentication and a coarse
+operation-level permission check succeed. An institution has delegated
+one kind of judgment and the software has exercised another.
+
+This is a configuration and modeling problem rather than evidence that
+authorization systems are intrinsically limited to identity and resource
+access. Attribute-based, relationship-based, and usage-control systems
+can express rich business conditions {[}4-6{]}. A final-disposition
+action can be modeled directly in such systems. The issue is whether the
+deployment represents and enforces the intended decision rights,
+evidence conditions, and consequences. Tool access does not supply those
+representations automatically.
+
+A shared ontology can support them. Domain concepts such as claim,
+evidence, coverage, exclusion, disposition, and appeal provide a common
+language for relating a situation to a permissible decision. Yet the
+language itself can change. Suppose a policy permits an agent to approve
+routine claims. A revised ontology classifies a category not previously
+entailed to be routine as routine. In a deployment that adopts this
+revision without grant review, the policy text and tool credentials
+remain unchanged, while the agent can now approve more claims. The
+change has institutional significance because classification helps
+determine the extension of a delegated right.
+
+The question examined here is: \textbf{How can an autonomous
+intelligence be given a bounded scope of independent judgment, grounded
+in a shared model of its operating world, without allowing learning or
+semantic evolution to silently expand its authority?} The word
+\emph{silently} matters. An institution may intentionally expand a
+mandate. The design objective is to make a relevant expansion
+detectable, reviewable, and explicitly admitted, rather than to freeze
+knowledge or prohibit institutional change.
+
+We call the delegated scope of independent judgment \emph{bounded
+agency}. The proposed distinctions concern which decisions an agent may
+settle, which consequences it may authorize, and which representations
+it may promote into the basis for those decisions. They do not purport
+to constrain every concept entertained inside a language model.
+
+The paper makes three contributions. First, it gives an explicit
+comparison target for changes to the effective permissible-decision set
+under a fixed policy and controlled context. Second, it connects that
+comparison to a proposed semantic-change admission procedure and a
+version-bound decision envelope. Third, it develops two operational
+thought experiments that distinguish ontology revisions from ordinary
+facts and classification assertions. These contributions are
+architectural proposals and explanatory formalization. They build on
+established authorization and semantic-change mechanisms; their
+operational benefits require evaluation.
+
+\section{Related work}\label{related-work}
+
+\subsection{Scope of comparison}\label{scope-of-comparison}
+
+This comparison draws on targeted searches of primary papers, official
+specifications and documentation, and references from closely related
+work. Coverage is selective rather than systematic. Recent preprints and
+live specifications are discussed as proposals, not independently
+validated systems. The bibliography identifies the versions examined.
+For the enterprise framework {[}14{]}, publisher-indexed passages were
+accessible, but complete direct retrieval was limited.
+
+\subsection{Semantic policy and institutional
+meaning}\label{semantic-policy-and-institutional-meaning}
+
+KAoS provides ontology-based policy specification, analysis, management,
+and enforcement for agents and distributed services {[}1, 23{]}. Rei
+connects policy rules to domain ontologies and supports permissions,
+obligations, delegation, and revocation {[}2, 28{]}. These frameworks
+establish ontology-grounded agent-policy specification, management, and
+enforcement.
+
+Normative multiagent-system research supplies a closely related
+conceptual foundation. Boella and van der Torre distinguish regulative
+norms from constitutive rules that determine what counts as an
+institutional fact {[}3{]}. Classification can therefore carry normative
+consequences, and authority over institutional rules is not reducible to
+an agent's ability to act. Jones and Sergot also distinguish
+institutional power from permission and practical possibility {[}25{]}.
+The category-expansion example applies this established relationship to
+semantic-change admission.
+
+ODRL specifies permissions, prohibitions, duties, constraints, and
+parties {[}9{]}. OWL supplies formal ontology constructs and entailment
+semantics {[}10{]}; SHACL supplies graph validation against shapes
+{[}11{]}. None of those specifications alone establishes the legitimacy
+of a business decision. They are usable components whose normative
+significance depends on the institution's policy and implementation.
+
+\subsection{Authorization, delegation, and enforceable
+behavior}\label{authorization-delegation-and-enforceable-behavior}
+
+ABAC evaluates attributes of subjects, objects, operations, and
+environment {[}4{]}; Zanzibar demonstrates relationship-based
+authorization at scale {[}5{]}; UCON integrates authorizations,
+obligations, conditions, and mutable attributes with ongoing usage
+control {[}6{]}. Cedar provides a policy language, evaluator, and formal
+analysis facilities {[}7{]}. OPA separates policy decisions from
+application code {[}8{]}. Thus independent decision evaluation and rich
+contextual authority conditions are established capabilities.
+
+The decision-rights literature separates management of a decision from
+its ratification and monitoring {[}21{]}. This supports treating
+evidence gathering, proposing an outcome, approving it, and executing it
+as different assignments. It does not imply that an agent becomes the
+legal bearer of accountability when it receives a software role.
+
+Runtime enforcement is also established. Schneider's analysis concerns
+the security properties enforceable by execution monitors {[}20{]}. Our
+enforcement claims are correspondingly limited to represented, mediated
+operational behavior. An evaluator cannot inspect or prohibit all
+private inference, nor can a gate prevent effects that bypass it.
+
+\subsection{Semantic evolution and recent governed
+agents}\label{semantic-evolution-and-recent-governed-agents}
+
+Ontology-evolution research already investigates preservation and change
+impact. Conservative extensions and inseparability provide formal ways
+to ask whether relevant consequences or queries change {[}12{]}.
+Security co-evolution work uses ontology change patterns to detect
+security impact and propose adaptations {[}13{]}. The
+effective-authority comparison proposed here is therefore an
+application-specific target for established change-analysis techniques,
+rather than a new general theory of semantic difference. Lopes and
+colleagues already propagate permission annotations across RDF inference
+premises {[}24{]}, illustrating why classification and its evidential
+basis belong in the comparison.
+
+Recent work addresses related governance boundaries. Jørgensen and Ma
+combine enterprise semantics, contextual knowledge, process
+orchestration, decision authority, execution control, and provenance in
+a bounded-autonomy framework {[}14{]}. AgentBound separates behavioral
+and semantic constraints and binds action governance to versioned
+artifacts {[}15{]}. The Authority Resolution Framework models contextual
+authority and provenance through an ontology {[}16{]}. Agent libOS
+separates evolving action surfaces from admission authority {[}17{]},
+and AgentFlow addresses delegated task scope, runtime monitoring, and
+bounded policy verification {[}18{]}. Salas specifies commit-time
+authority checks over changing normative and model dependencies
+{[}19{]}. These works overlap with important parts of the proposed
+architecture, although they differ in emphasis and evidence.
+
+An undated live artifact-evolution specification also separates
+proposals, qualified approval, immutable versions, realization, and
+declared semantic comparison coverage {[}22{]}. Its public text is
+relevant overlap, but the review does not establish its historical
+priority.
+
+The focus here is an explicit permissible-decision-set comparison and
+its connection to mandate ratification, including the distinction
+between ontology revisions and fact admission. The paper develops a
+synthesis and specialization of the mechanisms above; it makes no claim
+of priority for ontology-based agent governance or for the combination
+as a whole.
+
+\section{Delegation and the dimensions of bounded
+agency}\label{delegation-and-the-dimensions-of-bounded-agency}
+
+\subsection{Four distinctions}\label{four-distinctions}
+
+\emph{Delegated intelligence} emphasizes the relationship between a
+system and the human or institution entrusting it with work. It
+complements rather than replaces a technical description of artificial
+intelligence. A delegation can assign a problem, access, interpretation,
+choice among outcomes, execution, investigation, or adaptation. Those
+assignments need not travel together. Authenticated delegation and
+intelligent-delegation research already addresses task scope and the
+transfer of authority and responsibility {[}26, 27{]}.
+
+We distinguish four operational concepts:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Capability:} the computation or operation the system can
+  technically perform. Capability does not establish reliable
+  competence.
+\item
+  \textbf{Execution permission:} authorization to invoke an operation on
+  a resource. A sophisticated implementation may already condition this
+  permission on business meaning.
+\item
+  \textbf{Decision authority:} a delegated institutional right to
+  select, approve, or initiate a specified outcome under stated
+  conditions.
+\item
+  \textbf{Semantic authority:} a right to promote a representation or
+  inference regime into the authoritative basis of operational
+  decisions.
+\end{enumerate}
+
+\emph{Semantic authority} is preferable here to \emph{epistemic
+authority}. The latter can refer to credibility, expertise, or
+entitlement to believe. Our concern is narrower: whether an ontology
+axiom, mapping, classifier output, or evidence-admission rule is
+approved for operational use. Approval does not make it true. Similarly,
+a passing policy evaluation is an implementation's representation of a
+mandate, not proof of ethical or legal legitimacy.
+
+Responsibility and accountability remain distinct from these
+permissions. An agent may be assigned to produce a recommendation; a
+designated institutional role may remain responsible for ratifying it
+and answering for its consequences. The architecture must identify that
+role rather than rely on a statement that the agent is accountable.
+
+\subsection{Scope, constraints, and admitted semantic
+basis}\label{scope-constraints-and-admitted-semantic-basis}
+
+The first dimension is \textbf{decision scope}: subjects and decision
+classes entrusted to the agent. Documentation completeness and fraud
+determination are different decision classes even if both concern the
+same claim.
+
+The second is \textbf{decision constraints}: permitted outcomes,
+conditions, and consequences. An agent may recommend a denial while
+lacking authority to finalize it. Amount, jurisdiction, recipient,
+appeal opportunity, evidence freshness, and cumulative exposure may
+constrain an otherwise permitted class.
+
+The third is \textbf{the admitted semantic basis}: which formal
+representations and admission rules may support those operational
+judgments. An agent can recognize a possible new category, preserve
+evidence, and propose a model change without being allowed to treat the
+proposal as an approved ground for action.
+
+These dimensions interact. A taxonomy change affects scope; a changed
+relationship may affect an outcome condition; a new assertion can affect
+both without revising the ontology. They are analytical distinctions,
+not independent mathematical axes.
+
+A frontier model's latent knowledge is broader than a domain ontology.
+We do not claim to remove that knowledge from its weights or prevent
+internal speculation. The enforceable boundary concerns represented
+proposals, admissible evidence and classifications, adopted model
+changes, and operational effects. Out-of-scope analysis can itself have
+consequences when it discloses data or produces an influential
+institutional record; those outputs must be represented as effects if
+they are to be governed.
+
+\section{A lightweight model of effective
+authority}\label{a-lightweight-model-of-effective-authority}
+
+\subsection{Separate objects}\label{separate-objects}
+
+Let \(A\) identify an agent acting through an authenticated role and
+delegation chain. Let \(O_v\) be a versioned domain ontology, \(K\) a
+situation knowledge base, and \(E\) evidence supporting assertions in
+\(K\). Observations enter through an admission process; they are not
+automatically authoritative facts.
+
+Let \(P\) be the substantive decision-authority policy, \(L\) the
+substantive delegation mandate, and \(C\) the operational context,
+including relevant time, jurisdiction, workflow state, revocation, and
+previously committed consequences. Let a \textbf{semantic bundle} be
+
+\[ B = (O_v, I, M, R, T), \]
+
+where \(I\) identifies imports, \(M\) mappings and entity-resolution
+rules, \(R\) the inference regime, and \(T\) assertion-admission rules,
+including validators, shape versions, and classifier artifacts. A
+manifest identifies their immutable versions or digests. The bundle is
+broader than the ontology because policy interpretation can change
+through any of these inputs. The deployment manifest additionally
+identifies evaluator semantics and implementation, effect-contract
+versions, and trusted adapter versions; changes to these artifacts enter
+the same admission and freshness boundary.
+
+A proposal is
+
+\[ q = (d,x,y,h), \]
+
+where \(d\) is the decision class, \(x\) the governed subject or
+subjects, \(y\) the proposed outcome, and \(h\) a represented effect
+plan. The effect plan identifies intended operations and declared
+consequence dependencies. It is not an oracle for every real-world
+consequence.
+
+Define a \textbf{counterfactual eligibility evaluator}
+
+\[ U(A,q;P,L,B,K,E,C) \in \{\mathsf{permit},\mathsf{deny},\mathsf{indeterminate}\}. \]
+
+It checks substantive policy and mandate conditions, supported situation
+assertions, and represented consequences under the supplied bundle. For
+comparison, it intentionally excludes the requirement that the candidate
+bundle already be admitted by an active production grant. It runs in a
+shadow context with no authority to cause effects. Indeterminate covers
+missing evidence, unsupported inference, unknown classification,
+inconsistent inputs, or inability to resolve required conditions.
+Deployment rules must specify this treatment; unrestricted classical
+entailment from an inconsistent theory is unsuitable for a permit test.
+
+For a fixed proposal universe \(Q\), define the candidate eligibility
+envelope
+
+\[ \widehat{\mathcal{H}}_{Q}(A;P,L,B,K,E,C)
+= \{q\in Q \mid U(A,q;P,L,B,K,E,C)=\mathsf{permit}\}. \]
+
+Let \(G\) identify the active version-bound grant. Operational admission
+\(V\) additionally requires that \(G\) admit this exact policy, mandate,
+semantic and deployment basis; that the grant and evidence remain
+current; and that the effect can be faithfully mediated. Thus
+\(U=\mathsf{permit}\) is necessary but not sufficient for
+\(V=\mathsf{permit}\). A candidate \(B_1\) can enlarge
+\(\widehat{\mathcal{H}}_Q\) while remaining inadmissible for production
+under \(G_0\).
+
+The operational authority envelope contains only proposals permitted by
+\(V\) under an active grant. Separating it from the candidate envelope
+avoids a circular change test: if the comparison already demanded
+ratification of the candidate, it would conceal the very prospective
+expansion being reviewed. Neither envelope establishes substantive
+correctness or institutional legitimacy.
+
+\subsection{Authority-relative change}\label{authority-relative-change}
+
+Hold \(A,P,L,K,E,C,Q\) fixed and compare bundles \(B_0\) and \(B_1\).
+This comparison also holds evaluator and effect-contract semantics
+fixed. Changes to evaluator, adapter, or effect-contract versions
+require a separately declared comparison or revalidation of those
+deployment artifacts. Define the expansion witnesses
+
+\[ \Delta^+_Q(B_0,B_1)
+= \widehat{\mathcal{H}}_Q(A;P,L,B_1,K,E,C)
+\smallsetminus \widehat{\mathcal{H}}_Q(A;P,L,B_0,K,E,C). \]
+
+A nonempty set exhibits expansion under the controlled comparison. An
+indeterminate proposal under the old basis becoming permitted under the
+new one counts as expansion. A removal set can likewise be defined by
+reversing the difference; lost permissions can require review even
+without expansion.
+
+This definition separates semantic effects from ordinary changes in the
+situation. In production, \(K\), \(E\), and \(C\) also vary. Controlled
+replay can compare the same snapshot to isolate the bundle's impact,
+while operational admission evaluates the current admitted context.
+Holding already-admitted \(K\) fixed tests downstream interpretation
+only. To compare changes to \(T\) or classifiers, replay the same
+original observations and evidence through both admission pipelines and
+compare their resulting situation models; this is a distinct controlled
+comparison. A newly eligible customer under an unchanged mandate is not
+necessarily a new delegation; it may be an intended application of the
+existing rule. A falsely admitted classification can nevertheless create
+an unauthorized effect. The controls on \(T\), \(K\), and \(E\)
+therefore matter independently of ontology release controls.
+
+A stronger preservation obligation would quantify over an explicitly
+chosen comparison family \(\mathcal{W}\) of situation/evidence/context
+triples chosen independently of either candidate's acceptance rules:
+
+\[ \forall(K,E,C)\in\mathcal{W},\quad
+\widehat{\mathcal{H}}_Q(A;P,L,B_1,K,E,C)
+\subseteq\widehat{\mathcal{H}}_Q(A;P,L,B_0,K,E,C). \]
+
+Both \(Q\) and \(\mathcal{W}\) are fixed before comparison, over
+declared relevant input and decision signatures, including any proposed
+new vocabulary. That statement names the scope of the obligation; this
+paper supplies no general algorithm proving it. A finite replay corpus
+establishes preservation only over that corpus. Conservative extension
+over an old ontology signature is not automatically preservation over
+new decision vocabulary, future instances, mappings, and policy queries.
+The relevant signatures, data domain, and query language must be
+specified.
+
+\subsection{A restricted
+counterexample}\label{a-restricted-counterexample}
+
+Consider finite class names and individuals, positive subclass axioms,
+positive type assertions, and transitive classification. Fix one policy
+permitting approval of an individual \(x\) exactly when \(K\cup O\)
+entails \texttt{RoutineClaim(x)} and the unchanged
+amount/evidence/context predicates pass. There are no overriding
+denials, negation, inconsistent assertions, or other inference rules.
+
+\textbf{Proposition.} For counterfactual eligibility in this fragment,
+adding subclass axioms cannot remove a previously permitted approval. It
+can add an approval without changing the policy.
+
+\textbf{Proof.} Every existing derivation of \texttt{RoutineClaim(x)}
+remains available after axioms are added, and the other predicates are
+fixed. Therefore the permitted set cannot shrink. For strict growth,
+choose \(K\) and \(O_0\) such that \(K\) contains
+\texttt{DeviceLossClaim(c)}, the unchanged amount/evidence/context
+predicates pass, and \(K\cup O_0\) does not entail
+\texttt{RoutineClaim(c)}. Under the evaluator's stipulated
+positive-membership permit rule, approval of \(c\) is not permitted. Add
+\texttt{Device\allowbreak{}Loss\allowbreak{}Claim} subclass of \texttt{Routine\allowbreak{}Claim} to obtain
+\(O_1\). The new axiom derives \texttt{RoutineClaim(c)}, so approval is
+permitted. The policy is identical. \(\square\)
+
+This is a direct consequence of monotone positive inference, not a new
+mathematical theorem. Non-entailment is not an OWL assertion of
+non-membership; the gate simply refuses to permit without the required
+entailment. Deny precedence, negative tests, changed evidence,
+inconsistent ontologies, or nonmonotonic rules invalidate the general
+monotonicity claim. The companion executable example demonstrates only
+this finite fragment.
+
+\section{Proposed reference
+architecture}\label{proposed-reference-architecture}
+
+\subsection{Components and trust
+boundaries}\label{components-and-trust-boundaries}
+
+The architecture has six components, with traditional IAM retaining
+identity, authentication, resource access, and authenticated
+delegation-chain responsibilities.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Responsibility
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output used by the next boundary
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Semantic service & Serve admitted ontology, imports, mappings, inference
+regime, and assertion rules & Immutable bundle manifest and relevant
+semantic slice \\
+Situation/evidence service & Admit observations, maintain facts,
+preserve provenance and disputed assertions & Versioned decision
+snapshot with evidence references \\
+Authority registry & Store mandates, decision policies, approval roles,
+revocation and consequence rules & Versioned authority context \\
+Decision evaluator & Independently check typed proposals against current
+authority and supported facts & Permit, deny, or indeterminate with
+reasons and dependencies \\
+Enforcement adapter & Mediate governed operations and bind actual
+parameters to admitted effects & Execution or refusal plus effect
+receipt \\
+Governance process & Review semantic and authority changes, approve
+releases and rollout & Separate semantic acceptance and
+authority-ratification records \\
+\end{longtable}
+}
+
+The semantic service need not be a single physical server or require a
+universal ontology. A governed domain model can be shared through a
+knowledge graph or registry. Agents can retrieve small slices, provided
+the evaluator resolves the authoritative closure and manifest rather
+than trusting an agent-supplied fragment to be complete. Multiagent
+retrieval does not imply equal grants: common meaning and delegated
+authority are separate.
+
+The evaluator should be independently controlled relative to the
+operating agent. Policies may use decision classes, ontology predicates,
+state transitions, outcome constraints, evidence conditions, and
+delegation context. Whether those checks are implemented in Cedar, OPA,
+a rule engine, or a custom reasoner is a deployment choice. Using a
+general language model as the final evaluator requires additional
+evidence of reliability; calling it an independent reviewer is
+insufficient.
+
+\subsection{Decision envelopes and
+commit}\label{decision-envelopes-and-commit}
+
+A submitted envelope should name the authenticated role and delegation
+chain; mandate and policy versions; semantic and deployment manifests,
+including evaluator, effect-contract, and adapter versions;
+situation/evidence snapshot; decision class, subject, outcome, and
+effect plan; evidence dependencies; expiry; and an effect identity for
+replay and idempotency. These are proposed fields, not a new credential
+standard.
+
+Before commitment, the enforcement path must confirm that the envelope
+is still admitted under the current grant and revocation rules. It must
+bind the permitted outcome to actual adapter parameters. A permission to
+recommend cannot authorize an adapter call that commits the
+recommendation as a final decision. Side effects of routing,
+communications, and disclosure must be included where they are
+institutionally governed.
+
+A version check alone is not a transaction. A policy, evidence snapshot,
+or grant may change between evaluation and effect. An implementation
+needs a transaction, reservation, lease/fence protocol, or other
+explicitly analyzed mechanism that gives admission and execution defined
+freshness semantics. Salas already addresses closely related commit-time
+dependencies {[}19{]}; we adopt that engineering requirement without
+claiming a new concurrency protocol.
+
+Version pinning also needs revocation. An agent cannot indefinitely
+retain a permissive historical bundle after the institution withdraws
+its grant. A migration may deliberately keep an old contract active for
+a defined scope, but that continued use must itself be admitted.
+Ordinary receipt replay explains what happened; it does not authorize a
+new action today.
+
+\subsection{Proposed invariants and their
+limits}\label{proposed-invariants-and-their-limits}
+
+The design seeks four invariants:
+
+\begin{itemize}
+\tightlist
+\item
+  Every governed effect passes a controlled enforcement path and matches
+  an admitted proposal.
+\item
+  Every permit identifies its authority and semantic basis and
+  sufficient current evidence.
+\item
+  A semantic release cannot substitute a new operational basis into a
+  grant without the required authority review.
+\item
+  An authority-sensitive change produces an explicit decision to reject,
+  retain a defined old scope, or admit a revised grant.
+\end{itemize}
+
+These are design requirements, not established properties of an
+implemented system. They depend on complete mediation, credential
+isolation, authenticated versions, policy correctness, adequate
+dependency discovery, and faithful adapters. A tamper-resistant receipt
+can support audit while still faithfully recording a mistaken decision.
+Availability failures must have defined refusal behavior; safety by
+refusal can impose substantial operational costs.
+
+\section{Admission of semantic and knowledge
+changes}\label{admission-of-semantic-and-knowledge-changes}
+
+\subsection{Different changes require different
+questions}\label{different-changes-require-different-questions}
+
+Learning new facts about familiar concepts is not the same as changing
+the conceptual scheme. The distinction helps assign review, but it is
+not a reliable security boundary by itself.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Change
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Appropriate control question
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Observation or ordinary fact & Receipt received for a known claim & Is
+the assertion supported, current, and admitted under the existing
+evidence rule? \\
+New instance & A new claim of an existing kind & Does normal enrollment
+and the existing mandate cover this instance? \\
+Classification assertion & An existing claim is now marked routine & Who
+can attest this type, and what evidence permits operational reliance? \\
+Relationship or mapping & External issue code mapped to courtesy issue &
+Does the mapping change policy-relevant entailments or governed
+subjects? \\
+New class or changed definition & Device loss becomes a routine subclass
+& Does this alter the decisions or consequences permitted under current
+mandates? \\
+Imports or inference settings & A reasoner begins using an additional
+relation rule & Does the admitted closure or evaluation behavior
+change? \\
+Authority policy or mandate & Agent receives denial authority & Is the
+delegating role entitled to grant it, and has the change been explicitly
+ratified? \\
+\end{longtable}
+}
+
+A factual update can legitimately alter current eligibility while
+leaving the delegated rule unchanged. It can also improperly launder a
+disputed classification into a permit. Assertions that supply
+policy-relevant types or relationships should therefore pass an approved
+admission rule. They need not receive the same governance ceremony as
+every ontology revision.
+
+Likewise, a new concept unrelated to any policy dependency may be
+harmless for a particular agent's authority. The appropriate target is
+authority impact relative to declared decisions and context, rather than
+indiscriminate approval of all learning. Impact analysis may be
+incomplete, so an unrelated-change verdict needs an explicit coverage
+claim.
+
+\subsection{Proposed change-review
+procedure}\label{proposed-change-review-procedure}
+
+The reference procedure is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Register a proposal.} Preserve observations, evidence,
+  proposed edits, proposer identity, and the immutable baseline. Keep
+  proposed semantics separate from the admitted operational bundle.
+\item
+  \textbf{Resolve dependencies.} Identify relevant policies, mandates,
+  decision classes, mappings, imports, assertion rules, and effect
+  contracts. Use independently derived dependencies where possible;
+  agent-declared dependencies are hints requiring validation.
+\item
+  \textbf{Compare under a stated regime.} Check logical consistency and
+  graph conformance, then compare counterfactual eligibility under \(U\)
+  using controlled snapshots. State the proposal language, data domain,
+  reasoner, and coverage. Seek expansion witnesses and removed
+  permissions.
+\item
+  \textbf{Return a qualified result.} Distinguish witnessed expansion,
+  witnessed removal, proven preservation under declared assumptions,
+  bounded tests with no witnessed expansion, and indeterminate
+  comparison. Do not relabel a successful regression suite as a
+  universal proof.
+\item
+  \textbf{Obtain the required decisions.} Reviewer eligibility must be
+  resolved under the pre-change admitted authority context; a candidate
+  cannot create its own approver through a new class or relationship. A
+  domain steward may accept a better ontology without possessing
+  authority to broaden an agent's mandate. Where the policy requires it,
+  an independently authorized role must ratify the affected grant. One
+  person may hold both roles, but the two decisions remain explicit.
+\item
+  \textbf{Release and migrate.} Publish the admitted bundle,
+  policy/grant versions, scope, effective time, expiry, and revocation
+  behavior. Validate or invalidate pending proposals; retain a defined
+  old scope only under an active grant.
+\item
+  \textbf{Monitor and retain evidence.} Preserve comparisons, approval
+  reasons, admitted envelopes, and effect receipts. Observe unexpected
+  classifications and effects, and route them to investigation.
+\end{enumerate}
+
+The policy for approving a semantic release is itself a governed policy.
+Shadow comparison is read-only with respect to governed effects and
+cannot issue an execution grant. An operating agent must not be able to
+alter that rule or attest its own eligibility merely by proposing a new
+ontology relation. Escalation should not fall back to a permissive mode
+when the reviewer is unavailable.
+
+\subsection{Knowledge growth without automatic authority
+growth}\label{knowledge-growth-without-automatic-authority-growth}
+
+The statement ``an agent may expand its knowledge without automatically
+expanding its authority'' is a design principle consistent with
+established separation of duties and admission controls. It does not
+imply that all facts leave the effective permit set unchanged. Facts are
+supposed to change decisions when a mandate is conditional on them.
+
+The principle instead separates acquiring information, proposing or
+investigating a representation, approving its operational adoption, and
+renewing an affected delegation. An agent may record a candidate
+category in a nonauthoritative investigation store. It may use that
+candidate to explain an uncertainty or propose a review. No unadmitted
+semantic premise may discharge a required permit condition. The
+candidate can appear as a labeled hypothesis in a review submission,
+without supplying operational authorization.
+
+Version binding alone prevents accidental substitution only if the bound
+bundle remains the evaluated basis and the grant is current. It does not
+decide whether the next bundle should be adopted. Authority-relative
+comparison serves that admission decision, while the execution gate
+enforces the admitted result.
+
+\section{Insurance-claims thought
+experiment}\label{insurance-claims-thought-experiment}
+
+\subsection{Initial mandate}\label{initial-mandate}
+
+All policy choices in this example are synthetic. They are not insurance
+law or recommendations for claims handling.
+
+An insurer uses an ontology with \texttt{Claim}, \texttt{Routine\allowbreak{}Claim},
+\texttt{Device\allowbreak{}Loss\allowbreak{}Claim}, \texttt{Policy}, \texttt{Coverage},
+\texttt{Exclusion}, \texttt{Evidence}, \texttt{Disposition}, and
+\texttt{Appeal}. An agent may collect documentation and classify
+document completeness. It may recommend an outcome for review. It may
+approve a routine claim of at most 500 units when coverage and loss
+evidence have been independently attested. It may never autonomously
+finalize a denial or a fraud finding. A designated adjuster ratifies
+those outcomes.
+
+The record-update API can technically write documentation status,
+recommendations, approvals, and denials. Its credentials are brokered
+through an adapter. The decision evaluator checks the decision class and
+actual resulting transition. A completeness check is admitted as a
+documentation update; it cannot carry a hidden final disposition.
+Reading a claimant's history is governed access and does not confer
+fraud-adjudication authority.
+
+Recommendations are not automatically harmless. If a downstream workflow
+routinely treats a denial recommendation as final unless a reviewer
+interrupts it, the effect contract must represent that default. Labeling
+the decision a recommendation does not justify avoiding ratification.
+
+\subsection{Semantic expansion}\label{semantic-expansion}
+
+A claim \(c\) has type \texttt{Device\allowbreak{}Loss\allowbreak{}Claim}, an amount of 300, and
+sufficient supported coverage/evidence facts. Under \(O_0\), device-loss
+claims are not known to be routine; the positive-membership gate
+therefore refuses autonomous approval. The agent can preserve evidence
+and escalate.
+
+An improvement process proposes the axiom
+
+\[ \mathsf{DeviceLossClaim}\sqsubseteq\mathsf{RoutineClaim}. \]
+
+Under \(O_1\), the unchanged routine-approval policy permits approval of
+\(c\). The shadow comparison has a concrete witness: the same subject,
+evidence, amount, decision, and substantive policy change from
+non-permit to permit under \(U\). This is prospective eligibility
+expansion, while the active grant remains bound to \(B_0\). The
+institution may welcome the result; operational adoption requires
+ratification before \(V\) can admit the expanded scope.
+
+An ungoverned deployment might replace the ontology service's current
+content and continue using the policy as before. The proposed
+architecture instead retains the operating grant's admitted \(B_0\)
+until the release decision is complete. The change assessor reports the
+witness and identifies other affected decisions. The domain steward
+evaluates the classification; the authorized claims role decides whether
+routine-approval delegation should now include device loss. Approval
+results in an explicit grant bound to \(B_1\). If the institution
+rejects the delegation change, it can retain a compatible restricted
+contract or amend the policy before releasing the new operational basis.
+
+Pinning an ontology name such as \texttt{current} is insufficient.
+Pinning the policy text while permitting the type hierarchy to drift is
+also insufficient. A grant must name the evaluated semantic basis.
+Conversely, listing an allowed parent class without controlling the
+meaning of descendant membership does not freeze its effective scope.
+
+\subsection{A fact-level alternative}\label{a-fact-level-alternative}
+
+Suppose the ontology remains \(O_0\) but an agent writes
+\texttt{RoutineClaim(c)} into the situation store. The same policy can
+now permit approval. This is not ontology evolution. It is an
+assertion-admission problem.
+
+The approved rule must identify who can attest routine status and from
+which evidence. If the operating agent is permitted only to classify
+completeness, its self-issued routine assertion cannot become an
+accepted premise for approval. New genuine routine instances may enter
+through the existing attestation procedure without requiring a revised
+ontology or a new delegation. This distinction allows operational
+learning while controlling policy-relevant assertions.
+
+\section{Customer-support thought
+experiment}\label{customer-support-thought-experiment}
+
+\subsection{Access, judgment, and
+consequences}\label{access-judgment-and-consequences}
+
+A support agent can access customer records and issue a courtesy credit
+of at most 25 units for an attested \texttt{Courtesy\allowbreak{}Eligible\allowbreak{}Issue}. Its
+mandate excludes contract termination, fraud classification, and
+modification of contractual entitlements. It can propose those outcomes
+to a designated reviewer.
+
+Access to a customer's subscription and payment history does not itself
+confer authority to cancel that subscription or label the customer
+fraudulent. If the tool exposes both credit and cancellation operations,
+the evaluator must distinguish those outcomes. Credit limits must also
+consider accumulated effects: four nominally allowed credits can violate
+a 25-unit per-incident limit. The relevant context includes previous
+credits and incident identity. Entity resolution and aggregation are
+part of the governing basis, not optional audit details.
+
+The agent encounters duplicate renewals caused by a migration. The
+current issue model has no adequate category. It records the
+observations and proposes \texttt{Migration\allowbreak{}Duplicate\allowbreak{}Renewal}. It may
+explain the mismatch to the improvement function. Until adopted through
+the required process, the proposed class does not justify an autonomous
+credit or a change to subscription status.
+
+\subsection{Change, review, and an allowed
+resolution}\label{change-review-and-an-allowed-resolution}
+
+The improvement function proposes to place
+\texttt{Migration\allowbreak{}Duplicate\allowbreak{}Renewal} beneath
+\texttt{Courtesy\allowbreak{}Eligible\allowbreak{}Issue}. For a taxonomy-only comparison, the
+change assessor fixes customer/evidence snapshots that include a
+supported \texttt{Migration\allowbreak{}Duplicate\allowbreak{}Renewal} classification for the
+affected incidents, alongside fixed credit proposals. This candidate
+classification is available only for shadow analysis until operationally
+admitted. If the classifier or assertion-admission rule also changes,
+the original observations must instead be replayed through both
+admission pipelines, as described in Section 4.2. Credits previously
+refused because courtesy eligibility was not established become
+permitted under the new hierarchy. In addition, some duplicate charges
+exceed 25 units. The semantic expansion witness and amount constraint
+are different findings: new class membership does not remove an outcome
+ceiling.
+
+A reviewer may adopt the new descriptive class while deciding that these
+cases require billing reconciliation rather than courtesy compensation.
+The domain ontology can correctly represent the issue without delegating
+its resolution to the support agent. Another deployment may explicitly
+authorize credits up to the existing ceiling, with larger corrections
+escalated. In either case, operational use follows a grant bound to the
+approved model, evidence rule, and policy.
+
+An external ticket code mapping can cause the same problem without
+adding a class. If a new source code maps to courtesy eligibility, its
+effect on the policy query must be evaluated. An unsupervised classifier
+assigning courtesy status can also change current permits. All three
+mechanisms require control, but they need different owners and evidence.
+
+\subsection{Costs and failure cases}\label{costs-and-failure-cases}
+
+Conservative refusal delays some legitimate service. A narrow taxonomy
+can encode institutional blind spots, and an approval queue can preserve
+them. The architecture should therefore provide a clear unknown-category
+route, preserve contrary evidence, allow authorized exception decisions,
+and measure review burden. Bounded agency must not become a rationale
+for suppressing observations that challenge the model.
+
+Nor does approval solve representation errors. A mistaken equivalence,
+misleading source mapping, fabricated receipt, or incomplete consequence
+contract can lead a deterministic evaluator to an incorrect permit. The
+system needs domain validation and monitoring in addition to formal
+consistency. Shared meanings can propagate a mistake across many agents,
+making governed semantic releases valuable and consequential at the same
+time.
+
+\section{Develop, operate, and
+improve}\label{develop-operate-and-improve}
+
+A shared semantic basis can support three functions with different
+grants.
+
+\textbf{Develop} implements capabilities and adapters against an
+identified model and policy contract. Its permission to modify code or
+author test data does not entail permission to release production
+semantics, rewrite live mandates, or commit domain decisions.
+Development output remains a proposed artifact until the release
+authority admits it.
+
+\textbf{Operate} interprets admitted situations and proposes or executes
+decisions within the active contract. It can collect observations and
+report mismatches. It cannot grant itself a broader decision class or
+make a candidate ontology extension authoritative simply because the
+extension appears useful.
+
+\textbf{Improve} investigates failures and gaps, compares alternatives,
+and proposes changes. It can have a broader research scope than the
+operating function while retaining narrower authority over effects.
+Discovery of a new category, a successful test, or a persuasive
+diagnosis does not itself approve adoption.
+
+An orchestrator or another authorized mechanism governs transitions
+between these functions. They may be different agents, services, teams,
+or roles in one platform; naming three agents does not establish
+separation of duties if they share unrestricted credentials. The full
+develop/operate/improve lifecycle is outside this paper's scope. Here it
+shows why access to a common ontology need not imply a common authority
+envelope.
+
+\section{Discussion and future work}\label{discussion-and-future-work}
+
+\subsection{Relationship to existing
+mechanisms}\label{relationship-to-existing-mechanisms}
+
+The architecture combines established semantic authorization, normative
+modeling, ontology-change analysis, and version-bound enforcement
+{[}1-3, 12-19, 22{]}. Its organizing question is: \emph{Does a candidate
+semantic change alter the decisions eligible under a stated delegation
+and comparison domain, and which role may ratify that effect?} The
+comparison target makes the effect of a semantic change explicit, while
+the admission procedure connects that effect to a designated authority.
+The taxonomy example illustrates this relationship in a restricted
+fragment; it does not establish a general preservation theorem.
+
+A typed schema, curated decision table, state machine, or existing
+policy data model may represent a narrow domain more cheaply than an
+ontology. The ontology proposal is appropriate when shared relations and
+inference make policy interpretation depend on evolving meaning. It
+should be compared with simpler representations rather than treated as a
+mandatory foundation for every agent.
+
+\subsection{Technical and institutional
+limits}\label{technical-and-institutional-limits}
+
+The formal model is relative to represented proposals, evidence, and
+consequences. It cannot certify that the institution's mandate is
+legitimate, that classifications are fair, or that the admitted evidence
+is true. Classical ontology consistency and SHACL conformance do not
+establish these claims.
+
+Complete mediation may be infeasible across legacy tools and external
+workflows. Direct credentials, unmodeled notification effects, and data
+disclosed during retrieval can bypass a final write gate. Multiagent
+composition creates additional problems: individually allowed proposals
+can combine into an unauthorized outcome. Trace and aggregate
+constraints need state, concurrency control, and clearly attributed
+effects.
+
+The semantic comparison problem can be expensive or undecidable for
+sufficiently expressive languages and open domains. Extracted
+dependencies can be incomplete. A narrower sound approximation may
+refuse benign changes; a broader heuristic may miss harmful ones. An
+indeterminate result must remain visible, with a policy defining which
+authority may accept the residual uncertainty.
+
+Institutions can also approve an overbroad grant. Separating approval
+roles supports accountability; it does not guarantee prudent judgment.
+Evidence disputes, appeal, jurisdiction, and override procedures require
+domain-specific governance that this paper does not supply.
+
+\subsection{What an implementation study should
+test}\label{what-an-implementation-study-should-test}
+
+A future study should compare four configurations on the same workflows
+and evidence: resource/operation permission checks alone; an explicit
+business-decision policy gate; that gate with version-bound semantics
+and current grants; and that gate with authority-relative
+semantic-change review. Baselines must be configured competently, since
+otherwise the study merely compares careful modeling with a deliberately
+weak system.
+
+Tests should include subclass additions, equivalence and mapping
+changes, ordinary new instances, disputed type assertions, imported
+rules, reasoner changes, unrelated ontology edits, expired grants,
+concurrent releases, stale evidence, bypass credentials, cumulative
+credits, and recommendations that downstream systems finalize. Report
+expansion witnesses, unauthorized effects, false refusals, review
+workload, latency, and recovery separately. A bounded executable example
+does not constitute an experiment on agent reliability or a deployment
+evaluation.
+
+Future work should specify a decidable comparison fragment, implement a
+change assessor, validate the mandates, and compare detection accuracy
+and cost against strong existing semantic-policy and ontology-change
+controls. These comparisons should establish whether the additional
+review detects consequential authority expansions at acceptable cost.
+
+\section{Conclusion}\label{conclusion}
+
+Delegated intelligence needs an explicit account of which judgments and
+consequences an institution has entrusted to it. An independently
+governed shared ontology can help express that account, while ontology
+revisions, mappings, admitted assertions, and inference choices can also
+change its effective scope. A policy can remain textually identical as
+the decisions it permits expand.
+
+Bounded agency, as developed here, separates acquiring or proposing
+knowledge from adopting an authoritative operational basis and renewing
+affected decision rights. The proposed architecture pairs
+authority-relative semantic comparison with explicit ratification,
+current version-bound admission, and mediated effects. Future evaluation
+should test whether this obligation detects consequential semantic
+changes beyond existing controls and measure review burden and runtime
+cost.
+
+\section*{Declarations}\label{declarations}
+\addcontentsline{toc}{section}{Declarations}
+
+\textbf{Nature of the work.} This is a conceptual design study. The
+cases and finite taxonomy illustration are synthetic thought
+experiments. No human-subject study, production deployment, or
+agent-performance experiment was conducted.
+
+\textbf{Research artifacts.} Manuscript sources, the executable
+finite-taxonomy illustration, its recorded output, and an example
+change-admission schema are available in the supplementary archive and
+\href{https://github.com/prosessleder/bounded-agency}{project
+repository}.
+
+\textbf{AI assistance.} OpenAI Codex assisted literature discovery,
+manuscript drafting, generation of illustrative code, and internal
+critical review. The author is responsible for the manuscript's content,
+references, and conclusions.
+
+\begin{thebibliography}{99}
+\bibitem{ref1}
+Andrzej Uszok, Jeffrey M. Bradshaw, Matthew Johnson, Renia Jeffers,
+Austin Tate, Jeff Dalton, and Stuart Aitken. 2004. ``KAoS Policy
+Management for Semantic Web Services.'' \emph{IEEE Intelligent Systems}
+19(4): 32--41.
+\href{https://doi.org/10.1109/MIS.2004.31}{doi:10.1109/MIS.2004.31}.
+
+\bibitem{ref2}
+Lalana Kagal, Tim Finin, and Anupam Joshi. 2003. ``A Policy Based
+Approach to Security for the Semantic Web.'' \emph{ISWC}, LNCS 2870:
+402--418.
+\href{https://doi.org/10.1007/978-3-540-39718-2_26}{doi:10.1007/978-3-540-39718-2\_26}.
+
+\bibitem{ref3}
+Guido Boella and Leendert van der Torre. 2004. ``Regulative and
+Constitutive Norms in Normative Multiagent Systems.'' \emph{KR 2004}:
+255--265. \href{https://cdn.aaai.org/KR/2004/KR04-028.pdf}{Primary AAAI
+paper}.
+
+\bibitem{ref4}
+Vincent C. Hu, David Ferraiolo, D. Richard Kuhn, Adam Schnitzer, Kenneth
+Sandlin, Robert Miller, and Karen Scarfone. 2014, updated 2019.
+\emph{Guide to Attribute Based Access Control (ABAC) Definition and
+Considerations}. NIST SP 800-162.
+\href{https://doi.org/10.6028/NIST.SP.800-162}{doi:10.6028/NIST.SP.800-162}.
+
+\bibitem{ref5}
+Ruoming Pang, Ramon Caceres, Mike Burrows, Zhifeng Chen, Pratik Dave,
+Nathan Germer, Alexander Golynski, Kevin Graney, Nina Kang, Lea Kissner,
+Jeffrey L. Korn, Abhishek Parmar, Christina D. Richards, and Mengzhi
+Wang. 2019. ``Zanzibar: Google's Consistent, Global Authorization
+System.'' \emph{USENIX ATC}: 33--46.
+\href{https://www.usenix.org/conference/atc19/presentation/pang}{Primary
+USENIX paper and record}.
+
+\bibitem{ref6}
+Jaehong Park and Ravi Sandhu. 2004. ``The UCONABC Usage Control Model.''
+\emph{ACM Transactions on Information and System Security} 7(1):
+128--174.
+\href{https://doi.org/10.1145/984334.984339}{doi:10.1145/984334.984339}.
+
+\bibitem{ref7}
+Joseph W. Cutler, Craig Disselkoen, Aaron Eline, Shaobo He, Kyle
+Headley, Michael Hicks, Kesha Hietala, Eleftherios Ioannidis, John
+Kastner, Anwar Mamat, Darin McAdams, Matt McCutchen, Neha Rungta, Emina
+Torlak, and Andrew Wells. 2024. ``Cedar: A New Language for Expressive,
+Fast, Safe, and Analyzable Authorization (Extended Version).''
+arXiv:2403.04651v2. \href{https://arxiv.org/abs/2403.04651v2}{Primary
+record}.
+
+\bibitem{ref8}
+Open Policy Agent project. Undated. \emph{Open Policy Agent
+Documentation}. \href{https://www.openpolicyagent.org/docs}{Official
+documentation}. Accessed 9 October 2026.
+
+\bibitem{ref9}
+Renato Iannella and Serena Villata, eds.~2018. \emph{ODRL Information
+Model 2.2}. W3C Recommendation, 15 February.
+\href{https://www.w3.org/TR/2018/REC-odrl-model-20180215/}{Dated
+specification}.
+
+\bibitem{ref10}
+Pascal Hitzler, Markus Krötzsch, Bijan Parsia, Peter F. Patel-Schneider,
+and Sebastian Rudolph, eds.~2012. \emph{OWL 2 Web Ontology Language
+Primer (Second Edition)}. W3C Recommendation, 11 December.
+\href{https://www.w3.org/TR/2012/REC-owl2-primer-20121211/}{Dated
+specification}.
+
+\bibitem{ref11}
+Holger Knublauch and Dimitris Kontokostas, eds.~2017. \emph{Shapes
+Constraint Language (SHACL)}. W3C Recommendation, 20 July.
+\href{https://www.w3.org/TR/2017/REC-shacl-20170720/}{Dated
+specification}.
+
+\bibitem{ref12}
+Elena Botoeva, Boris Konev, Carsten Lutz, Vladislav Ryzhikov, Frank
+Wolter, and Michael Zakharyaschev. 2017. ``Inseparability and
+Conservative Extensions of Description Logic Ontologies: A Survey.''
+\emph{Reasoning Web: Logical Foundation of Knowledge Graph Construction
+and Query Answering}, LNCS 9885: 27--89. RW2016 event; publisher
+publication 2017.
+\href{https://doi.org/10.1007/978-3-319-49493-7_2}{doi:10.1007/978-3-319-49493-7\_2};
+\href{https://arxiv.org/abs/1804.07805}{author-deposited text}.
+
+\bibitem{ref13}
+Sven Peldszus, Jens Bürger, Timo Kehrer, and Jan Jürjens. 2021.
+``Ontology-driven Evolution of Software Security.'' \emph{Data \&
+Knowledge Engineering} 134: 101907.
+\href{https://doi.org/10.1016/j.datak.2021.101907}{doi:10.1016/j.datak.2021.101907}.
+
+\bibitem{ref14}
+Bo Nørregaard Jørgensen and Zheng Grace Ma. 2026. ``Governing Agentic AI
+in Enterprise Workflows: A Bounded-Autonomy Framework for Delegated
+Authority and Controlled Execution.'' \emph{Information} 17(9): 923.
+Published 20 September.
+\href{https://doi.org/10.3390/info17090923}{doi:10.3390/info17090923}.
+
+\bibitem{ref15}
+Anuj Kaul, Qianlong Lan, and Pranay Gupta. 2026. ``Behavioral Governance
+for Autonomous AI Agents: The AgentBound Framework.''
+arXiv:2606.30970v2, revised 1 July.
+\href{https://arxiv.org/abs/2606.30970v2}{Primary record}.
+
+\bibitem{ref16}
+Parviz Shariff. 2026. ``The Authority Resolution Framework: A
+Five-Domain Ontology for Governing Who and What Decides, at Scale.''
+arXiv:2608.15832v1. \href{https://arxiv.org/abs/2608.15832v1}{Primary
+record}.
+
+\bibitem{ref17}
+Yingqi Zhang. 2026. ``Agent libOS: A Runtime Substrate for
+Capability-Controlled Self-Evolving LLM Agents.'' arXiv:2606.03895v3,
+revised 18 August. \href{https://arxiv.org/abs/2606.03895v3}{Primary
+record}.
+
+\bibitem{ref18}
+Basavesh Ammanaghatta Shivakumar, Swarn Priya, and Peng Gao. 2026.
+``AgentFlow: A Flow-Centric Policy Language and Framework for Securing
+LLM Agent Systems.'' arXiv:2608.22868v1.
+\href{https://arxiv.org/abs/2608.22868v1}{Primary record}.
+
+\bibitem{ref19}
+Jesus Salas. 2026. ``Authority at Commit Time: Reject-and-Rerun
+Semantics for Governed Agentic Systems.'' arXiv:2609.31490v1.
+\href{https://arxiv.org/abs/2609.31490v1}{Primary record}.
+
+\bibitem{ref20}
+Fred B. Schneider. 2000. ``Enforceable Security Policies.'' \emph{ACM
+Transactions on Information and System Security} 3(1): 30--50.
+\href{https://www.cs.cornell.edu/fbs/publications/EnfSecPols.pdf}{Author-hosted
+primary paper}.
+
+\bibitem{ref21}
+Eugene F. Fama and Michael C. Jensen. 1983. ``Separation of Ownership
+and Control.'' \emph{Journal of Law and Economics} 26(2): 301--325.
+\href{https://doi.org/10.1086/467037}{doi:10.1086/467037}.
+
+\bibitem{ref22}
+Inferal. Undated. \emph{Inferal Governed Artifact Evolution Ontology}.
+Unofficial 1.0 Editor's Draft.
+\href{https://ontology.inferal.com/modules/artifact-evolution/spec/}{Maintained
+specification}. Accessed 9 October 2026; no dated immutable publication
+established.
+
+\bibitem{ref23}
+Andrzej Uszok, Jeffrey M. Bradshaw, James Lott, Maggie Breedy, Larry
+Bunch, Paul Feltovich, Matthew Johnson, and Hyuckchul Jung. 2008. ``New
+Developments in Ontology-Based Policy Management: Increasing the
+Practicality and Comprehensiveness of KAoS.'' \emph{IEEE POLICY}:
+145--152.
+\href{https://doi.org/10.1109/POLICY.2008.47}{doi:10.1109/POLICY.2008.47};
+\href{https://ontology.ihmc.us/Papers/uszok_kaos_policy08.pdf}{primary
+manuscript}.
+
+\bibitem{ref24}
+Nuno Lopes, Sabrina Kirrane, Antoine Zimmermann, Axel Polleres, and
+Alessandra Mileo. 2012. ``A Logic Programming Approach for Access
+Control over RDF.'' \emph{ICLP Technical Communications}, LIPIcs 17:
+381--392.
+\href{https://doi.org/10.4230/LIPIcs.ICLP.2012.381}{doi:10.4230/LIPIcs.ICLP.2012.381}.
+
+\bibitem{ref25}
+Andrew J. I. Jones and Marek Sergot. 1996. ``A Formal Characterisation
+of Institutionalised Power.'' \emph{Logic Journal of the IGPL} 4(3):
+427--443.
+\href{https://doi.org/10.1093/jigpal/4.3.427}{doi:10.1093/jigpal/4.3.427}.
+
+\bibitem{ref26}
+Tobin South, Samuele Marro, Thomas Hardjono, Robert Mahari, Cedric
+Deslandes Whitney, Dazza Greenwood, Alan Chan, and Alex Pentland. 2025.
+``Authenticated Delegation and Authorized AI Agents.''
+arXiv:2501.09674v1. \href{https://arxiv.org/abs/2501.09674v1}{Primary
+record}.
+
+\bibitem{ref27}
+Nenad Tomašev, Matija Franklin, and Simon Osindero. 2026. ``Intelligent
+AI Delegation.'' arXiv:2602.11865v1.
+\href{https://arxiv.org/abs/2602.11865v1}{Primary record}.
+
+\bibitem{ref28}
+Lalana Kagal. Undated. \emph{Rei Ontology Specifications, Ver 2.0}.
+\href{https://userpages.cs.umbc.edu/lkagal1/rei/}{Author-maintained
+specification}. Accessed 9 October 2026.
+\end{thebibliography}
+\end{document}

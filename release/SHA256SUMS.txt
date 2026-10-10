@@ -1,0 +1,3 @@
+6bde249b7f5dd0196ed23caed65e35bc39bba7144e12ae776645e0b8cc515524  bounded-agency-v0.1.0-preprint.pdf
+2e04678dc911393ec3c6ed2b2fb183a7ccf0765b027ff031e78d61e1c8e71619  bounded-agency-v0.1.0-preprint-research.zip
+43ca04dab0927747a3baab14a9323ae8a7c9e2adb1d57befd97d66f42aa48624  zenodo-upload-metadata.json
