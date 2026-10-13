@@ -12,10 +12,13 @@ comparison:
   domain: four-enumerated-candidates
   inference: finite-positive-subclass-closure
   frozen_inputs: [principal, mandate, policy, situation, evidence, context, proposals]
-  result: witnessed-expansion
-  witnesses: [close-sensor-anomaly-incident]
-  coverage: bounded
-  universal_preservation_proven: false
+  expansion_witnesses: [close-sensor-anomaly-incident]
+  removal_witnesses: []
+  coverage: exhaustive-over-four-enumerated-candidates-only
+  non_expansion_on_declared_candidates: false
+  permit_set_equivalence_on_declared_candidates: false
+  universal_non_expansion_proven: false
+  full_outcomes_and_obligations_compared: false
   observation_replay_for_admission_rule_changes: required-when-rules-change
 approval:
   authorize_review_using: pre-change-admitted-grant-and-context

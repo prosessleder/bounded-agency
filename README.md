@@ -2,7 +2,7 @@
 
 **Ontology-Driven Authority for Delegated Intelligence**
 
-Timothy O'Brien · Initial conceptual preprint · 10 October 2026 · v0.1.0-preprint
+Timothy O'Brien · Initial conceptual preprint · 12 October 2026 · v0.1.0-preprint
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
@@ -44,6 +44,8 @@ python3 scripts/package_release.py
 ```
 
 The illustration exhaustively compares four fixed candidates in a finite positive taxonomy. It distinguishes shadow eligibility from current version-bound authorization and shows both ontology and accepted-type-fact paths. It is neither an LLM experiment nor a production implementation.
+
+The recorded controls also distinguish a removal-only revision (non-expansion without permit-set equivalence) from a replacement revision that both adds and removes permits. These results cover the four enumerated proposals only.
 
 ## Publication status and rights
 

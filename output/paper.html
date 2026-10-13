@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Timothy O’Brien" />
-  <meta name="dcterms.date" content="2026-10-10" />
+  <meta name="dcterms.date" content="2026-10-12" />
   <title>Bounded Agency</title>
   <style>
     /* Default styles provided by pandoc.
@@ -177,7 +177,7 @@
 <h1 class="title">Bounded Agency: Ontology-Driven Authority for
 Delegated Intelligence</h1>
 <p class="author">Timothy O’Brien</p>
-<p class="date">10 October 2026</p>
+<p class="date">12 October 2026</p>
 </header>
 <p><em>Preprint (not peer reviewed). Version 0.1.0-preprint.</em></p>
 <p>ORCID: <a href="https://orcid.org/0009-0001-2589-347X"
@@ -288,14 +288,25 @@ contributions are architectural proposals and explanatory formalization.
 They build on established authorization and semantic-change mechanisms;
 their operational benefits require evaluation.</p>
 <h1 id="related-work">2. Related work</h1>
-<h2 id="scope-of-comparison">2.1 Scope of comparison</h2>
-<p>This comparison draws on targeted searches of primary papers,
-official specifications and documentation, and references from closely
-related work. Coverage is selective rather than systematic. Recent
-preprints and live specifications are discussed as proposals, not
-independently validated systems. The bibliography identifies the
-versions examined. For the enterprise framework [14], publisher-indexed
-passages were accessible, but complete direct retrieval was limited.</p>
+<h2 id="approach-and-scope-of-comparison">2.1 Approach and scope of
+comparison</h2>
+<p>This conceptual study formulates a change-control problem, defines a
+comparison target, establishes a restricted counterexample, and traces
+the proposed controls through two synthetic cases. The analytical
+criteria are whether the comparison isolates semantic change, whether
+candidate eligibility remains separate from operational authorization,
+and whether the proposed approval roles can prevent a candidate from
+authorizing its own adoption. These checks assess coherence and
+explanatory value; they do not measure effectiveness.</p>
+<p>The literature comparison draws on targeted searches of primary
+papers, official specifications and documentation, and references from
+closely related work, with focused rechecking on 12 October 2026.
+Coverage is selective rather than systematic. Recent preprints and live
+specifications are discussed as proposals, not independently validated
+systems. The bibliography identifies the versions examined. For the
+enterprise framework [14], the institutional abstract and
+publisher-indexed passages were accessible, but complete direct
+retrieval was limited.</p>
 <h2 id="semantic-policy-and-institutional-meaning">2.2 Semantic policy
 and institutional meaning</h2>
 <p>KAoS provides ontology-based policy specification, analysis,
@@ -376,6 +387,27 @@ between ontology revisions and fact admission. The paper develops a
 synthesis and specialization of the mechanisms above; it makes no claim
 of priority for ontology-based agent governance or for the combination
 as a whole.</p>
+<h2 id="the-specific-design-contribution">2.5 The specific design
+contribution</h2>
+<p>For a policy expressed through ontology queries, the expansion
+comparison is a policy-selected query-answer difference, closely related
+to the notions surveyed in [12]. The additional design question is who
+may adopt a changed answer set as the basis of a particular delegation.
+Semantic difference computation supplies evidence for that decision; it
+does not supply the right to approve it.</p>
+<p>The broader architecture also has substantial antecedents. KAoS
+combines ontology-based policy reasoning and enforcement [23]; Jørgensen
+and Ma connect enterprise semantics with delegated authority and
+controlled execution [14]; AgentBound binds action judgments to
+delegation, policy, and semantic artifacts [15]; and Salas checks
+current authority and model dependencies at commitment [19]. Those
+capabilities are foundations for this proposal. Here the organizing
+object is a proposed semantic release: compare its candidate decision
+set before adoption, distinguish that comparison from current
+authorization, and route the result to the role entitled to revise the
+grant. Existing systems could implement this procedure. Its value
+therefore depends on whether making that obligation explicit improves
+change review, a question the present illustration cannot answer.</p>
 <h1 id="delegation-and-the-dimensions-of-bounded-agency">3. Delegation
 and the dimensions of bounded agency</h1>
 <h2 id="four-distinctions">3.1 Four distinctions</h2>
@@ -585,14 +617,24 @@ The controls on
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
 therefore matter independently of ontology release controls.</p>
-<p>A stronger preservation obligation would quantify over an explicitly
-chosen comparison family
+<p>A stronger <strong>non-expansion</strong> obligation would quantify
+over an explicitly chosen comparison family
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒲</mi><annotation encoding="application/x-tex">\mathcal{W}</annotation></semantics></math>
 of situation/evidence/context triples chosen independently of either
 candidate’s acceptance rules:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo>,</mo><mi>E</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒲</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mover><mi>ℋ</mi><mo accent="true">̂</mo></mover><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>;</mo><mi>P</mi><mo>,</mo><mi>L</mi><mo>,</mo><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mi>K</mi><mo>,</mo><mi>E</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><msub><mover><mi>ℋ</mi><mo accent="true">̂</mo></mover><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>;</mo><mi>P</mi><mo>,</mo><mi>L</mi><mo>,</mo><msub><mi>B</mi><mn>0</mn></msub><mo>,</mo><mi>K</mi><mo>,</mo><mi>E</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex"> \forall(K,E,C)\in\mathcal{W},\quad
 \widehat{\mathcal{H}}_Q(A;P,L,B_1,K,E,C)
 \subseteq\widehat{\mathcal{H}}_Q(A;P,L,B_0,K,E,C). </annotation></semantics></math></p>
+<p>This inclusion forbids new permits but allows existing permits to
+disappear. <strong>Permit-set equivalence</strong> instead requires
+equality over the same comparison family, or both inclusions. Neither
+property establishes preservation of obligations, denial reasons, or
+other behavior omitted from the permit set. In particular, a
+deny-to-indeterminate transition changes the evaluator’s result without
+changing eligibility. A review that depends on those distinctions must
+retain the full outcome and any associated obligations. A revision can
+also add some permits and remove others; both findings must be
+reported.</p>
 <p>Both
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
 and
@@ -600,7 +642,7 @@ and
 are fixed before comparison, over declared relevant input and decision
 signatures, including any proposed new vocabulary. That statement names
 the scope of the obligation; this paper supplies no general algorithm
-proving it. A finite replay corpus establishes preservation only over
+proving it. A finite replay corpus establishes non-expansion only over
 that corpus. Conservative extension over an old ontology signature is
 not automatically preservation over new decision vocabulary, future
 instances, mappings, and policy queries. The relevant signatures, data
@@ -647,6 +689,64 @@ entailment. Deny precedence, negative tests, changed evidence,
 inconsistent ontologies, or nonmonotonic rules invalidate the general
 monotonicity claim. The companion executable example demonstrates only
 this finite fragment.</p>
+<h2 id="executable-illustration">4.4 Executable illustration</h2>
+<p>The supplied program enumerates four fixed incident-closure
+proposals. Under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math>,
+service notices are routine;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>1</mn></msub><annotation encoding="application/x-tex">B_1</annotation></semantics></math>
+adds the sensor-anomaly subclass axiom. Unless noted, proposals concern
+the assigned site and have attested observations. The table reports
+Boolean eligibility, where false means non-permit and does not
+distinguish denial from indeterminacy.</p>
+<table>
+<thead>
+<tr>
+<th>Fixed proposal</th>
+<th>Eligible under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math></th>
+<th>Eligible under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>1</mn></msub><annotation encoding="application/x-tex">B_1</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Routine service notice</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Sensor anomaly</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Sensor anomaly, other site</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Sensor anomaly, unattested observations</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>The program finds one expansion witness and no removal. A grant still
+bound to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math>
+refuses the candidate basis; a grant bound to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>1</mn></msub><annotation encoding="application/x-tex">B_1</annotation></semantics></math>
+permits the eligible anomaly in the toy model, and revocation blocks it.
+An unrelated subclass addition leaves eligibility unchanged. Removing
+the service-to-routine axiom alone removes the original permit without
+adding one, illustrating non-expansion without equivalence. Replacing
+that axiom with the anomaly-to-routine axiom both removes the service
+permit and adds the anomaly permit. These controls are recorded in the
+example output. They establish the stated results for the enumerated
+proposals, not general comparison coverage or safety of incident
+closure. The program omits full three-valued evaluation, obligations,
+evidence authentication, and production execution.</p>
 <h1 id="proposed-reference-architecture">5. Proposed reference
 architecture</h1>
 <h2 id="components-and-trust-boundaries">5.1 Components and trust
@@ -865,11 +965,14 @@ eligibility under
 using controlled snapshots. State the proposal language, data domain,
 reasoner, and coverage. Seek expansion witnesses and removed
 permissions.</li>
-<li><strong>Return a qualified result.</strong> Distinguish witnessed
-expansion, witnessed removal, proven preservation under declared
-assumptions, bounded tests with no witnessed expansion, and
-indeterminate comparison. Do not relabel a successful regression suite
-as a universal proof.</li>
+<li><strong>Return a qualified result.</strong> Report expansion and
+removal witnesses separately, since both can occur. State coverage
+independently: proof under declared assumptions, exhaustive evaluation
+of a declared finite domain, incomplete tests, or indeterminate
+comparison. Distinguish non-expansion from permit-set equivalence.
+Retain changed non-permit outcomes and obligations when relevant to the
+review. Do not relabel a successful regression suite as a universal
+proof.</li>
 <li><strong>Obtain the required decisions.</strong> Reviewer eligibility
 must be resolved under the pre-change admitted authority context; a
 candidate cannot create its own approver through a new class or
@@ -1165,9 +1268,20 @@ implementation study should test</h2>
 workflows and evidence: resource/operation permission checks alone; an
 explicit business-decision policy gate; that gate with version-bound
 semantics and current grants; and that gate with authority-relative
-semantic-change review. Baselines must be configured competently, since
-otherwise the study merely compares careful modeling with a deliberately
-weak system.</p>
+semantic-change review. The third configuration must already include
+competent semantic-policy administration, ontology-change analysis, and
+its usual approval process. The fourth should add only the explicit
+delegation-relative comparison and ratification procedure. Otherwise the
+study would attribute the benefits of basic change control to the
+proposed procedure.</p>
+<p>The incremental benefit is an open hypothesis. A useful result would
+identify consequential changes missed by that strong baseline or reduce
+review burden at comparable detection quality. Equivalent decisions at
+equal or greater cost would count against the added procedure’s utility.
+Domain reviewers independent of the implementation should label intended
+decision scope before seeing the comparison results, and report
+disagreements rather than treating the evaluator’s own output as ground
+truth.</p>
 <p>Tests should include subclass additions, equivalence and mapping
 changes, ordinary new instances, disputed type assertions, imported
 rules, reasoner changes, unrelated ontology edits, expired grants,

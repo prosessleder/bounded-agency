@@ -11,6 +11,44 @@
     "sensor-anomaly"
   ],
   "removed": [],
+  "case_evaluations": [
+    {
+      "proposal": "routine-service",
+      "eligible_B0": true,
+      "eligible_B1": true
+    },
+    {
+      "proposal": "sensor-anomaly",
+      "eligible_B0": false,
+      "eligible_B1": true
+    },
+    {
+      "proposal": "other-site",
+      "eligible_B0": false,
+      "eligible_B1": false
+    },
+    {
+      "proposal": "missing-evidence",
+      "eligible_B0": false,
+      "eligible_B1": false
+    }
+  ],
+  "removal_only_revision": {
+    "expansion_witnesses": [],
+    "removal_witnesses": [
+      "routine-service"
+    ],
+    "non_expansion_on_fixed_cases": true,
+    "permit_set_equivalence_on_fixed_cases": false
+  },
+  "replacement_revision": {
+    "expansion_witnesses": [
+      "sensor-anomaly"
+    ],
+    "removal_witnesses": [
+      "routine-service"
+    ]
+  },
   "unrelated_revision_changes_eligibility": false,
   "candidate_authorized_under_old_grant": false,
   "candidate_authorized_after_ratification": true,

@@ -2,7 +2,7 @@
 title: 'Bounded Agency: Ontology-Driven Authority for Delegated Intelligence'
 author: "Timothy O'Brien"
 orcid: 'https://orcid.org/0009-0001-2589-347X'
-date: '10 October 2026'
+date: '12 October 2026'
 lang: en
 version: '0.1.0-preprint'
 license: 'CC-BY-4.0'
@@ -37,9 +37,11 @@ The paper makes three contributions. First, it gives an explicit comparison targ
 
 # 2. Related work
 
-## 2.1 Scope of comparison
+## 2.1 Approach and scope of comparison
 
-This comparison draws on targeted searches of primary papers, official specifications and documentation, and references from closely related work. Coverage is selective rather than systematic. Recent preprints and live specifications are discussed as proposals, not independently validated systems. The bibliography identifies the versions examined. For the enterprise framework [14], publisher-indexed passages were accessible, but complete direct retrieval was limited.
+This conceptual study formulates a change-control problem, defines a comparison target, establishes a restricted counterexample, and traces the proposed controls through two synthetic cases. The analytical criteria are whether the comparison isolates semantic change, whether candidate eligibility remains separate from operational authorization, and whether the proposed approval roles can prevent a candidate from authorizing its own adoption. These checks assess coherence and explanatory value; they do not measure effectiveness.
+
+The literature comparison draws on targeted searches of primary papers, official specifications and documentation, and references from closely related work, with focused rechecking on 12 October 2026. Coverage is selective rather than systematic. Recent preprints and live specifications are discussed as proposals, not independently validated systems. The bibliography identifies the versions examined. For the enterprise framework [14], the institutional abstract and publisher-indexed passages were accessible, but complete direct retrieval was limited.
 
 ## 2.2 Semantic policy and institutional meaning
 
@@ -66,6 +68,12 @@ Recent work addresses related governance boundaries. Jørgensen and Ma combine e
 An undated live artifact-evolution specification also separates proposals, qualified approval, immutable versions, realization, and declared semantic comparison coverage [22]. Its public text is relevant overlap, but the review does not establish its historical priority.
 
 The focus here is an explicit permissible-decision-set comparison and its connection to mandate ratification, including the distinction between ontology revisions and fact admission. The paper develops a synthesis and specialization of the mechanisms above; it makes no claim of priority for ontology-based agent governance or for the combination as a whole.
+
+## 2.5 The specific design contribution
+
+For a policy expressed through ontology queries, the expansion comparison is a policy-selected query-answer difference, closely related to the notions surveyed in [12]. The additional design question is who may adopt a changed answer set as the basis of a particular delegation. Semantic difference computation supplies evidence for that decision; it does not supply the right to approve it.
+
+The broader architecture also has substantial antecedents. KAoS combines ontology-based policy reasoning and enforcement [23]; Jørgensen and Ma connect enterprise semantics with delegated authority and controlled execution [14]; AgentBound binds action judgments to delegation, policy, and semantic artifacts [15]; and Salas checks current authority and model dependencies at commitment [19]. Those capabilities are foundations for this proposal. Here the organizing object is a proposed semantic release: compare its candidate decision set before adoption, distinguish that comparison from current authorization, and route the result to the role entitled to revise the grant. Existing systems could implement this procedure. Its value therefore depends on whether making that obligation explicit improves change review, a question the present illustration cannot answer.
 
 # 3. Delegation and the dimensions of bounded agency
 
@@ -141,13 +149,15 @@ A nonempty set exhibits expansion under the controlled comparison. An indetermin
 
 This definition separates semantic effects from ordinary changes in the situation. In production, $K$, $E$, and $C$ also vary. Controlled replay can compare the same snapshot to isolate the bundle's impact, while operational authorization evaluates the current admitted context. Holding already-admitted $K$ fixed tests downstream interpretation only. To compare changes to $T$ or classifiers, replay the same original observations and evidence through both admission pipelines and compare their resulting situation models; this is a distinct controlled comparison. A newly eligible customer under an unchanged mandate is not necessarily a new delegation; it may be an intended application of the existing rule. A falsely admitted classification can nevertheless create an unauthorized effect. The controls on $T$, $K$, and $E$ therefore matter independently of ontology release controls.
 
-A stronger preservation obligation would quantify over an explicitly chosen comparison family $\mathcal{W}$ of situation/evidence/context triples chosen independently of either candidate's acceptance rules:
+A stronger **non-expansion** obligation would quantify over an explicitly chosen comparison family $\mathcal{W}$ of situation/evidence/context triples chosen independently of either candidate's acceptance rules:
 
 $$ \forall(K,E,C)\in\mathcal{W},\quad
 \widehat{\mathcal{H}}_Q(A;P,L,B_1,K,E,C)
 \subseteq\widehat{\mathcal{H}}_Q(A;P,L,B_0,K,E,C). $$
 
-Both $Q$ and $\mathcal{W}$ are fixed before comparison, over declared relevant input and decision signatures, including any proposed new vocabulary. That statement names the scope of the obligation; this paper supplies no general algorithm proving it. A finite replay corpus establishes preservation only over that corpus. Conservative extension over an old ontology signature is not automatically preservation over new decision vocabulary, future instances, mappings, and policy queries. The relevant signatures, data domain, and query language must be specified.
+This inclusion forbids new permits but allows existing permits to disappear. **Permit-set equivalence** instead requires equality over the same comparison family, or both inclusions. Neither property establishes preservation of obligations, denial reasons, or other behavior omitted from the permit set. In particular, a deny-to-indeterminate transition changes the evaluator's result without changing eligibility. A review that depends on those distinctions must retain the full outcome and any associated obligations. A revision can also add some permits and remove others; both findings must be reported.
+
+Both $Q$ and $\mathcal{W}$ are fixed before comparison, over declared relevant input and decision signatures, including any proposed new vocabulary. That statement names the scope of the obligation; this paper supplies no general algorithm proving it. A finite replay corpus establishes non-expansion only over that corpus. Conservative extension over an old ontology signature is not automatically preservation over new decision vocabulary, future instances, mappings, and policy queries. The relevant signatures, data domain, and query language must be specified.
 
 ## 4.3 A restricted counterexample
 
@@ -158,6 +168,19 @@ Consider finite class names and individuals, positive subclass axioms, positive 
 **Proof.** Every existing derivation of `RoutineNotice(x)` remains available after axioms are added, and the other predicates are fixed. Therefore the permitted set cannot shrink. For strict growth, choose $K$ and $O_0$ such that $K$ contains `SensorAnomaly(c)`, the unchanged evidence/context predicates pass, and $K\cup O_0$ does not entail `RoutineNotice(c)`. Under the evaluator's stipulated positive-membership permit rule, closure of $c$ is not permitted. Add `SensorAnomaly` subclass of `RoutineNotice` to obtain $O_1$. The new axiom derives `RoutineNotice(c)`, so closure is permitted. The policy is identical. $\square$
 
 This is a direct consequence of monotone positive inference, not a new mathematical theorem. Non-entailment is not an OWL assertion of non-membership; the gate simply refuses to permit without the required entailment. Deny precedence, negative tests, changed evidence, inconsistent ontologies, or nonmonotonic rules invalidate the general monotonicity claim. The companion executable example demonstrates only this finite fragment.
+
+## 4.4 Executable illustration
+
+The supplied program enumerates four fixed incident-closure proposals. Under $B_0$, service notices are routine; $B_1$ adds the sensor-anomaly subclass axiom. Unless noted, proposals concern the assigned site and have attested observations. The table reports Boolean eligibility, where false means non-permit and does not distinguish denial from indeterminacy.
+
+| Fixed proposal | Eligible under $B_0$ | Eligible under $B_1$ |
+|---|---|---|
+| Routine service notice | True | True |
+| Sensor anomaly | False | True |
+| Sensor anomaly, other site | False | False |
+| Sensor anomaly, unattested observations | False | False |
+
+The program finds one expansion witness and no removal. A grant still bound to $B_0$ refuses the candidate basis; a grant bound to $B_1$ permits the eligible anomaly in the toy model, and revocation blocks it. An unrelated subclass addition leaves eligibility unchanged. Removing the service-to-routine axiom alone removes the original permit without adding one, illustrating non-expansion without equivalence. Replacing that axiom with the anomaly-to-routine axiom both removes the service permit and adds the anomaly permit. These controls are recorded in the example output. They establish the stated results for the enumerated proposals, not general comparison coverage or safety of incident closure. The program omits full three-valued evaluation, obligations, evidence authentication, and production execution.
 
 # 5. Proposed reference architecture
 
@@ -226,7 +249,7 @@ The reference procedure is:
 1. **Register a proposal.** Preserve observations, evidence, proposed edits, proposer identity, and the immutable baseline. Keep proposed semantics separate from the admitted operational bundle.
 2. **Resolve dependencies.** Identify relevant policies, mandates, decision classes, mappings, imports, assertion rules, and effect contracts. Use independently derived dependencies where possible; agent-declared dependencies are hints requiring validation.
 3. **Compare under a stated regime.** Check logical consistency and graph conformance, then compare counterfactual eligibility under $U$ using controlled snapshots. State the proposal language, data domain, reasoner, and coverage. Seek expansion witnesses and removed permissions.
-4. **Return a qualified result.** Distinguish witnessed expansion, witnessed removal, proven preservation under declared assumptions, bounded tests with no witnessed expansion, and indeterminate comparison. Do not relabel a successful regression suite as a universal proof.
+4. **Return a qualified result.** Report expansion and removal witnesses separately, since both can occur. State coverage independently: proof under declared assumptions, exhaustive evaluation of a declared finite domain, incomplete tests, or indeterminate comparison. Distinguish non-expansion from permit-set equivalence. Retain changed non-permit outcomes and obligations when relevant to the review. Do not relabel a successful regression suite as a universal proof.
 5. **Obtain the required decisions.** Reviewer eligibility must be resolved under the pre-change admitted authority context; a candidate cannot create its own approver through a new class or relationship. A domain steward may accept a better ontology without possessing authority to broaden an agent's mandate. Where the policy requires it, an independently authorized role must ratify the affected grant. One person may hold both roles, but the two decisions remain explicit.
 6. **Release and migrate.** Publish the admitted bundle, policy/grant versions, scope, effective time, expiry, and revocation behavior. Validate or invalidate pending proposals; retain a defined old scope only under an active grant.
 7. **Monitor and retain evidence.** Preserve comparisons, approval reasons, admitted envelopes, and effect receipts. Observe unexpected classifications and effects, and route them to investigation.
@@ -331,7 +354,9 @@ Institutions can also approve an overbroad grant. Separating approval roles supp
 
 ## 10.3 What an implementation study should test
 
-A future study should compare four configurations on the same workflows and evidence: resource/operation permission checks alone; an explicit business-decision policy gate; that gate with version-bound semantics and current grants; and that gate with authority-relative semantic-change review. Baselines must be configured competently, since otherwise the study merely compares careful modeling with a deliberately weak system.
+A future study should compare four configurations on the same workflows and evidence: resource/operation permission checks alone; an explicit business-decision policy gate; that gate with version-bound semantics and current grants; and that gate with authority-relative semantic-change review. The third configuration must already include competent semantic-policy administration, ontology-change analysis, and its usual approval process. The fourth should add only the explicit delegation-relative comparison and ratification procedure. Otherwise the study would attribute the benefits of basic change control to the proposed procedure.
+
+The incremental benefit is an open hypothesis. A useful result would identify consequential changes missed by that strong baseline or reduce review burden at comparable detection quality. Equivalent decisions at equal or greater cost would count against the added procedure's utility. Domain reviewers independent of the implementation should label intended decision scope before seeing the comparison results, and report disagreements rather than treating the evaluator's own output as ground truth.
 
 Tests should include subclass additions, equivalence and mapping changes, ordinary new instances, disputed type assertions, imported rules, reasoner changes, unrelated ontology edits, expired grants, concurrent releases, stale evidence, bypass credentials, cumulative credits, and recommendations that downstream systems finalize. Report expansion witnesses, unauthorized effects, false refusals, review workload, latency, and recovery separately. A bounded executable example does not constitute an experiment on agent reliability or a deployment evaluation.
 

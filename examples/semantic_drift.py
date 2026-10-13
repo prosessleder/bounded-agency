@@ -50,6 +50,8 @@ def demonstration() -> dict:
     initial = Basis('B0', frozenset({('ServiceNotice', 'RoutineNotice')}))
     revised = Basis('B1', initial.subclasses | {('SensorAnomaly', 'RoutineNotice')})
     unrelated = Basis('B-unrelated', initial.subclasses | {('MaintenanceLog', 'Document')})
+    removed = Basis('B-removal', frozenset())
+    replaced = Basis('B-replacement', frozenset({('SensorAnomaly', 'RoutineNotice')}))
     cases = (
         Case('routine-service', frozenset({'ServiceNotice'}), True, True),
         Case('sensor-anomaly', frozenset({'SensorAnomaly'}), True, True),
@@ -62,6 +64,12 @@ def demonstration() -> dict:
     assert after == {'routine-service', 'sensor-anomaly'}
     assert before <= after  # Exact only for these four enumerated candidates.
     assert permitted(unrelated) == before
+    removal_after = permitted(removed)
+    replacement_after = permitted(replaced)
+    assert removal_after == set()
+    assert before - removal_after == {'routine-service'}
+    assert replacement_after - before == {'sensor-anomaly'}
+    assert before - replacement_after == {'routine-service'}
     anomaly = cases[1]
     assert not authorized_to_act(anomaly, revised, 'B0')
     assert authorized_to_act(anomaly, revised, 'B1')
@@ -77,6 +85,20 @@ def demonstration() -> dict:
         'after_shadow_eligible': sorted(after),
         'expansion_witnesses': sorted(after - before),
         'removed': sorted(before - after),
+        'case_evaluations': [
+            {'proposal': c.identity, 'eligible_B0': eligible(c, initial),
+             'eligible_B1': eligible(c, revised)} for c in cases
+        ],
+        'removal_only_revision': {
+            'expansion_witnesses': sorted(removal_after - before),
+            'removal_witnesses': sorted(before - removal_after),
+            'non_expansion_on_fixed_cases': removal_after <= before,
+            'permit_set_equivalence_on_fixed_cases': removal_after == before,
+        },
+        'replacement_revision': {
+            'expansion_witnesses': sorted(replacement_after - before),
+            'removal_witnesses': sorted(before - replacement_after),
+        },
         'unrelated_revision_changes_eligibility': permitted(unrelated) != before,
         'candidate_authorized_under_old_grant': authorized_to_act(anomaly, revised, 'B0'),
         'candidate_authorized_after_ratification': authorized_to_act(anomaly, revised, 'B1'),

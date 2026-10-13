@@ -1,21 +1,21 @@
 {
   "version": "v0.1.0-preprint",
-  "manuscript_date": "2026-10-10",
+  "manuscript_date": "2026-10-12",
   "publication_status": "not published",
   "doi_assigned": false,
   "repository_visibility": "public",
   "license": "CC-BY-4.0",
   "files": {
     "bounded-agency-v0.1.0-preprint.pdf": {
-      "sha256": "5e86c14e01b33fbb54e8db22784da1537db43e45460db2da66c6d9c482111705",
-      "bytes": 130366
+      "sha256": "ee1d7773ceef78d5aff44dcd01853b536310b989fbb27615d6470f923c429852",
+      "bytes": 136474
     },
     "bounded-agency-v0.1.0-preprint-research.zip": {
-      "sha256": "6f21caad2e783f567d16c4e419df7cff3c21773f990ef36149d778a7401dc501",
-      "bytes": 53887
+      "sha256": "aecac70de0553a6d97f9804183191b7d7c147a6f2eecabc8782f6c37f2eb3f8d",
+      "bytes": 57659
     },
     "zenodo-upload-metadata.json": {
-      "sha256": "494bda689290bb511badb2230cf62e963ac32036946a1e68ee18486c7a010174",
+      "sha256": "c812f1cd9192ca73624a38f41a9eff7b691dea537fde15acf0933ce65b8dcfce",
       "bytes": 3030
     }
   },

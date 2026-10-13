@@ -1,6 +1,6 @@
 # Bounded Agency: supplementary materials
 
-Timothy O'Brien · 0.1.0-preprint · 10 October 2026
+Timothy O'Brien · 0.1.0-preprint · 12 October 2026
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
@@ -29,6 +29,8 @@ python3 examples/semantic_drift.py
 ```
 
 The output should match `examples/semantic-drift-result.json`. The program compares four fixed proposals under a finite positive taxonomy. It distinguishes candidate eligibility from current version-bound operational authorization and illustrates both ontology and accepted-fact changes.
+
+The recorded controls also distinguish a removal-only revision (non-expansion without permit-set equivalence) from a replacement revision that both adds and removes permits. These results cover the four enumerated proposals only.
 
 The cases and this finite example are synthetic. They do not implement a deployed agent, general OWL reasoning, complete mediation, or a validated semantic-change assessor, and they provide no empirical estimate of safety or performance.
 
