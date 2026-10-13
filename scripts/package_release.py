@@ -10,6 +10,18 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 release = ROOT / 'release'
 version = 'v0.1.0-preprint'
+# Published files are immutable snapshots. Metadata updates must not regenerate
+# the deposited ZIP with different citation or README contents under this version.
+manifest_path = release / 'release-manifest.json'
+if manifest_path.exists():
+    published = json.loads(manifest_path.read_text())
+    if published.get('version') == version and published.get('doi_assigned'):
+        for name, expected in published['files'].items():
+            data = (release / name).read_bytes()
+            if len(data) != expected['bytes'] or sha256(data).hexdigest() != expected['sha256']:
+                raise SystemExit('Published release checksum mismatch: ' + name)
+        print('Verified published release ' + published['doi'] + '; no files changed.')
+        raise SystemExit(0)
 subprocess.run(['python3', str(ROOT / 'scripts' / 'check_project.py')], check=True)
 source_pdf = ROOT / 'output' / 'pdf' / 'bounded-agency.pdf'
 if not source_pdf.is_file():

@@ -22,7 +22,7 @@ The paper develops a conceptual synthesis of established semantic-policy, ontolo
 | [examples/change-admission.yaml](examples/change-admission.yaml) | Example change-admission schema |
 | [examples/semantic-drift-result.json](examples/semantic-drift-result.json) | Recorded illustration output |
 | [release/bounded-agency-v0.1.0-preprint-research.zip](release/bounded-agency-v0.1.0-preprint-research.zip) | Curated scientific supplement: sources, examples, and reproducibility instructions |
-| [release/zenodo-upload.md](release/zenodo-upload.md) | Direct deposit steps and editable metadata |
+| [release/zenodo-upload.md](release/zenodo-upload.md) | Zenodo deposit record and metadata |
 
 The supplement includes the manuscript and bibliography, standalone TeX, the illustrative code and schema, recorded example output, and the files needed to rebuild the paper.
 
@@ -49,6 +49,8 @@ The recorded controls also distinguish a removal-only revision (non-expansion wi
 
 ## Publication status and rights
 
-The GitHub repository is public. No Zenodo deposit has been published or DOI assigned. The release package supports direct upload to Zenodo.
+Published on [Zenodo](https://zenodo.org/records/23332953) as a conceptual preprint, version 0.1.0-preprint, on 12 October 2026. Version DOI: [10.5281/zenodo.23332953](https://doi.org/10.5281/zenodo.23332953). The paper has not been peer reviewed.
+
+The PDF and research ZIP in `release/` are the exact deposited files. The ZIP preserves the sources and citation metadata as they stood before DOI assignment; the current `CITATION.cff` supplies the assigned DOI. The packaging script verifies this published release without overwriting it. Changes to the manuscript or supplement require a new release version.
 
 The paper and original supporting materials are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/); see [LICENSE.md](LICENSE.md) for scope. Linked third-party sources retain their own rights.

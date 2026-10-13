@@ -1,8 +1,8 @@
 {
   "version": "v0.1.0-preprint",
   "manuscript_date": "2026-10-12",
-  "publication_status": "not published",
-  "doi_assigned": false,
+  "publication_status": "published conceptual preprint; not peer reviewed",
+  "doi_assigned": true,
   "repository_visibility": "public",
   "license": "CC-BY-4.0",
   "files": {
@@ -15,8 +15,8 @@
       "bytes": 57659
     },
     "zenodo-upload-metadata.json": {
-      "sha256": "c812f1cd9192ca73624a38f41a9eff7b691dea537fde15acf0933ce65b8dcfce",
-      "bytes": 3030
+      "sha256": "d95d78eec81dd432d121d882ba48d51742aa323e90ee336c79bb6378efcb4a17",
+      "bytes": 3110
     }
   },
   "archive_entry_count": 11,
@@ -32,5 +32,13 @@
     "references.md",
     "release/license-notice.txt",
     "scripts/build_paper.py"
+  ],
+  "doi": "10.5281/zenodo.23332953",
+  "concept_doi": "10.5281/zenodo.23332952",
+  "record_url": "https://zenodo.org/records/23332953",
+  "publication_date": "2026-10-12",
+  "deposited_files": [
+    "bounded-agency-v0.1.0-preprint.pdf",
+    "bounded-agency-v0.1.0-preprint-research.zip"
   ]
 }
