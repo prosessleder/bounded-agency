@@ -10,11 +10,21 @@ import copy
 import json
 import re
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--pdf', action='store_true')
+parser.add_argument('--check-references', action='store_true',
+                    help='Run the online RefChecker audit before building')
+parser.add_argument('--strict-references', action='store_true',
+                    help='Run RefChecker and stop the build on any finding')
 args = parser.parse_args()
+if args.check_references or args.strict_references:
+    command = [sys.executable, str(ROOT / 'scripts/check_references.py')]
+    if args.strict_references:
+        command.append('--strict')
+    subprocess.run(command, check=True)
 out = ROOT / 'output' / 'pdf'
 out.mkdir(parents=True, exist_ok=True)
 body = (ROOT / 'paper.md').read_text()

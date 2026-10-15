@@ -12,3 +12,5 @@ output/pdf/*.out
 output/pdf/*.xdv
 output/pdf/header.tex
 output/pdf/paper-assembled.md
+.venv-refchecker/
+output/refchecker/

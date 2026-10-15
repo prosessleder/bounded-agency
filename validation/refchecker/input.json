@@ -1,0 +1,515 @@
+[
+  {
+    "number": 1,
+    "key": "ref1",
+    "original": "Andrzej Uszok, Jeffrey M. Bradshaw, Matthew Johnson, Renia Jeffers, Austin Tate, Jeff Dalton, and Stuart Aitken. 2004. “KAoS Policy Management for Semantic Web Services.” *IEEE Intelligent Systems* 19(4): 32–41. [doi:10.1109/MIS.2004.31](https://doi.org/10.1109/MIS.2004.31).",
+    "authors": [
+      "Andrzej Uszok",
+      "Jeffrey M. Bradshaw",
+      "Matthew Johnson",
+      "Renia Jeffers",
+      "Austin Tate",
+      "Jeff Dalton",
+      "Stuart Aitken"
+    ],
+    "fields": {
+      "title": "KAoS Policy Management for Semantic Web Services",
+      "author": "Andrzej Uszok and Jeffrey M. Bradshaw and Matthew Johnson and Renia Jeffers and Austin Tate and Jeff Dalton and Stuart Aitken",
+      "url": "https://doi.org/10.1109/MIS.2004.31",
+      "year": "2004",
+      "doi": "10.1109/MIS.2004.31",
+      "journal": "IEEE Intelligent Systems"
+    }
+  },
+  {
+    "number": 2,
+    "key": "ref2",
+    "original": "Lalana Kagal, Tim Finin, and Anupam Joshi. 2003. “A Policy Based Approach to Security for the Semantic Web.” *ISWC*, LNCS 2870: 402–418. [doi:10.1007/978-3-540-39718-2_26](https://doi.org/10.1007/978-3-540-39718-2_26).",
+    "authors": [
+      "Lalana Kagal",
+      "Tim Finin",
+      "Anupam Joshi"
+    ],
+    "fields": {
+      "title": "A Policy Based Approach to Security for the Semantic Web",
+      "author": "Lalana Kagal and Tim Finin and Anupam Joshi",
+      "url": "https://doi.org/10.1007/978-3-540-39718-2_26",
+      "year": "2003",
+      "doi": "10.1007/978-3-540-39718-2_26",
+      "journal": "ISWC"
+    }
+  },
+  {
+    "number": 3,
+    "key": "ref3",
+    "original": "Guido Boella and Leendert van der Torre. 2004. “Regulative and Constitutive Norms in Normative Multiagent Systems.” *KR 2004*: 255–265. [Primary AAAI paper](https://cdn.aaai.org/KR/2004/KR04-028.pdf).",
+    "authors": [
+      "Guido Boella",
+      "Leendert van der Torre"
+    ],
+    "fields": {
+      "title": "Regulative and Constitutive Norms in Normative Multiagent Systems",
+      "author": "Guido Boella and Leendert van der Torre",
+      "url": "https://cdn.aaai.org/KR/2004/KR04-028.pdf",
+      "year": "2004",
+      "journal": "KR 2004"
+    }
+  },
+  {
+    "number": 4,
+    "key": "ref4",
+    "original": "Vincent C. Hu, David Ferraiolo, D. Richard Kuhn, Adam Schnitzer, Kenneth Sandlin, Robert Miller, and Karen Scarfone. 2014, updated 2019. *Guide to Attribute Based Access Control (ABAC) Definition and Considerations*. NIST SP 800-162. [doi:10.6028/NIST.SP.800-162](https://doi.org/10.6028/NIST.SP.800-162).",
+    "authors": [
+      "Vincent C. Hu",
+      "David Ferraiolo",
+      "D. Richard Kuhn",
+      "Adam Schnitzer",
+      "Kenneth Sandlin",
+      "Robert Miller",
+      "Karen Scarfone"
+    ],
+    "fields": {
+      "title": "Guide to Attribute Based Access Control (ABAC) Definition and Considerations",
+      "author": "Vincent C. Hu and David Ferraiolo and D. Richard Kuhn and Adam Schnitzer and Kenneth Sandlin and Robert Miller and Karen Scarfone",
+      "url": "https://doi.org/10.6028/NIST.SP.800-162",
+      "year": "2014",
+      "doi": "10.6028/NIST.SP.800-162"
+    }
+  },
+  {
+    "number": 5,
+    "key": "ref5",
+    "original": "Ruoming Pang, Ramon Caceres, Mike Burrows, Zhifeng Chen, Pratik Dave, Nathan Germer, Alexander Golynski, Kevin Graney, Nina Kang, Lea Kissner, Jeffrey L. Korn, Abhishek Parmar, Christina D. Richards, and Mengzhi Wang. 2019. “Zanzibar: Google's Consistent, Global Authorization System.” *USENIX ATC*: 33–46. [Primary USENIX paper and record](https://www.usenix.org/conference/atc19/presentation/pang).",
+    "authors": [
+      "Ruoming Pang",
+      "Ramon Caceres",
+      "Mike Burrows",
+      "Zhifeng Chen",
+      "Pratik Dave",
+      "Nathan Germer",
+      "Alexander Golynski",
+      "Kevin Graney",
+      "Nina Kang",
+      "Lea Kissner",
+      "Jeffrey L. Korn",
+      "Abhishek Parmar",
+      "Christina D. Richards",
+      "Mengzhi Wang"
+    ],
+    "fields": {
+      "title": "Zanzibar: Google's Consistent, Global Authorization System",
+      "author": "Ruoming Pang and Ramon Caceres and Mike Burrows and Zhifeng Chen and Pratik Dave and Nathan Germer and Alexander Golynski and Kevin Graney and Nina Kang and Lea Kissner and Jeffrey L. Korn and Abhishek Parmar and Christina D. Richards and Mengzhi Wang",
+      "url": "https://www.usenix.org/conference/atc19/presentation/pang",
+      "year": "2019",
+      "journal": "USENIX ATC"
+    }
+  },
+  {
+    "number": 6,
+    "key": "ref6",
+    "original": "Jaehong Park and Ravi Sandhu. 2004. “The UCONABC Usage Control Model.” *ACM Transactions on Information and System Security* 7(1): 128–174. [doi:10.1145/984334.984339](https://doi.org/10.1145/984334.984339).",
+    "authors": [
+      "Jaehong Park",
+      "Ravi Sandhu"
+    ],
+    "fields": {
+      "title": "The UCONABC Usage Control Model",
+      "author": "Jaehong Park and Ravi Sandhu",
+      "url": "https://doi.org/10.1145/984334.984339",
+      "year": "2004",
+      "doi": "10.1145/984334.984339",
+      "journal": "ACM Transactions on Information and System Security"
+    }
+  },
+  {
+    "number": 7,
+    "key": "ref7",
+    "original": "Joseph W. Cutler, Craig Disselkoen, Aaron Eline, Shaobo He, Kyle Headley, Michael Hicks, Kesha Hietala, Eleftherios Ioannidis, John Kastner, Anwar Mamat, Darin McAdams, Matt McCutchen, Neha Rungta, Emina Torlak, and Andrew Wells. 2024. “Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization (Extended Version).” arXiv:2403.04651v2. [Primary record](https://arxiv.org/abs/2403.04651v2).",
+    "authors": [
+      "Joseph W. Cutler",
+      "Craig Disselkoen",
+      "Aaron Eline",
+      "Shaobo He",
+      "Kyle Headley",
+      "Michael Hicks",
+      "Kesha Hietala",
+      "Eleftherios Ioannidis",
+      "John Kastner",
+      "Anwar Mamat",
+      "Darin McAdams",
+      "Matt McCutchen",
+      "Neha Rungta",
+      "Emina Torlak",
+      "Andrew Wells"
+    ],
+    "fields": {
+      "title": "Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization (Extended Version)",
+      "author": "Joseph W. Cutler and Craig Disselkoen and Aaron Eline and Shaobo He and Kyle Headley and Michael Hicks and Kesha Hietala and Eleftherios Ioannidis and John Kastner and Anwar Mamat and Darin McAdams and Matt McCutchen and Neha Rungta and Emina Torlak and Andrew Wells",
+      "url": "https://arxiv.org/abs/2403.04651v2",
+      "year": "2024",
+      "eprint": "2403.04651v2",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 8,
+    "key": "ref8",
+    "original": "Open Policy Agent project. Undated. *Open Policy Agent Documentation*. [Official documentation](https://www.openpolicyagent.org/docs). Accessed 9 October 2026.",
+    "authors": [
+      "Open Policy Agent project"
+    ],
+    "fields": {
+      "title": "Open Policy Agent Documentation",
+      "author": "{Open Policy Agent project}",
+      "url": "https://www.openpolicyagent.org/docs"
+    }
+  },
+  {
+    "number": 9,
+    "key": "ref9",
+    "original": "Renato Iannella and Serena Villata, eds. 2018. *ODRL Information Model 2.2*. W3C Recommendation, 15 February. [Dated specification](https://www.w3.org/TR/2018/REC-odrl-model-20180215/).",
+    "authors": [
+      "Renato Iannella",
+      "Serena Villata"
+    ],
+    "fields": {
+      "title": "ODRL Information Model 2.2",
+      "author": "Renato Iannella and Serena Villata",
+      "url": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "year": "2018"
+    }
+  },
+  {
+    "number": 10,
+    "key": "ref10",
+    "original": "Pascal Hitzler, Markus Krötzsch, Bijan Parsia, Peter F. Patel-Schneider, and Sebastian Rudolph, eds. 2012. *OWL 2 Web Ontology Language Primer (Second Edition)*. W3C Recommendation, 11 December. [Dated specification](https://www.w3.org/TR/2012/REC-owl2-primer-20121211/).",
+    "authors": [
+      "Pascal Hitzler",
+      "Markus Krötzsch",
+      "Bijan Parsia",
+      "Peter F. Patel-Schneider",
+      "Sebastian Rudolph"
+    ],
+    "fields": {
+      "title": "OWL 2 Web Ontology Language Primer (Second Edition)",
+      "author": "Pascal Hitzler and Markus Krötzsch and Bijan Parsia and Peter F. Patel-Schneider and Sebastian Rudolph",
+      "url": "https://www.w3.org/TR/2012/REC-owl2-primer-20121211/",
+      "year": "2012"
+    }
+  },
+  {
+    "number": 11,
+    "key": "ref11",
+    "original": "Holger Knublauch and Dimitris Kontokostas, eds. 2017. *Shapes Constraint Language (SHACL)*. W3C Recommendation, 20 July. [Dated specification](https://www.w3.org/TR/2017/REC-shacl-20170720/).",
+    "authors": [
+      "Holger Knublauch",
+      "Dimitris Kontokostas"
+    ],
+    "fields": {
+      "title": "Shapes Constraint Language (SHACL)",
+      "author": "Holger Knublauch and Dimitris Kontokostas",
+      "url": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+      "year": "2017"
+    }
+  },
+  {
+    "number": 12,
+    "key": "ref12",
+    "original": "Elena Botoeva, Boris Konev, Carsten Lutz, Vladislav Ryzhikov, Frank Wolter, and Michael Zakharyaschev. 2017. “Inseparability and Conservative Extensions of Description Logic Ontologies: A Survey.” *Reasoning Web: Logical Foundation of Knowledge Graph Construction and Query Answering*, LNCS 9885: 27–89. RW2016 event; publisher publication 2017. [doi:10.1007/978-3-319-49493-7_2](https://doi.org/10.1007/978-3-319-49493-7_2); [author-deposited text](https://arxiv.org/abs/1804.07805).",
+    "authors": [
+      "Elena Botoeva",
+      "Boris Konev",
+      "Carsten Lutz",
+      "Vladislav Ryzhikov",
+      "Frank Wolter",
+      "Michael Zakharyaschev"
+    ],
+    "fields": {
+      "title": "Inseparability and Conservative Extensions of Description Logic Ontologies: A Survey",
+      "author": "Elena Botoeva and Boris Konev and Carsten Lutz and Vladislav Ryzhikov and Frank Wolter and Michael Zakharyaschev",
+      "url": "https://doi.org/10.1007/978-3-319-49493-7_2",
+      "year": "2017",
+      "doi": "10.1007/978-3-319-49493-7_2",
+      "journal": "Reasoning Web: Logical Foundation of Knowledge Graph Construction and Query Answering"
+    }
+  },
+  {
+    "number": 13,
+    "key": "ref13",
+    "original": "Sven Peldszus, Jens Bürger, Timo Kehrer, and Jan Jürjens. 2021. “Ontology-driven Evolution of Software Security.” *Data & Knowledge Engineering* 134: 101907. [doi:10.1016/j.datak.2021.101907](https://doi.org/10.1016/j.datak.2021.101907).",
+    "authors": [
+      "Sven Peldszus",
+      "Jens Bürger",
+      "Timo Kehrer",
+      "Jan Jürjens"
+    ],
+    "fields": {
+      "title": "Ontology-driven Evolution of Software Security",
+      "author": "Sven Peldszus and Jens Bürger and Timo Kehrer and Jan Jürjens",
+      "url": "https://doi.org/10.1016/j.datak.2021.101907",
+      "year": "2021",
+      "doi": "10.1016/j.datak.2021.101907",
+      "journal": "Data & Knowledge Engineering"
+    }
+  },
+  {
+    "number": 14,
+    "key": "ref14",
+    "original": "Bo Nørregaard Jørgensen and Zheng Grace Ma. 2026. “Governing Agentic AI in Enterprise Workflows: A Bounded-Autonomy Framework for Delegated Authority and Controlled Execution.” *Information* 17(9): 923. Published 20 September. [doi:10.3390/info17090923](https://doi.org/10.3390/info17090923).",
+    "authors": [
+      "Bo Nørregaard Jørgensen",
+      "Zheng Grace Ma"
+    ],
+    "fields": {
+      "title": "Governing Agentic AI in Enterprise Workflows: A Bounded-Autonomy Framework for Delegated Authority and Controlled Execution",
+      "author": "Bo Nørregaard Jørgensen and Zheng Grace Ma",
+      "url": "https://doi.org/10.3390/info17090923",
+      "year": "2026",
+      "doi": "10.3390/info17090923",
+      "journal": "Information"
+    }
+  },
+  {
+    "number": 15,
+    "key": "ref15",
+    "original": "Anuj Kaul, Qianlong Lan, and Pranay Gupta. 2026. “Behavioral Governance for Autonomous AI Agents: The AgentBound Framework.” arXiv:2606.30970v2, revised 1 July. [Primary record](https://arxiv.org/abs/2606.30970v2).",
+    "authors": [
+      "Anuj Kaul",
+      "Qianlong Lan",
+      "Pranay Gupta"
+    ],
+    "fields": {
+      "title": "Behavioral Governance for Autonomous AI Agents: The AgentBound Framework",
+      "author": "Anuj Kaul and Qianlong Lan and Pranay Gupta",
+      "url": "https://arxiv.org/abs/2606.30970v2",
+      "year": "2026",
+      "eprint": "2606.30970v2",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 16,
+    "key": "ref16",
+    "original": "Parviz Shariff. 2026. “The Authority Resolution Framework: A Five-Domain Ontology for Governing Who and What Decides, at Scale.” arXiv:2608.15832v1. [Primary record](https://arxiv.org/abs/2608.15832v1).",
+    "authors": [
+      "Parviz Shariff"
+    ],
+    "fields": {
+      "title": "The Authority Resolution Framework: A Five-Domain Ontology for Governing Who and What Decides, at Scale",
+      "author": "Parviz Shariff",
+      "url": "https://arxiv.org/abs/2608.15832v1",
+      "year": "2026",
+      "eprint": "2608.15832v1",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 17,
+    "key": "ref17",
+    "original": "Yingqi Zhang. 2026. “Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents.” arXiv:2606.03895v3, revised 18 August. [Primary record](https://arxiv.org/abs/2606.03895v3).",
+    "authors": [
+      "Yingqi Zhang"
+    ],
+    "fields": {
+      "title": "Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents",
+      "author": "Yingqi Zhang",
+      "url": "https://arxiv.org/abs/2606.03895v3",
+      "year": "2026",
+      "eprint": "2606.03895v3",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 18,
+    "key": "ref18",
+    "original": "Basavesh Ammanaghatta Shivakumar, Swarn Priya, and Peng Gao. 2026. “AgentFlow: A Flow-Centric Policy Language and Framework for Securing LLM Agent Systems.” arXiv:2608.22868v1. [Primary record](https://arxiv.org/abs/2608.22868v1).",
+    "authors": [
+      "Basavesh Ammanaghatta Shivakumar",
+      "Swarn Priya",
+      "Peng Gao"
+    ],
+    "fields": {
+      "title": "AgentFlow: A Flow-Centric Policy Language and Framework for Securing LLM Agent Systems",
+      "author": "Basavesh Ammanaghatta Shivakumar and Swarn Priya and Peng Gao",
+      "url": "https://arxiv.org/abs/2608.22868v1",
+      "year": "2026",
+      "eprint": "2608.22868v1",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 19,
+    "key": "ref19",
+    "original": "Jesus Salas. 2026. “Authority at Commit Time: Reject-and-Rerun Semantics for Governed Agentic Systems.” arXiv:2609.31490v1. [Primary record](https://arxiv.org/abs/2609.31490v1).",
+    "authors": [
+      "Jesus Salas"
+    ],
+    "fields": {
+      "title": "Authority at Commit Time: Reject-and-Rerun Semantics for Governed Agentic Systems",
+      "author": "Jesus Salas",
+      "url": "https://arxiv.org/abs/2609.31490v1",
+      "year": "2026",
+      "eprint": "2609.31490v1",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 20,
+    "key": "ref20",
+    "original": "Fred B. Schneider. 2000. “Enforceable Security Policies.” *ACM Transactions on Information and System Security* 3(1): 30–50. [Author-hosted primary paper](https://www.cs.cornell.edu/fbs/publications/EnfSecPols.pdf).",
+    "authors": [
+      "Fred B. Schneider"
+    ],
+    "fields": {
+      "title": "Enforceable Security Policies",
+      "author": "Fred B. Schneider",
+      "url": "https://www.cs.cornell.edu/fbs/publications/EnfSecPols.pdf",
+      "year": "2000",
+      "journal": "ACM Transactions on Information and System Security"
+    }
+  },
+  {
+    "number": 21,
+    "key": "ref21",
+    "original": "Eugene F. Fama and Michael C. Jensen. 1983. “Separation of Ownership and Control.” *Journal of Law and Economics* 26(2): 301–325. [doi:10.1086/467037](https://doi.org/10.1086/467037).",
+    "authors": [
+      "Eugene F. Fama",
+      "Michael C. Jensen"
+    ],
+    "fields": {
+      "title": "Separation of Ownership and Control",
+      "author": "Eugene F. Fama and Michael C. Jensen",
+      "url": "https://doi.org/10.1086/467037",
+      "year": "1983",
+      "doi": "10.1086/467037",
+      "journal": "Journal of Law and Economics"
+    }
+  },
+  {
+    "number": 22,
+    "key": "ref22",
+    "original": "Inferal. Undated. *Inferal Governed Artifact Evolution Ontology*. Unofficial 1.0 Editor's Draft. [Maintained specification](https://ontology.inferal.com/modules/artifact-evolution/spec/). Accessed 9 October 2026; no dated immutable publication established.",
+    "authors": [
+      "Inferal"
+    ],
+    "fields": {
+      "title": "Inferal Governed Artifact Evolution Ontology",
+      "author": "{Inferal}",
+      "url": "https://ontology.inferal.com/modules/artifact-evolution/spec/"
+    }
+  },
+  {
+    "number": 23,
+    "key": "ref23",
+    "original": "Andrzej Uszok, Jeffrey M. Bradshaw, James Lott, Maggie Breedy, Larry Bunch, Paul Feltovich, Matthew Johnson, and Hyuckchul Jung. 2008. “New Developments in Ontology-Based Policy Management: Increasing the Practicality and Comprehensiveness of KAoS.” *IEEE POLICY*: 145–152. [doi:10.1109/POLICY.2008.47](https://doi.org/10.1109/POLICY.2008.47); [primary manuscript](https://ontology.ihmc.us/Papers/uszok_kaos_policy08.pdf).",
+    "authors": [
+      "Andrzej Uszok",
+      "Jeffrey M. Bradshaw",
+      "James Lott",
+      "Maggie Breedy",
+      "Larry Bunch",
+      "Paul Feltovich",
+      "Matthew Johnson",
+      "Hyuckchul Jung"
+    ],
+    "fields": {
+      "title": "New Developments in Ontology-Based Policy Management: Increasing the Practicality and Comprehensiveness of KAoS",
+      "author": "Andrzej Uszok and Jeffrey M. Bradshaw and James Lott and Maggie Breedy and Larry Bunch and Paul Feltovich and Matthew Johnson and Hyuckchul Jung",
+      "url": "https://doi.org/10.1109/POLICY.2008.47",
+      "year": "2008",
+      "doi": "10.1109/POLICY.2008.47",
+      "journal": "IEEE POLICY"
+    }
+  },
+  {
+    "number": 24,
+    "key": "ref24",
+    "original": "Nuno Lopes, Sabrina Kirrane, Antoine Zimmermann, Axel Polleres, and Alessandra Mileo. 2012. “A Logic Programming Approach for Access Control over RDF.” *ICLP Technical Communications*, LIPIcs 17: 381–392. [doi:10.4230/LIPIcs.ICLP.2012.381](https://doi.org/10.4230/LIPIcs.ICLP.2012.381).",
+    "authors": [
+      "Nuno Lopes",
+      "Sabrina Kirrane",
+      "Antoine Zimmermann",
+      "Axel Polleres",
+      "Alessandra Mileo"
+    ],
+    "fields": {
+      "title": "A Logic Programming Approach for Access Control over RDF",
+      "author": "Nuno Lopes and Sabrina Kirrane and Antoine Zimmermann and Axel Polleres and Alessandra Mileo",
+      "url": "https://doi.org/10.4230/LIPIcs.ICLP.2012.381",
+      "year": "2012",
+      "doi": "10.4230/LIPIcs.ICLP.2012.381",
+      "journal": "ICLP Technical Communications"
+    }
+  },
+  {
+    "number": 25,
+    "key": "ref25",
+    "original": "Andrew J. I. Jones and Marek Sergot. 1996. “A Formal Characterisation of Institutionalised Power.” *Logic Journal of the IGPL* 4(3): 427–443. [doi:10.1093/jigpal/4.3.427](https://doi.org/10.1093/jigpal/4.3.427).",
+    "authors": [
+      "Andrew J. I. Jones",
+      "Marek Sergot"
+    ],
+    "fields": {
+      "title": "A Formal Characterisation of Institutionalised Power",
+      "author": "Andrew J. I. Jones and Marek Sergot",
+      "url": "https://doi.org/10.1093/jigpal/4.3.427",
+      "year": "1996",
+      "doi": "10.1093/jigpal/4.3.427",
+      "journal": "Logic Journal of the IGPL"
+    }
+  },
+  {
+    "number": 26,
+    "key": "ref26",
+    "original": "Tobin South, Samuele Marro, Thomas Hardjono, Robert Mahari, Cedric Deslandes Whitney, Dazza Greenwood, Alan Chan, and Alex Pentland. 2025. “Authenticated Delegation and Authorized AI Agents.” arXiv:2501.09674v1. [Primary record](https://arxiv.org/abs/2501.09674v1).",
+    "authors": [
+      "Tobin South",
+      "Samuele Marro",
+      "Thomas Hardjono",
+      "Robert Mahari",
+      "Cedric Deslandes Whitney",
+      "Dazza Greenwood",
+      "Alan Chan",
+      "Alex Pentland"
+    ],
+    "fields": {
+      "title": "Authenticated Delegation and Authorized AI Agents",
+      "author": "Tobin South and Samuele Marro and Thomas Hardjono and Robert Mahari and Cedric Deslandes Whitney and Dazza Greenwood and Alan Chan and Alex Pentland",
+      "url": "https://arxiv.org/abs/2501.09674v1",
+      "year": "2025",
+      "eprint": "2501.09674v1",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 27,
+    "key": "ref27",
+    "original": "Nenad Tomašev, Matija Franklin, and Simon Osindero. 2026. “Intelligent AI Delegation.” arXiv:2602.11865v1. [Primary record](https://arxiv.org/abs/2602.11865v1).",
+    "authors": [
+      "Nenad Tomašev",
+      "Matija Franklin",
+      "Simon Osindero"
+    ],
+    "fields": {
+      "title": "Intelligent AI Delegation",
+      "author": "Nenad Tomašev and Matija Franklin and Simon Osindero",
+      "url": "https://arxiv.org/abs/2602.11865v1",
+      "year": "2026",
+      "eprint": "2602.11865v1",
+      "archivePrefix": "arXiv"
+    }
+  },
+  {
+    "number": 28,
+    "key": "ref28",
+    "original": "Lalana Kagal. Undated. *Rei Ontology Specifications, Ver 2.0*. [Author-maintained specification](https://userpages.cs.umbc.edu/lkagal1/rei/). Accessed 9 October 2026.",
+    "authors": [
+      "Lalana Kagal"
+    ],
+    "fields": {
+      "title": "Rei Ontology Specifications, Ver 2.0",
+      "author": "Lalana Kagal",
+      "url": "https://userpages.cs.umbc.edu/lkagal1/rei/"
+    }
+  }
+]

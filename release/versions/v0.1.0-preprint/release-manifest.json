@@ -1,0 +1,44 @@
+{
+  "version": "v0.1.0-preprint",
+  "manuscript_date": "2026-10-12",
+  "publication_status": "published conceptual preprint; not peer reviewed",
+  "doi_assigned": true,
+  "repository_visibility": "public",
+  "license": "CC-BY-4.0",
+  "files": {
+    "bounded-agency-v0.1.0-preprint.pdf": {
+      "sha256": "ee1d7773ceef78d5aff44dcd01853b536310b989fbb27615d6470f923c429852",
+      "bytes": 136474
+    },
+    "bounded-agency-v0.1.0-preprint-research.zip": {
+      "sha256": "aecac70de0553a6d97f9804183191b7d7c147a6f2eecabc8782f6c37f2eb3f8d",
+      "bytes": 57659
+    },
+    "zenodo-upload-metadata.json": {
+      "sha256": "d95d78eec81dd432d121d882ba48d51742aa323e90ee336c79bb6378efcb4a17",
+      "bytes": 3110
+    }
+  },
+  "archive_entry_count": 11,
+  "archive_contents": [
+    "CITATION.cff",
+    "LICENSE.md",
+    "README.md",
+    "examples/change-admission.yaml",
+    "examples/semantic-drift-result.json",
+    "examples/semantic_drift.py",
+    "output/pdf/bounded-agency.tex",
+    "paper.md",
+    "references.md",
+    "release/license-notice.txt",
+    "scripts/build_paper.py"
+  ],
+  "doi": "10.5281/zenodo.23332953",
+  "concept_doi": "10.5281/zenodo.23332952",
+  "record_url": "https://zenodo.org/records/23332953",
+  "publication_date": "2026-10-12",
+  "deposited_files": [
+    "bounded-agency-v0.1.0-preprint.pdf",
+    "bounded-agency-v0.1.0-preprint-research.zip"
+  ]
+}

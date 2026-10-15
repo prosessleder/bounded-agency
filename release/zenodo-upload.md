@@ -1,24 +1,20 @@
 # Zenodo deposit record
 
-Published as a conceptual preprint on 12 October 2026.
+Version 0.1.1-preprint is prepared for publication on 15 October 2026.
 
-- Record: [https://zenodo.org/records/23332953](https://zenodo.org/records/23332953).
-- Version DOI: [10.5281/zenodo.23332953](https://doi.org/10.5281/zenodo.23332953). Use this DOI to cite the fixed preprint.
+- New record: [https://zenodo.org/records/23401477](https://zenodo.org/records/23401477).
+- Reserved version DOI: [10.5281/zenodo.23401477](https://doi.org/10.5281/zenodo.23401477).
 - All-versions DOI: [10.5281/zenodo.23332952](https://doi.org/10.5281/zenodo.23332952).
-- Version: 0.1.0-preprint.
+- Previous version: [0.1.0-preprint](https://zenodo.org/records/23332953).
 - Resource type: Publication → Preprint; not peer reviewed.
 - Author: Timothy O'Brien, ORCID [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X); no affiliation.
 - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 - Access: public.
 
-## Deposited files
+This version adds reproducible RefChecker build integration, recorded screening evidence, and a reference-screening disclosure. Scientific claims and the bibliography are unchanged.
 
-`bounded-agency-v0.1.0-preprint.pdf` is the primary paper and default preview. `bounded-agency-v0.1.0-preprint-research.zip` is the scientific supplement containing manuscript sources, bibliography, illustrative code/schema/output, and build instructions. Both were uploaded and their displayed Zenodo MD5 checksums matched the local files. `SHA256SUMS.txt` and `release-manifest.json` identify the local release bytes.
+## Files
 
-The deposited PDF and ZIP are preserved unchanged. The supplement is a snapshot from before DOI assignment, so its enclosed citation file has no DOI. The repository's current `CITATION.cff` contains the assigned version DOI. `zenodo-upload-metadata.json` records the published metadata as a human-readable field aid, not an API request body.
+`bounded-agency-v0.1.1-preprint.pdf` is the primary paper and default preview. `bounded-agency-v0.1.1-preprint-research.zip` includes the manuscript, bibliography, standalone TeX, illustrative code, build/source checks, pinned RefChecker dependency and wrapper, tests, and screening evidence. Private review narratives and local environments are excluded.
 
-The record description contains the abstract, conceptual-preprint status, and factual AI-assistance disclosure. Only the paper and curated scientific supplement were deposited.
-
-## Subsequent changes
-
-The packaging script verifies the published release without rebuilding or overwriting it. Changes to deposited files require a new version and review of that version's artifacts. Metadata-only corrections can use Zenodo's edit workflow. See [Zenodo versioning guidance](https://zenodo.org/help/versioning).
+The previous version's PDF, ZIP, and metadata snapshot are preserved unchanged. The packaging script verifies published release hashes before preparing a new version. `SHA256SUMS.txt` and `release-manifest.json` record the current release bytes. A reserved DOI is registered when Zenodo publishes the new version.

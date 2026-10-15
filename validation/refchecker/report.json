@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-10-15T16:40:43.567745Z",
+  "summary": {
+    "total_papers_processed": 1,
+    "total_references_processed": 28,
+    "total_errors_found": 0,
+    "total_warnings_found": 0,
+    "total_info_found": 0,
+    "total_unverified_refs": 0,
+    "records_written": 0,
+    "papers_with_records": 0,
+    "flagged_records": 0,
+    "flagged_papers": 0
+  },
+  "papers": [],
+  "records": []
+}

@@ -1,0 +1,2 @@
+# RefChecker 3.1.6; immutable upstream revision used for this integration.
+academic-refchecker[llm] @ git+https://github.com/markrussinovich/refchecker.git@b5792c5b28edda686cc078a173bc49fe8c0a7d4f

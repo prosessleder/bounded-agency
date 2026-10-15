@@ -2,14 +2,14 @@
 title: 'Bounded Agency: Ontology-Driven Authority for Delegated Intelligence'
 author: "Timothy O'Brien"
 orcid: 'https://orcid.org/0009-0001-2589-347X'
-date: '12 October 2026'
+date: '15 October 2026'
 lang: en
-version: '0.1.0-preprint'
+version: '0.1.1-preprint'
 license: 'CC-BY-4.0'
 license-url: 'https://creativecommons.org/licenses/by/4.0/'
 ---
 
-*Preprint (not peer reviewed). Version 0.1.0-preprint.*
+*Preprint (not peer reviewed). Version 0.1.1-preprint.*
 
 # Abstract
 
@@ -41,7 +41,7 @@ The paper makes three contributions. First, it gives an explicit comparison targ
 
 This conceptual study formulates a change-control problem, defines a comparison target, establishes a restricted counterexample, and traces the proposed controls through two synthetic cases. The analytical criteria are whether the comparison isolates semantic change, whether candidate eligibility remains separate from operational authorization, and whether the proposed approval roles can prevent a candidate from authorizing its own adoption. These checks assess coherence and explanatory value; they do not measure effectiveness.
 
-The literature comparison draws on targeted searches of primary papers, official specifications and documentation, and references from closely related work, with focused rechecking on 12 October 2026. Coverage is selective rather than systematic. Recent preprints and live specifications are discussed as proposals, not independently validated systems. The bibliography identifies the versions examined. For the enterprise framework [14], the institutional abstract and publisher-indexed passages were accessible, but complete direct retrieval was limited.
+The literature comparison draws on targeted searches of primary papers, official specifications and documentation, and references from closely related work, with focused rechecking on 15 October 2026. Coverage is selective rather than systematic. Recent preprints and live specifications are discussed as proposals, not independently validated systems. The bibliography identifies the versions examined. For the enterprise framework [14], the institutional abstract and publisher-indexed passages were accessible, but complete direct retrieval was limited.
 
 ## 2.2 Semantic policy and institutional meaning
 
@@ -374,4 +374,4 @@ Bounded agency, as developed here, separates acquiring or proposing knowledge fr
 
 **Research artifacts.** Manuscript sources, the executable finite-taxonomy illustration, its recorded output, and an example change-admission schema are available in the supplementary archive and [project repository](https://github.com/prosessleder/bounded-agency).
 
-**AI assistance.** OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. The author is responsible for the manuscript's content, references, and conclusions.
+**AI assistance.** OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. Reference metadata was screened with RefChecker 3.1.6, and automated findings were reviewed against publisher and other primary-source records. The author is responsible for the manuscript's content, references, and conclusions.

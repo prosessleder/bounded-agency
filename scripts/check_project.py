@@ -27,6 +27,9 @@ REQUIRED = (
     "examples/change-admission.yaml",
     "examples/semantic-drift-result.json",
     "scripts/build_paper.py",
+    "scripts/check_references.py",
+    "scripts/test_check_references.py",
+    "requirements-refchecker.txt",
     "scripts/package_release.py",
     "release/license-notice.txt",
     "release/supplement-README.md",
@@ -107,7 +110,7 @@ def main() -> int:
     empty = [path for path in REQUIRED if (ROOT / path).is_file() and not (ROOT / path).read_text().strip()]
     record("required source artifacts", [f"missing: {path}" for path in missing] + [f"empty: {path}" for path in empty], f"{len(REQUIRED)} required source artifacts")
 
-    documents = {str(path.relative_to(ROOT)): path.read_text() for path in ROOT.rglob("*.md") if not any(part in {".git", "output"} for part in path.relative_to(ROOT).parts)}
+    documents = {str(path.relative_to(ROOT)): path.read_text() for path in ROOT.rglob("*.md") if not any(part in {".git", "output"} or part.startswith('.venv') for part in path.relative_to(ROOT).parts)}
     bibliography = documents.get("references.md", "")
     records = re.findall(r"^\[(\d+)\]\s+(.+?)(?=\n\n\[\d+\]|\Z)", bibliography, flags=re.M | re.S)
     numbers = [int(number) for number, _ in records]

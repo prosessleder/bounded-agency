@@ -1,0 +1,38 @@
+{
+  "started_at": "2026-10-15T16:29:21.515152+00:00",
+  "finished_at": "2026-10-15T16:40:43.624778+00:00",
+  "complete": true,
+  "exit_code": 0,
+  "expected_references": 28,
+  "refchecker": {
+    "version": "3.1.6",
+    "origin": {
+      "url": "https://github.com/markrussinovich/refchecker.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "b5792c5b28edda686cc078a173bc49fe8c0a7d4f",
+        "requested_revision": "b5792c5b28edda686cc078a173bc49fe8c0a7d4f"
+      }
+    }
+  },
+  "llm_provider": null,
+  "summary": {
+    "total_papers_processed": 1,
+    "total_references_processed": 28,
+    "total_errors_found": 0,
+    "total_warnings_found": 0,
+    "total_info_found": 0,
+    "total_unverified_refs": 0,
+    "records_written": 0,
+    "papers_with_records": 0,
+    "flagged_records": 0,
+    "flagged_papers": 0
+  },
+  "source_unchanged": true,
+  "source_sha256": {
+    "paper.md": "c0ff73b650d2dfc3efd25f39392afc68b843d572f23109f5d3aa92cd87875a73",
+    "references.md": "2329ded5744aa755149c3ab56e5d30783719322f104a1f979b5e918e865fc60d"
+  },
+  "input_sha256": "b7c5d39e673a18bb643654d3f48e1ac4cf9084c47967e5b8cb285ed6dcda81a8",
+  "note": "Database metadata findings require review; unverified does not mean fabricated."
+}

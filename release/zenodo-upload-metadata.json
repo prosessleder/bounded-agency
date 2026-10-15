@@ -7,9 +7,9 @@
       "orcid": "0009-0001-2589-347X"
     }
   ],
-  "version": "0.1.0-preprint",
-  "manuscript_date": "2026-10-12",
-  "description": "An autonomous system's technical permissions may let it perform actions that settle decisions beyond the authority it was given. Permission to update an incident record, for example, need not include authority to declare a potentially hazardous situation resolved. Ontology-grounded policies can express these decision boundaries, but revisions to classifications, relationships, or inference rules can change what an unchanged policy permits. This paper examines bounded agency as delegated independent judgment limited by the situations an agent may resolve, the outcomes it may choose, and the consequences it may initiate. Its central mechanism is authority-relative semantic-change admission: assessing how a proposed change in meaning affects a specified agent's decision scope before approving that change for operational use. A lightweight model separates the decisions a candidate semantic model would permit in a hypothetical evaluation from the decisions the agent is currently authorized to carry out. A positive-taxonomy counterexample shows how a subclass axiom enlarges the former set without editing policy text. A reference architecture connects that comparison to explicit approval, version-bound operational authorization, and controlled execution. Building-safety and customer-support thought experiments distinguish changes in meaning from changes in accepted facts. The contribution is a conceptual design synthesis building on semantic-policy and ontology-evolution research. The cases and finite taxonomy illustration explain the mechanism; operational effectiveness remains to be evaluated.\n\nConceptual preprint; not peer reviewed.\n\nAI assistance: OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. The author is responsible for the manuscript's content, references, and conclusions.",
+  "version": "0.1.1-preprint",
+  "manuscript_date": "2026-10-15",
+  "description": "An autonomous system's technical permissions may let it perform actions that settle decisions beyond the authority it was given. Permission to update an incident record, for example, need not include authority to declare a potentially hazardous situation resolved. Ontology-grounded policies can express these decision boundaries, but revisions to classifications, relationships, or inference rules can change what an unchanged policy permits. This paper examines bounded agency as delegated independent judgment limited by the situations an agent may resolve, the outcomes it may choose, and the consequences it may initiate. Its central mechanism is authority-relative semantic-change admission: assessing how a proposed change in meaning affects a specified agent's decision scope before approving that change for operational use. A lightweight model separates the decisions a candidate semantic model would permit in a hypothetical evaluation from the decisions the agent is currently authorized to carry out. A positive-taxonomy counterexample shows how a subclass axiom enlarges the former set without editing policy text. A reference architecture connects that comparison to explicit approval, version-bound operational authorization, and controlled execution. Building-safety and customer-support thought experiments distinguish changes in meaning from changes in accepted facts. The contribution is a conceptual design synthesis building on semantic-policy and ontology-evolution research. The cases and finite taxonomy illustration explain the mechanism; operational effectiveness remains to be evaluated.\n\nConceptual preprint; not peer reviewed.\n\nAI assistance: OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. Reference metadata was screened with RefChecker 3.1.6, and automated findings were reviewed against publisher and other primary-source records. The author is responsible for the manuscript's content, references, and conclusions.\n\nVersion 0.1.1-preprint adds reproducible RefChecker build integration and reference-screening disclosure. The scientific claims and bibliography are unchanged.",
   "keywords": [
     "bounded agency",
     "delegated intelligence",
@@ -26,14 +26,14 @@
     "url": "https://creativecommons.org/licenses/by/4.0/",
     "description": "Copyright © 2026 Timothy O'Brien. Licensed under CC BY 4.0."
   },
-  "publication_status": "Published conceptual preprint; not peer reviewed.",
+  "publication_status": "New version prepared for publication; not peer reviewed.",
   "repository": {
     "url": "https://github.com/prosessleder/bounded-agency",
     "visibility": "public"
   },
   "schema_note": "Human upload field aid, not an API request body.",
-  "publication_date": "2026-10-12",
-  "doi": "10.5281/zenodo.23332953",
+  "publication_date": "2026-10-15",
+  "doi": "10.5281/zenodo.23401477",
   "concept_doi": "10.5281/zenodo.23332952",
-  "record_url": "https://zenodo.org/records/23332953"
+  "record_url": "https://zenodo.org/records/23401477"
 }

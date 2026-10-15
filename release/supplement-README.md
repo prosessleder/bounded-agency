@@ -1,6 +1,6 @@
 # Bounded Agency: supplementary materials
 
-Timothy O'Brien · 0.1.0-preprint · 12 October 2026
+Timothy O'Brien · 0.1.1-preprint · 15 October 2026
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
@@ -16,7 +16,11 @@ This archive accompanies *Bounded Agency: Ontology-Driven Authority for Delegate
 | `examples/semantic_drift.py` | Executable illustration using Python's standard library |
 | `examples/change-admission.yaml` | Illustrative admission schema |
 | `examples/semantic-drift-result.json` | Recorded illustration output |
-| `scripts/build_paper.py` | Generate LaTeX and HTML from the manuscript |
+| `scripts/build_paper.py` | Generate LaTeX and HTML; optionally run reference verification |
+| `scripts/check_project.py` | Offline source-integrity checks |
+| `scripts/check_references.py`, `scripts/test_check_references.py` | Online reference check and offline regression tests |
+| `requirements-refchecker.txt` | Pinned upstream RefChecker revision |
+| `validation/refchecker/` | Recorded reference-screening inputs, results, provenance, and release binding |
 | `release/license-notice.txt` | License notice used by the build |
 | `LICENSE.md`, `CITATION.cff` | License and citation metadata |
 
@@ -48,10 +52,29 @@ Open the generated `.tex` file in a compatible LaTeX editor. The source uses the
 python3 scripts/build_paper.py --pdf
 ```
 
-The primary paper PDF is supplied separately with the deposit. The project repository additionally provides a source-integrity checker and a release packaging script.
+The primary paper PDF is supplied separately with the deposit. The archive also includes the source-integrity checker and release packaging script.
+
+## Reference screening
+
+Reference metadata was screened using [RefChecker](https://github.com/markrussinovich/refchecker) 3.1.6. Its final scan checked 28 references with no errors, warnings, or unverified entries. No LLM or paid web-search checks were enabled. See `validation/refchecker/README.txt` for scope and the relationship between the scan and this release.
+
+To reproduce the online check, install Python 3.11 or newer and the pinned requirements in an isolated environment:
+
+```sh
+python3.11 -m venv .venv-refchecker
+.venv-refchecker/bin/python -m pip install -r requirements-refchecker.txt
+python3 scripts/build_paper.py --check-references
+```
+
+The check requires network access; findings depend on live scholarly databases and require review. The offline checks remain available:
+
+```sh
+python3 scripts/check_project.py
+python3 scripts/test_check_references.py
+```
 
 ## License and assistance
 
 The paper and these original supporting materials are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see `LICENSE.md`. Third-party sources retain their own rights.
 
-OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. The author is responsible for the manuscript's content, references, and conclusions.
+OpenAI Codex assisted literature discovery, manuscript drafting, generation of illustrative code, and internal critical review. Reference metadata was screened with RefChecker 3.1.6, and automated findings were reviewed against publisher and other primary-source records. The author is responsible for the manuscript's content, references, and conclusions.
