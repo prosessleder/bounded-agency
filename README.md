@@ -87,6 +87,6 @@ The recorded controls also distinguish a removal-only revision (non-expansion wi
 
 Version 0.1.1-preprint adds reproducible RefChecker build integration and discloses its use in reference screening. The scientific claims and bibliography are unchanged. The paper has not been peer reviewed.
 
-The new version is prepared for [Zenodo](https://zenodo.org/records/23401477), with reserved version DOI [10.5281/zenodo.23401477](https://doi.org/10.5281/zenodo.23401477). The [original version](https://zenodo.org/records/23332953) remains available. Prior deposited files and metadata are preserved under `release/versions/`; published PDF and ZIP files are never overwritten under an existing version.
+Published on 15 October 2026 on [Zenodo](https://zenodo.org/records/23401477), with version DOI [10.5281/zenodo.23401477](https://doi.org/10.5281/zenodo.23401477). The [original version](https://zenodo.org/records/23332953) remains available. The supplement is a snapshot prepared before publication with the reserved DOI; current repository metadata records publication. Prior deposited files and metadata are preserved under `release/versions/`; published PDF and ZIP files are never overwritten under an existing version.
 
 The paper and original supporting materials are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/); see [LICENSE.md](LICENSE.md) for scope. Linked third-party sources retain their own rights.
