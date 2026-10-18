@@ -49,6 +49,14 @@
       "routine-service"
     ]
   },
+  "composition_control": {
+    "first_edit_expansion_witnesses": [],
+    "second_edit_expansion_witnesses": [],
+    "combined_expansion_witnesses": [
+      "sensor-anomaly"
+    ],
+    "coverage": "same four fixed proposals only; not a general preservation proof"
+  },
   "unrelated_revision_changes_eligibility": false,
   "candidate_authorized_under_old_grant": false,
   "candidate_authorized_after_ratification": true,

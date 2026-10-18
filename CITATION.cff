@@ -5,9 +5,9 @@ authors:
   - family-names: "O'Brien"
     given-names: "Timothy"
     orcid: "https://orcid.org/0009-0001-2589-347X"
-version: "0.1.1-preprint"
-doi: "10.5281/zenodo.23401477"
-date-released: 2026-10-15
+version: "0.1.2-preprint"
+doi: "10.5281/zenodo.23455281"
+date-released: 2026-10-18
 license: CC-BY-4.0
 url: "https://github.com/prosessleder/bounded-agency"
 preferred-citation:
@@ -17,9 +17,9 @@ preferred-citation:
     - family-names: "O'Brien"
       given-names: "Timothy"
       orcid: "https://orcid.org/0009-0001-2589-347X"
-  doi: "10.5281/zenodo.23401477"
-  url: "https://zenodo.org/records/23401477"
+  doi: "10.5281/zenodo.23455281"
+  url: "https://zenodo.org/records/23455281"
   year: 2026
   month: 10
-  day: 15
-  notes: "Conceptual preprint deposited on Zenodo; not peer reviewed."
+  day: 18
+  notes: "Corrected conceptual preprint candidate; DOI reserved, publication pending; not peer reviewed."

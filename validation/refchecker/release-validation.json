@@ -1,11 +1,11 @@
 {
-  "release_version": "v0.1.1-preprint",
-  "release_date": "2026-10-15",
+  "release_version": "v0.1.2-preprint",
+  "release_date": "2026-10-18",
   "source_sha256": {
-    "paper.md": "3b661ce08693d4ee9f5e314cb1f9234b520a75cf5edb6578bc4ca8f76abd3d6e",
+    "paper.md": "d70107dd74637054b837e916c276377ead6e4129a8121915833b8ca09fd86266",
     "references.md": "2329ded5744aa755149c3ab56e5d30783719322f104a1f979b5e918e865fc60d"
   },
   "reference_report_sha256": "9abb25384ae84bc833290bbb690522048308e29f4f7b39eab8169542025583af",
   "bibliography_unchanged_since_online_scan": true,
-  "note": "The online scan preceded only the release date/version and RefChecker disclosure update; no fresh online scan is claimed."
+  "note": "Historical metadata scan: bibliography unchanged. Current manuscript prose has changed; this is not a fresh online reference or claim-support review."
 }

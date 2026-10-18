@@ -15,3 +15,5 @@ Publisher and primary-source records supported retaining the cited names,
 years, and venues; Crossref/OpenAlex fallback in the final scan reported no
 findings. Automated metadata screening does not check whether every citation
 supports the paper's scientific claims. The author remains responsible.
+
+For 0.1.2, the bibliography remains byte-identical, but conflict/composition prose and the illustration have changed. The historical scan does not constitute a fresh review of those changes.

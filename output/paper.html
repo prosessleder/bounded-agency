@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Timothy O’Brien" />
-  <meta name="dcterms.date" content="2026-10-15" />
+  <meta name="dcterms.date" content="2026-10-18" />
   <title>Bounded Agency</title>
   <style>
     /* Default styles provided by pandoc.
@@ -177,9 +177,9 @@
 <h1 class="title">Bounded Agency: Ontology-Driven Authority for
 Delegated Intelligence</h1>
 <p class="author">Timothy O’Brien</p>
-<p class="date">15 October 2026</p>
+<p class="date">18 October 2026</p>
 </header>
-<p><em>Preprint (not peer reviewed). Version 0.1.1-preprint.</em></p>
+<p><em>Preprint (not peer reviewed). Version 0.1.2-preprint.</em></p>
 <p>ORCID: <a href="https://orcid.org/0009-0001-2589-347X"
 class="uri">https://orcid.org/0009-0001-2589-347X</a></p>
 <p>Copyright © 2026 Timothy O’Brien. Licensed under <a
@@ -436,11 +436,14 @@ operational decisions.</li>
 </ol>
 <p><em>Semantic authority</em> is preferable here to <em>epistemic
 authority</em>. The latter can refer to credibility, expertise, or
-entitlement to believe. Our concern is narrower: whether an ontology
-axiom, mapping, classifier output, or evidence-admission rule is
-approved for operational use. Approval does not make it true. Similarly,
-a passing policy evaluation is an implementation’s representation of a
-mandate, not proof of ethical or legal legitimacy.</p>
+entitlement to believe. Our concern here is whether an ontology axiom,
+mapping, classifier output, or evidence-admission rule is approved for
+operational use. This is distinct from assessing which claims the
+resulting evidence policy warrants accepting. Authority to adopt that
+policy does not establish that a source is truthful or that its reports
+are independent. Approval does not make it true. Similarly, a passing
+policy evaluation is an implementation’s representation of a mandate,
+not proof of ethical or legal legitimacy.</p>
 <p>Responsibility and accountability remain distinct from these
 permissions. An agent may be assigned to produce a recommendation; a
 designated institutional role may remain responsible for ratifying it
@@ -536,10 +539,16 @@ situation assertions, and represented consequences under the supplied
 bundle. For comparison, it intentionally excludes the requirement that
 the candidate bundle already be admitted by an active production grant.
 It runs in a hypothetical, or shadow, evaluation with no authority to
-cause effects. Indeterminate covers missing evidence, unsupported
-inference, unknown classification, inconsistent inputs, or inability to
-resolve required conditions. Deployment rules must specify this
-treatment; unrestricted classical entailment from an inconsistent theory
+cause effects. Indeterminate covers required conditions that remain
+unresolved under the declared evidence and conflict policy, including
+missing evidence, unsupported inference, or unknown classification. A
+conflict does not automatically make every decision indeterminate:
+unaffected facts can still establish a refusal or permission. If the
+policy requires warrant across all admissible consistent
+interpretations, permission requires the release conditions to hold in
+every one; an empty set of interpretations must never authorize by
+vacuous universal quantification. Deployment rules must specify these
+choices; unrestricted classical entailment from an inconsistent theory
 is unsuitable for a permit test.</p>
 <p>For a fixed proposal universe
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>,
@@ -743,10 +752,19 @@ the service-to-routine axiom alone removes the original permit without
 adding one, illustrating non-expansion without equivalence. Replacing
 that axiom with the anomaly-to-routine axiom both removes the service
 permit and adds the anomaly permit. These controls are recorded in the
-example output. They establish the stated results for the enumerated
-proposals, not general comparison coverage or safety of incident
-closure. The program omits full three-valued evaluation, obligations,
-evidence authentication, and production execution.</p>
+example output. A further composition control splits the
+anomaly-to-routine path into two edits: <code>SensorAnomaly</code>
+becomes a subclass of <code>ReviewCategory</code>, and
+<code>ReviewCategory</code> becomes a subclass of
+<code>RoutineNotice</code>. Alone, the first edit supplies only the
+intermediate category, while the second has no intermediate category to
+use; neither changes eligibility on the four proposals. Together they
+add the anomaly closure. Thus separate non-expansion checks do not
+establish non-expansion of their combination. They establish the stated
+results for the enumerated proposals, not general comparison coverage or
+safety of incident closure. The program omits full three-valued
+evaluation, obligations, evidence authentication, and production
+execution.</p>
 <h1 id="proposed-reference-architecture">5. Proposed reference
 architecture</h1>
 <h2 id="components-and-trust-boundaries">5.1 Components and trust
@@ -963,8 +981,10 @@ consistency and graph conformance, then compare counterfactual
 eligibility under
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
 using controlled snapshots. State the proposal language, data domain,
-reasoner, and coverage. Seek expansion witnesses and removed
-permissions.</li>
+reasoner, and coverage. Seek expansion witnesses and removed permissions
+for the complete proposed change. For a sequential rollout, also check
+each admitted prefix against the relevant state; individually checked
+edits do not establish preservation of the combined release.</li>
 <li><strong>Return a qualified result.</strong> Report expansion and
 removal witnesses separately, since both can occur. State coverage
 independently: proof under declared assumptions, exhaustive evaluation

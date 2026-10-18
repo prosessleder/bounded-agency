@@ -1,10 +1,12 @@
 # Bounded Agency: supplementary materials
 
-Timothy O'Brien · 0.1.1-preprint · 15 October 2026
+Timothy O'Brien · 0.1.2-preprint · 18 October 2026
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
 This archive accompanies *Bounded Agency: Ontology-Driven Authority for Delegated Intelligence*. It contains the paper's sources and a finite illustration of how a changed taxonomy or accepted classification can affect decision eligibility while authorization to act remains bound to an approved version.
+
+This corrected-version candidate adds an explicit whole-change composition control and corrects the schema witness identifier. See `release/revision-notes-v0.1.2.md`. The bibliography is unchanged; the saved reference scan is historical, not a fresh check of the revised prose.
 
 ## Contents
 

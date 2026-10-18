@@ -87,7 +87,7 @@
 \title{Bounded Agency: Ontology-Driven Authority for Delegated Intelligence}
 \author{Timothy O'Brien\fnref{orcid}}
 \fntext[orcid]{ORCID: \url{https://orcid.org/0009-0001-2589-347X}}
-\nonumnote{Preprint (not peer reviewed). Version 0.1.1-preprint, 15 October 2026.\\ Copyright © 2026 Timothy O'Brien. Licensed under
+\nonumnote{Preprint (not peer reviewed). Version 0.1.2-preprint, 18 October 2026.\\ Copyright © 2026 Timothy O'Brien. Licensed under
 \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.}
 \begin{abstract}
 An autonomous system's technical permissions may let it perform actions
@@ -382,11 +382,14 @@ We distinguish four operational concepts:
 
 \emph{Semantic authority} is preferable here to \emph{epistemic
 authority}. The latter can refer to credibility, expertise, or
-entitlement to believe. Our concern is narrower: whether an ontology
-axiom, mapping, classifier output, or evidence-admission rule is
-approved for operational use. Approval does not make it true. Similarly,
-a passing policy evaluation is an implementation's representation of a
-mandate, not proof of ethical or legal legitimacy.
+entitlement to believe. Our concern here is whether an ontology axiom,
+mapping, classifier output, or evidence-admission rule is approved for
+operational use. This is distinct from assessing which claims the
+resulting evidence policy warrants accepting. Authority to adopt that
+policy does not establish that a source is truthful or that its reports
+are independent. Approval does not make it true. Similarly, a passing
+policy evaluation is an implementation's representation of a mandate,
+not proof of ethical or legal legitimacy.
 
 Responsibility and accountability remain distinct from these
 permissions. An agent may be assigned to produce a recommendation; a
@@ -476,11 +479,17 @@ assertions, and represented consequences under the supplied bundle. For
 comparison, it intentionally excludes the requirement that the candidate
 bundle already be admitted by an active production grant. It runs in a
 hypothetical, or shadow, evaluation with no authority to cause effects.
-Indeterminate covers missing evidence, unsupported inference, unknown
-classification, inconsistent inputs, or inability to resolve required
-conditions. Deployment rules must specify this treatment; unrestricted
-classical entailment from an inconsistent theory is unsuitable for a
-permit test.
+Indeterminate covers required conditions that remain unresolved under
+the declared evidence and conflict policy, including missing evidence,
+unsupported inference, or unknown classification. A conflict does not
+automatically make every decision indeterminate: unaffected facts can
+still establish a refusal or permission. If the policy requires warrant
+across all admissible consistent interpretations, permission requires
+the release conditions to hold in every one; an empty set of
+interpretations must never authorize by vacuous universal
+quantification. Deployment rules must specify these choices;
+unrestricted classical entailment from an inconsistent theory is
+unsuitable for a permit test.
 
 For a fixed proposal universe \(Q\), define the candidate eligibility
 envelope
@@ -632,10 +641,18 @@ the service-to-routine axiom alone removes the original permit without
 adding one, illustrating non-expansion without equivalence. Replacing
 that axiom with the anomaly-to-routine axiom both removes the service
 permit and adds the anomaly permit. These controls are recorded in the
-example output. They establish the stated results for the enumerated
-proposals, not general comparison coverage or safety of incident
-closure. The program omits full three-valued evaluation, obligations,
-evidence authentication, and production execution.
+example output. A further composition control splits the
+anomaly-to-routine path into two edits: \texttt{Sensor\allowbreak{}Anomaly} becomes a
+subclass of \texttt{Review\allowbreak{}Category}, and \texttt{Review\allowbreak{}Category} becomes
+a subclass of \texttt{Routine\allowbreak{}Notice}. Alone, the first edit supplies
+only the intermediate category, while the second has no intermediate
+category to use; neither changes eligibility on the four proposals.
+Together they add the anomaly closure. Thus separate non-expansion
+checks do not establish non-expansion of their combination. They
+establish the stated results for the enumerated proposals, not general
+comparison coverage or safety of incident closure. The program omits
+full three-valued evaluation, obligations, evidence authentication, and
+production execution.
 
 \section{Proposed reference
 architecture}\label{proposed-reference-architecture}
@@ -850,7 +867,10 @@ The reference procedure is:
   graph conformance, then compare counterfactual eligibility under \(U\)
   using controlled snapshots. State the proposal language, data domain,
   reasoner, and coverage. Seek expansion witnesses and removed
-  permissions.
+  permissions for the complete proposed change. For a sequential
+  rollout, also check each admitted prefix against the relevant state;
+  individually checked edits do not establish preservation of the
+  combined release.
 \item
   \textbf{Return a qualified result.} Report expansion and removal
   witnesses separately, since both can occur. State coverage

@@ -70,6 +70,12 @@ def demonstration() -> dict:
     assert before - removal_after == {'routine-service'}
     assert replacement_after - before == {'sensor-anomaly'}
     assert before - replacement_after == {'routine-service'}
+    # Separately non-expanding edits can enable each other when composed.
+    first = Basis('B-first', initial.subclasses | {('SensorAnomaly', 'ReviewCategory')})
+    second = Basis('B-second', initial.subclasses | {('ReviewCategory', 'RoutineNotice')})
+    combined = Basis('B-combined', first.subclasses | second.subclasses)
+    assert permitted(first) == permitted(second) == before
+    assert permitted(combined) - before == {'sensor-anomaly'}
     anomaly = cases[1]
     assert not authorized_to_act(anomaly, revised, 'B0')
     assert authorized_to_act(anomaly, revised, 'B1')
@@ -98,6 +104,12 @@ def demonstration() -> dict:
         'replacement_revision': {
             'expansion_witnesses': sorted(replacement_after - before),
             'removal_witnesses': sorted(before - replacement_after),
+        },
+        'composition_control': {
+            'first_edit_expansion_witnesses': sorted(permitted(first) - before),
+            'second_edit_expansion_witnesses': sorted(permitted(second) - before),
+            'combined_expansion_witnesses': sorted(permitted(combined) - before),
+            'coverage': 'same four fixed proposals only; not a general preservation proof',
         },
         'unrelated_revision_changes_eligibility': permitted(unrelated) != before,
         'candidate_authorized_under_old_grant': authorized_to_act(anomaly, revised, 'B0'),

@@ -2,7 +2,7 @@
 
 **Ontology-Driven Authority for Delegated Intelligence**
 
-Timothy O'Brien · Conceptual preprint · 15 October 2026 · v0.1.1-preprint
+Timothy O'Brien · Conceptual preprint · 18 October 2026 · v0.1.2-preprint candidate
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
@@ -21,7 +21,7 @@ The paper develops a conceptual synthesis of established semantic-policy, ontolo
 | [examples/semantic_drift.py](examples/semantic_drift.py) | Executable finite-taxonomy illustration |
 | [examples/change-admission.yaml](examples/change-admission.yaml) | Example change-admission schema |
 | [examples/semantic-drift-result.json](examples/semantic-drift-result.json) | Recorded illustration output |
-| [release/bounded-agency-v0.1.1-preprint-research.zip](release/bounded-agency-v0.1.1-preprint-research.zip) | Curated scientific supplement: sources, examples, and reproducibility instructions |
+| `release/bounded-agency-v0.1.2-preprint-research.zip` | Curated scientific supplement: sources, examples, and reproducibility instructions |
 | [release/zenodo-upload.md](release/zenodo-upload.md) | Zenodo deposit record and metadata |
 
 The supplement includes the manuscript and bibliography, standalone TeX, the illustrative code and schema, recorded example output, and the files needed to rebuild the paper.
@@ -85,8 +85,10 @@ The recorded controls also distinguish a removal-only revision (non-expansion wi
 
 ## Publication status and rights
 
-Version 0.1.1-preprint adds reproducible RefChecker build integration and discloses its use in reference screening. The scientific claims and bibliography are unchanged. The paper has not been peer reviewed.
+The current source is the 0.1.2-preprint corrected-version candidate. It clarifies conflict handling, evidence versus adoption authority, and whole-change composition, and corrects the schema witness identifier. The bibliography is unchanged. See the [revision notes](release/revision-notes-v0.1.2.md). The paper has not been peer reviewed.
 
-Published on 15 October 2026 on [Zenodo](https://zenodo.org/records/23401477), with version DOI [10.5281/zenodo.23401477](https://doi.org/10.5281/zenodo.23401477). The [original version](https://zenodo.org/records/23332953) remains available. The supplement is a snapshot prepared before publication with the reserved DOI; current repository metadata records publication. Prior deposited files and metadata are preserved under `release/versions/`; published PDF and ZIP files are never overwritten under an existing version.
+The previous 0.1.1-preprint was published on 15 October 2026 on [Zenodo](https://zenodo.org/records/23401477), with version DOI [10.5281/zenodo.23401477](https://doi.org/10.5281/zenodo.23401477). The [original version](https://zenodo.org/records/23332953) remains available. The supplement is a snapshot prepared before publication with the reserved DOI; current repository metadata records publication. Prior deposited files and metadata are preserved under `release/versions/`; published PDF and ZIP files are never overwritten under an existing version.
 
 The paper and original supporting materials are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/); see [LICENSE.md](LICENSE.md) for scope. Linked third-party sources retain their own rights.
+
+The corrected version has a [Zenodo draft](https://zenodo.org/uploads/23455281), with reserved DOI `10.5281/zenodo.23455281`; it is not yet published.

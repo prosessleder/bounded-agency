@@ -1,0 +1,59 @@
+{
+  "version": "v0.1.1-preprint",
+  "manuscript_date": "2026-10-15",
+  "publication_status": "published conceptual preprint; not peer reviewed",
+  "doi_assigned": true,
+  "doi_reserved": false,
+  "doi": "10.5281/zenodo.23401477",
+  "concept_doi": "10.5281/zenodo.23332952",
+  "record_url": "https://zenodo.org/records/23401477",
+  "publication_date": "2026-10-15",
+  "repository_visibility": "public",
+  "license": "CC-BY-4.0",
+  "files": {
+    "bounded-agency-v0.1.1-preprint.pdf": {
+      "sha256": "15ed3aa3deec362edc1c23a1222cd8f11a44865b613d0f3b2e9fd4179b479c19",
+      "bytes": 136574
+    },
+    "bounded-agency-v0.1.1-preprint-research.zip": {
+      "sha256": "266bff51ae3aced866ae5057a3df7e12150755f0a8054f6dcac26887decb3662",
+      "bytes": 86449
+    },
+    "zenodo-upload-metadata.json": {
+      "sha256": "20aea676517ff4c8a8275d4185ce64ebd242fc4a941236bdef6f1ec136f2204c",
+      "bytes": 3417
+    }
+  },
+  "archive_entry_count": 25,
+  "archive_contents": [
+    "CITATION.cff",
+    "LICENSE.md",
+    "README.md",
+    "examples/change-admission.yaml",
+    "examples/semantic-drift-result.json",
+    "examples/semantic_drift.py",
+    "output/pdf/bounded-agency.tex",
+    "paper.md",
+    "references.md",
+    "release/license-notice.txt",
+    "release/supplement-README.md",
+    "release/zenodo-upload-metadata.json",
+    "release/zenodo-upload.md",
+    "requirements-refchecker.txt",
+    "scripts/build_paper.py",
+    "scripts/check_project.py",
+    "scripts/check_references.py",
+    "scripts/package_release.py",
+    "scripts/test_check_references.py",
+    "validation/refchecker/README.txt",
+    "validation/refchecker/input.json",
+    "validation/refchecker/provenance.json",
+    "validation/refchecker/references.bib",
+    "validation/refchecker/release-validation.json",
+    "validation/refchecker/report.json"
+  ],
+  "deposited_files": [
+    "bounded-agency-v0.1.1-preprint.pdf",
+    "bounded-agency-v0.1.1-preprint-research.zip"
+  ]
+}

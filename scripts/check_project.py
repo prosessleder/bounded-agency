@@ -174,6 +174,11 @@ def main() -> int:
             expected = json.loads(saved.read_text())
             if actual != expected:
                 problems.append("saved example result differs from fresh execution")
+            schema = (ROOT / "examples/change-admission.yaml").read_text()
+            match = re.search(r"^  expansion_witnesses: \[(.*?)\]$", schema, re.M)
+            witnesses = [part.strip() for part in match.group(1).split(",") if part.strip()] if match else None
+            if witnesses != actual.get("expansion_witnesses"):
+                problems.append("schema expansion witness IDs differ from executable result")
             if "illustration only" not in actual.get("limitations", "") or not actual.get("scope"):
                 problems.append("example output lacks explicit bounded scope and illustration limitation")
             if execution.stderr.strip():

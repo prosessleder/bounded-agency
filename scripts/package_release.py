@@ -67,7 +67,7 @@ def main():
                           for name in ['paper.md', 'references.md']},
         'reference_report_sha256': sha256((audit / 'report.json').read_bytes()).hexdigest(),
         'bibliography_unchanged_since_online_scan': True,
-        'note': 'The online scan preceded only the release date/version and RefChecker disclosure update; no fresh online scan is claimed.',
+        'note': 'Historical metadata scan: bibliography unchanged. Current manuscript prose has changed; this is not a fresh online reference or claim-support review.',
     }, indent=2) + '\n')
     pdf = release / f'bounded-agency-{version}.pdf'
     shutil.copyfile(pdf_source, pdf)
@@ -80,7 +80,7 @@ def main():
         'scripts/check_project.py', 'scripts/check_references.py',
         'scripts/test_check_references.py', 'scripts/package_release.py',
         'release/license-notice.txt', 'release/supplement-README.md', 'release/zenodo-upload-metadata.json',
-        'release/zenodo-upload.md',
+        'release/zenodo-upload.md', 'release/revision-notes-v0.1.2.md',
     ] + [str(path.relative_to(ROOT)) for path in sorted(audit.iterdir()) if path.is_file()]
     files = {name: ROOT / name for name in names}
     files['README.md'] = release / 'supplement-README.md'

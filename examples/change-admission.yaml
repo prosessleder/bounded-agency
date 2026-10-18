@@ -10,9 +10,12 @@ evidence_checks_establish_safety_clearance: false
 comparison:
   mode: shadow-no-effect-authority
   domain: four-enumerated-candidates
+  proposal_identity_namespace: examples/semantic-drift-result.json:case_evaluations[].proposal
+  change_scope: complete-proposed-bundle
+  sequential_rollout: validate-each-admitted-prefix-against-current-state
   inference: finite-positive-subclass-closure
   frozen_inputs: [principal, mandate, policy, situation, evidence, context, proposals]
-  expansion_witnesses: [close-sensor-anomaly-incident]
+  expansion_witnesses: [sensor-anomaly]
   removal_witnesses: []
   coverage: exhaustive-over-four-enumerated-candidates-only
   non_expansion_on_declared_candidates: false

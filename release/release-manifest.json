@@ -1,30 +1,30 @@
 {
-  "version": "v0.1.1-preprint",
-  "manuscript_date": "2026-10-15",
-  "publication_status": "published conceptual preprint; not peer reviewed",
-  "doi_assigned": true,
-  "doi_reserved": false,
-  "doi": "10.5281/zenodo.23401477",
+  "version": "v0.1.2-preprint",
+  "manuscript_date": "2026-10-18",
+  "publication_status": "prepared for Zenodo publication; not peer reviewed",
+  "doi_assigned": false,
+  "doi_reserved": true,
+  "doi": "10.5281/zenodo.23455281",
   "concept_doi": "10.5281/zenodo.23332952",
-  "record_url": "https://zenodo.org/records/23401477",
-  "publication_date": "2026-10-15",
+  "record_url": "https://zenodo.org/records/23455281",
+  "publication_date": "2026-10-18",
   "repository_visibility": "public",
   "license": "CC-BY-4.0",
   "files": {
-    "bounded-agency-v0.1.1-preprint.pdf": {
-      "sha256": "15ed3aa3deec362edc1c23a1222cd8f11a44865b613d0f3b2e9fd4179b479c19",
-      "bytes": 136574
+    "bounded-agency-v0.1.2-preprint.pdf": {
+      "sha256": "ac7d3b68e849882a794d0c0b3b1a379e1ac7ffa38e774e0ec94277c5f7cecf17",
+      "bytes": 137919
     },
-    "bounded-agency-v0.1.1-preprint-research.zip": {
-      "sha256": "266bff51ae3aced866ae5057a3df7e12150755f0a8054f6dcac26887decb3662",
-      "bytes": 86449
+    "bounded-agency-v0.1.2-preprint-research.zip": {
+      "sha256": "7e2b5d2270b9e07c6e9f427c3b9afd09212b67f57dce0dc793b22bee2d3d07f2",
+      "bytes": 89438
     },
     "zenodo-upload-metadata.json": {
-      "sha256": "20aea676517ff4c8a8275d4185ce64ebd242fc4a941236bdef6f1ec136f2204c",
-      "bytes": 3417
+      "sha256": "6e825221c7fbf3f06ee0bc08e5efafdbf215f693541def55a9a28209597b9e49",
+      "bytes": 3927
     }
   },
-  "archive_entry_count": 25,
+  "archive_entry_count": 26,
   "archive_contents": [
     "CITATION.cff",
     "LICENSE.md",
@@ -36,6 +36,7 @@
     "paper.md",
     "references.md",
     "release/license-notice.txt",
+    "release/revision-notes-v0.1.2.md",
     "release/supplement-README.md",
     "release/zenodo-upload-metadata.json",
     "release/zenodo-upload.md",
@@ -53,7 +54,7 @@
     "validation/refchecker/report.json"
   ],
   "deposited_files": [
-    "bounded-agency-v0.1.1-preprint.pdf",
-    "bounded-agency-v0.1.1-preprint-research.zip"
+    "bounded-agency-v0.1.2-preprint.pdf",
+    "bounded-agency-v0.1.2-preprint-research.zip"
   ]
 }

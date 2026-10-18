@@ -2,14 +2,14 @@
 title: 'Bounded Agency: Ontology-Driven Authority for Delegated Intelligence'
 author: "Timothy O'Brien"
 orcid: 'https://orcid.org/0009-0001-2589-347X'
-date: '15 October 2026'
+date: '18 October 2026'
 lang: en
-version: '0.1.1-preprint'
+version: '0.1.2-preprint'
 license: 'CC-BY-4.0'
 license-url: 'https://creativecommons.org/licenses/by/4.0/'
 ---
 
-*Preprint (not peer reviewed). Version 0.1.1-preprint.*
+*Preprint (not peer reviewed). Version 0.1.2-preprint.*
 
 # Abstract
 
@@ -88,7 +88,7 @@ We distinguish four operational concepts:
 3. **Decision authority:** the delegated right to resolve specified kinds of situations, select or approve outcomes, and initiate their consequences under stated conditions.
 4. **Semantic authority:** a right to promote a representation or inference regime into the authoritative basis of operational decisions.
 
-*Semantic authority* is preferable here to *epistemic authority*. The latter can refer to credibility, expertise, or entitlement to believe. Our concern is narrower: whether an ontology axiom, mapping, classifier output, or evidence-admission rule is approved for operational use. Approval does not make it true. Similarly, a passing policy evaluation is an implementation's representation of a mandate, not proof of ethical or legal legitimacy.
+*Semantic authority* is preferable here to *epistemic authority*. The latter can refer to credibility, expertise, or entitlement to believe. Our concern here is whether an ontology axiom, mapping, classifier output, or evidence-admission rule is approved for operational use. This is distinct from assessing which claims the resulting evidence policy warrants accepting. Authority to adopt that policy does not establish that a source is truthful or that its reports are independent. Approval does not make it true. Similarly, a passing policy evaluation is an implementation's representation of a mandate, not proof of ethical or legal legitimacy.
 
 Responsibility and accountability remain distinct from these permissions. An agent may be assigned to produce a recommendation; a designated institutional role may remain responsible for ratifying it and answering for its consequences. The architecture must identify that role rather than rely on a statement that the agent is accountable.
 
@@ -126,7 +126,7 @@ Define a **counterfactual eligibility evaluator**
 
 $$ U(A,q;P,L,B,K,E,C) \in \{\mathsf{permit},\mathsf{deny},\mathsf{indeterminate}\}. $$
 
-It checks substantive policy and mandate conditions, supported situation assertions, and represented consequences under the supplied bundle. For comparison, it intentionally excludes the requirement that the candidate bundle already be admitted by an active production grant. It runs in a hypothetical, or shadow, evaluation with no authority to cause effects. Indeterminate covers missing evidence, unsupported inference, unknown classification, inconsistent inputs, or inability to resolve required conditions. Deployment rules must specify this treatment; unrestricted classical entailment from an inconsistent theory is unsuitable for a permit test.
+It checks substantive policy and mandate conditions, supported situation assertions, and represented consequences under the supplied bundle. For comparison, it intentionally excludes the requirement that the candidate bundle already be admitted by an active production grant. It runs in a hypothetical, or shadow, evaluation with no authority to cause effects. Indeterminate covers required conditions that remain unresolved under the declared evidence and conflict policy, including missing evidence, unsupported inference, or unknown classification. A conflict does not automatically make every decision indeterminate: unaffected facts can still establish a refusal or permission. If the policy requires warrant across all admissible consistent interpretations, permission requires the release conditions to hold in every one; an empty set of interpretations must never authorize by vacuous universal quantification. Deployment rules must specify these choices; unrestricted classical entailment from an inconsistent theory is unsuitable for a permit test.
 
 For a fixed proposal universe $Q$, define the candidate eligibility envelope
 
@@ -180,7 +180,7 @@ The supplied program enumerates four fixed incident-closure proposals. Under $B_
 | Sensor anomaly, other site | False | False |
 | Sensor anomaly, unattested observations | False | False |
 
-The program finds one expansion witness and no removal. A grant still bound to $B_0$ refuses the candidate basis; a grant bound to $B_1$ permits the eligible anomaly in the toy model, and revocation blocks it. An unrelated subclass addition leaves eligibility unchanged. Removing the service-to-routine axiom alone removes the original permit without adding one, illustrating non-expansion without equivalence. Replacing that axiom with the anomaly-to-routine axiom both removes the service permit and adds the anomaly permit. These controls are recorded in the example output. They establish the stated results for the enumerated proposals, not general comparison coverage or safety of incident closure. The program omits full three-valued evaluation, obligations, evidence authentication, and production execution.
+The program finds one expansion witness and no removal. A grant still bound to $B_0$ refuses the candidate basis; a grant bound to $B_1$ permits the eligible anomaly in the toy model, and revocation blocks it. An unrelated subclass addition leaves eligibility unchanged. Removing the service-to-routine axiom alone removes the original permit without adding one, illustrating non-expansion without equivalence. Replacing that axiom with the anomaly-to-routine axiom both removes the service permit and adds the anomaly permit. These controls are recorded in the example output. A further composition control splits the anomaly-to-routine path into two edits: `SensorAnomaly` becomes a subclass of `ReviewCategory`, and `ReviewCategory` becomes a subclass of `RoutineNotice`. Alone, the first edit supplies only the intermediate category, while the second has no intermediate category to use; neither changes eligibility on the four proposals. Together they add the anomaly closure. Thus separate non-expansion checks do not establish non-expansion of their combination. They establish the stated results for the enumerated proposals, not general comparison coverage or safety of incident closure. The program omits full three-valued evaluation, obligations, evidence authentication, and production execution.
 
 # 5. Proposed reference architecture
 
@@ -248,7 +248,7 @@ The reference procedure is:
 
 1. **Register a proposal.** Preserve observations, evidence, proposed edits, proposer identity, and the immutable baseline. Keep proposed semantics separate from the admitted operational bundle.
 2. **Resolve dependencies.** Identify relevant policies, mandates, decision classes, mappings, imports, assertion rules, and effect contracts. Use independently derived dependencies where possible; agent-declared dependencies are hints requiring validation.
-3. **Compare under a stated regime.** Check logical consistency and graph conformance, then compare counterfactual eligibility under $U$ using controlled snapshots. State the proposal language, data domain, reasoner, and coverage. Seek expansion witnesses and removed permissions.
+3. **Compare under a stated regime.** Check logical consistency and graph conformance, then compare counterfactual eligibility under $U$ using controlled snapshots. State the proposal language, data domain, reasoner, and coverage. Seek expansion witnesses and removed permissions for the complete proposed change. For a sequential rollout, also check each admitted prefix against the relevant state; individually checked edits do not establish preservation of the combined release.
 4. **Return a qualified result.** Report expansion and removal witnesses separately, since both can occur. State coverage independently: proof under declared assumptions, exhaustive evaluation of a declared finite domain, incomplete tests, or indeterminate comparison. Distinguish non-expansion from permit-set equivalence. Retain changed non-permit outcomes and obligations when relevant to the review. Do not relabel a successful regression suite as a universal proof.
 5. **Obtain the required decisions.** Reviewer eligibility must be resolved under the pre-change admitted authority context; a candidate cannot create its own approver through a new class or relationship. A domain steward may accept a better ontology without possessing authority to broaden an agent's mandate. Where the policy requires it, an independently authorized role must ratify the affected grant. One person may hold both roles, but the two decisions remain explicit.
 6. **Release and migrate.** Publish the admitted bundle, policy/grant versions, scope, effective time, expiry, and revocation behavior. Validate or invalidate pending proposals; retain a defined old scope only under an active grant.
