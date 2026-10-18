@@ -1,9 +1,9 @@
 {
   "version": "v0.1.2-preprint",
   "manuscript_date": "2026-10-18",
-  "publication_status": "prepared for Zenodo publication; not peer reviewed",
-  "doi_assigned": false,
-  "doi_reserved": true,
+  "publication_status": "published corrected conceptual preprint; not peer reviewed",
+  "doi_assigned": true,
+  "doi_reserved": false,
   "doi": "10.5281/zenodo.23455281",
   "concept_doi": "10.5281/zenodo.23332952",
   "record_url": "https://zenodo.org/records/23455281",
@@ -20,8 +20,8 @@
       "bytes": 89438
     },
     "zenodo-upload-metadata.json": {
-      "sha256": "6e825221c7fbf3f06ee0bc08e5efafdbf215f693541def55a9a28209597b9e49",
-      "bytes": 3927
+      "sha256": "fc31c3168eb88aa90a87808752ce12fdbdb82f2b43a7be10f97e0dd82f474683",
+      "bytes": 3855
     }
   },
   "archive_entry_count": 26,

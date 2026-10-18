@@ -2,7 +2,7 @@
 
 **Ontology-Driven Authority for Delegated Intelligence**
 
-Timothy O'Brien · Conceptual preprint · 18 October 2026 · v0.1.2-preprint candidate
+Timothy O'Brien · Conceptual preprint · 18 October 2026 · v0.1.2-preprint
 
 ORCID: [0009-0001-2589-347X](https://orcid.org/0009-0001-2589-347X).
 
@@ -85,10 +85,10 @@ The recorded controls also distinguish a removal-only revision (non-expansion wi
 
 ## Publication status and rights
 
-The current source is the 0.1.2-preprint corrected-version candidate. It clarifies conflict handling, evidence versus adoption authority, and whole-change composition, and corrects the schema witness identifier. The bibliography is unchanged. See the [revision notes](release/revision-notes-v0.1.2.md). The paper has not been peer reviewed.
+The current source is the 0.1.2-preprint corrected version. It clarifies conflict handling, evidence versus adoption authority, and whole-change composition, and corrects the schema witness identifier. The bibliography is unchanged. See the [revision notes](release/revision-notes-v0.1.2.md). The paper has not been peer reviewed.
 
 The previous 0.1.1-preprint was published on 15 October 2026 on [Zenodo](https://zenodo.org/records/23401477), with version DOI [10.5281/zenodo.23401477](https://doi.org/10.5281/zenodo.23401477). The [original version](https://zenodo.org/records/23332953) remains available. The supplement is a snapshot prepared before publication with the reserved DOI; current repository metadata records publication. Prior deposited files and metadata are preserved under `release/versions/`; published PDF and ZIP files are never overwritten under an existing version.
 
 The paper and original supporting materials are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/); see [LICENSE.md](LICENSE.md) for scope. Linked third-party sources retain their own rights.
 
-The corrected version has a [Zenodo draft](https://zenodo.org/uploads/23455281), with reserved DOI `10.5281/zenodo.23455281`; it is not yet published.
+Version 0.1.2-preprint was published on 18 October 2026 at [Zenodo](https://zenodo.org/records/23455281), DOI [10.5281/zenodo.23455281](https://doi.org/10.5281/zenodo.23455281). The PDF is the default preview. Both deposited file checksums were verified against local release bytes.

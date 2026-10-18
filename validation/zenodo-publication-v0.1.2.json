@@ -1,0 +1,26 @@
+{
+  "status": "PUBLISHED_AND_FILES_VERIFIED",
+  "record_url": "https://zenodo.org/records/23455281",
+  "doi": "10.5281/zenodo.23455281",
+  "concept_doi": "10.5281/zenodo.23332952",
+  "version": "0.1.2-preprint",
+  "public_api_status": "published",
+  "default_preview": "bounded-agency-v0.1.2-preprint.pdf",
+  "default_preview_verified_in_browser": true,
+  "source_commit_before_publication": "3935b2b",
+  "new_model_calls": 0,
+  "external_peer_review": false,
+  "file_checks": {
+    "bounded-agency-v0.1.2-preprint-research.zip": {
+      "zenodo_checksum": "md5:77c9c1bd0ed758ca206f0c3487c67a28",
+      "local_sha256": "7e2b5d2270b9e07c6e9f427c3b9afd09212b67f57dce0dc793b22bee2d3d07f2",
+      "bytes": 89438
+    },
+    "bounded-agency-v0.1.2-preprint.pdf": {
+      "zenodo_checksum": "md5:6256f1aa963fcbfae814f3733cfa8d37",
+      "local_sha256": "ac7d3b68e849882a794d0c0b3b1a379e1ac7ffa38e774e0ec94277c5f7cecf17",
+      "bytes": 137919
+    }
+  },
+  "prior_deposited_files_preserved": true
+}

@@ -26,7 +26,7 @@
     "url": "https://creativecommons.org/licenses/by/4.0/",
     "description": "Copyright © 2026 Timothy O'Brien. Licensed under CC BY 4.0."
   },
-  "publication_status": "Prepared corrected conceptual preprint; not yet published; not peer reviewed.",
+  "publication_status": "Published corrected conceptual preprint; not peer reviewed.",
   "repository": {
     "url": "https://github.com/prosessleder/bounded-agency",
     "visibility": "public"
@@ -37,6 +37,5 @@
   "concept_doi": "10.5281/zenodo.23332952",
   "record_url": "https://zenodo.org/records/23455281",
   "previous_version_doi": "10.5281/zenodo.23401477",
-  "draft_url": "https://zenodo.org/uploads/23455281",
   "version_note": "Version 0.1.2-preprint clarifies conflict-sensitive evidence use and whole-change composition, adds a finite composition control, and aligns the illustrative schema witness ID with the executable result. The original positive-taxonomy proposition and conceptual scope remain; no model or deployment results are introduced. The bibliography is unchanged."
 }
