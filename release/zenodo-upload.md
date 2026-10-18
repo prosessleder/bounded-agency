@@ -13,3 +13,5 @@ The revision corrects the illustrative schema witness identifier, clarifies conf
 Files: `bounded-agency-v0.1.2-preprint.pdf` and `bounded-agency-v0.1.2-preprint-research.zip`. Preserve all prior deposited files and the complete 0.1.1 metadata snapshot under `versions/v0.1.1-preprint/`. The original published record and DOI remain unchanged.
 
 Both published file MD5 checksums match the checked local bytes. The PDF is the default preview. The deposited ZIP retains its truthful preparation-time metadata; current repository files record actual publication.
+
+On 18 October 2026 the public descriptions for versions 0.1.1 and 0.1.2 were simplified to the scientific abstract and one-line unreviewed-preprint notice. AI disclosures remain in manuscript Declarations and supporting documentation; version changes remain in the revision notes. This metadata-only edit leaves deposited PDFs and ZIPs unchanged. Historical archived upload aids retain their preparation-time text.

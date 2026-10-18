@@ -1,0 +1,27 @@
+{
+  "status": "BOTH_PUBLIC_DESCRIPTIONS_VERIFIED",
+  "change": "Zenodo descriptions contain scientific abstract plus brief preprint notice only. AI disclosure retained in manuscript Declarations and supporting documentation. Revision detail retained in release notes.",
+  "records": {
+    "23401477": {
+      "version": "0.1.1-preprint",
+      "description_sha256": "ba636871d9b90f5a3b0d658d9df38158abd003cf9390d5f788c43205790876e3",
+      "description_contains_ai_or_refchecker_disclosure": false,
+      "deposited_files": {
+        "bounded-agency-v0.1.1-preprint-research.zip": "md5:2594ed1285782e99bf397498727bf538",
+        "bounded-agency-v0.1.1-preprint.pdf": "md5:3079da573a7110a3bba21ccc0fb0839e"
+      }
+    },
+    "23455281": {
+      "version": "0.1.2-preprint",
+      "description_sha256": "ba636871d9b90f5a3b0d658d9df38158abd003cf9390d5f788c43205790876e3",
+      "description_contains_ai_or_refchecker_disclosure": false,
+      "deposited_files": {
+        "bounded-agency-v0.1.2-preprint-research.zip": "md5:77c9c1bd0ed758ca206f0c3487c67a28",
+        "bounded-agency-v0.1.2-preprint.pdf": "md5:6256f1aa963fcbfae814f3733cfa8d37"
+      }
+    }
+  },
+  "pdf_zip_files_changed": false,
+  "new_manuscript_version": false,
+  "new_model_calls": 0
+}
